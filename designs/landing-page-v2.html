@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NYFAF | New York Facial Aesthetics Forum</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <!-- Sticky Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl italic">
+                    NY</div>
+                <span class="text-xl font-extrabold tracking-tight uppercase">NYFAF</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider">
+                <a class="hover:text-primary transition-colors" href="#program">Program</a>
+                <a class="hover:text-primary transition-colors" href="#faculty">Faculty</a>
+                <a class="hover:text-primary transition-colors" href="#curriculum">Curriculum</a>
+                <a class="hover:text-primary transition-colors" href="#pricing">Enrollment</a>
+            </div>
+            <button
+                class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-lg shadow-primary/20">
+                Enroll Now
+            </button>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- SECTION 1 : HERO SECTION -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="" class="w-full h-full object-cover opacity-30 dark:opacity-20"
+                    data-alt="Dramatic New York City skyline at dusk with lights"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC54iu8aUfx7YYSP-1i1eSESAOUJKN78_Tax1uOgIjhlp66mVS14JByCLAdX5lRFbRkypW_Vtlu8bSIEVQYjCHV4z_s7JVU5n5zVzfmaqL1GQecRtQodsCRS7dA_cXtyvMHaPm6yiv5VqA74fQ_Ed61JKT-ZKGh59q1nW3KanI4k7xLCz3OgD7hhCH9hj7twOefH1mEu4Ncx7tV6DvxcU-PkY8C9Ufp1iFJIadYAnQnjCPCD_QO49IIcPd1UaDHZKxcZSuN5AsYMMkf" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-background-light via-background-light/80 to-transparent dark:from-background-dark dark:via-background-dark/80">
+                </div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10 py-20">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    1 : HERO SECTION</span>
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Master the Art of <span
+                            class="text-primary italic">Facial Aesthetics</span> in the Heart of New York</h1>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl">The
+                        New York Facial Aesthetics Forum (NYFAF) offers an elite residency-style training program for
+                        practitioners ready to redefine excellence in non-surgical facial rejuvenation.</p>
+                    <!-- Countdown Timer -->
+                    <div
+                        class="bg-white/50 dark:bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-primary/20 inline-flex flex-col gap-4 mb-10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Registration Closes
+                            In:</span>
+                        <div class="flex gap-6">
+                            <div class="text-center"><span class="block text-3xl font-black">14</span><span
+                                    class="text-[10px] uppercase font-bold text-slate-500">Days</span></div>
+                            <div class="text-center"><span class="block text-3xl font-black">08</span><span
+                                    class="text-[10px] uppercase font-bold text-slate-500">Hrs</span></div>
+                            <div class="text-center"><span class="block text-3xl font-black">42</span><span
+                                    class="text-[10px] uppercase font-bold text-slate-500">Mins</span></div>
+                            <div class="text-center"><span class="block text-3xl font-black">15</span><span
+                                    class="text-[10px] uppercase font-bold text-slate-500">Secs</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary/30">Claim
+                            Your Placement</button>
+                        <button
+                            class="px-10 py-5 rounded-xl font-bold text-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Download
+                            Brochure</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 2 : ABOUT NYFAC -->
+        <section class="py-24 border-t border-primary/5" id="program">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    2 : ABOUT NYFAC</span>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8">Defining Clinical Prestige</h2>
+                        <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400">
+                            <p>NYFAF was founded with a singular vision: to bridge the gap between academic theory and
+                                high-stakes clinical practice. We understand that facial aesthetics is as much an art
+                                form as it is a medical discipline.</p>
+                            <p>Our program is designed for medical professionals who refuse to settle for the status
+                                quo. We provide a sanctuary for learning where innovation meets safety, and where every
+                                injection is treated as a masterclass in anatomy and precision.</p>
+                        </div>
+                        <div class="mt-12 grid grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-primary font-bold text-3xl mb-1">500+</h4>
+                                <p class="text-sm font-semibold uppercase tracking-wide">Alumni Globally</p>
+                            </div>
+                            <div>
+                                <h4 class="text-primary font-bold text-3xl mb-1">15+</h4>
+                                <p class="text-sm font-semibold uppercase tracking-wide">Years Excellence</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                            <img alt="" class="w-full h-full object-cover"
+                                data-alt="Modern medical aesthetic clinic interior with clean lines"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmRNWu2-DxoUagtEk-fPhtxgBJNoj52DtxnVl1_6zrR10f-c5ME8_OyieOWvnY_H2tN0ol11q8Osy7CF_vqn8180Lk0d5yMcm14z1ckmeA0ACVPpK6sdNJ7jV0ZhjBNSh15hBAVVy7D2DNTWekAWP425i8vwFyVuQjkQk3-9nHEg0kOFrrJtkBiktVTtR2V4PCKldjmfjDNxqx0ti8buocfnedNF1UxO8cJ8VCbUEIra3EpXSyP4FviQIXhgHGVbSqxqtlIlD_PS-x" />
+                        </div>
+                        <div
+                            class="absolute -bottom-8 -left-8 bg-primary p-8 rounded-2xl text-white shadow-xl max-w-[240px]">
+                            <p class="text-sm italic font-medium">"NYFAC has set the global benchmark for aesthetic
+                                training excellence."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 3 : FACULTY & CLINICAL LEADERSHIP -->
+        <section class="py-24 bg-slate-100 dark:bg-slate-900/50" id="faculty">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                        3 : FACULTY &amp; CLINICAL LEADERSHIP</span>
+                    <h2 class="text-4xl font-bold">Led by Master Clinicians</h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Learn from the world's leading authorities in
+                        facial anatomy and aesthetic medicine.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Faculty member 1 -->
+                    <div
+                        class="group bg-background-light dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 shadow-sm">
+                        <div class="aspect-[4/5] mb-6 rounded-xl overflow-hidden bg-slate-200">
+                            <img alt=""
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="Professional portrait of a male aesthetic physician"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARG6qYRCE4cLjBc9SNeg3DGwbXXlx_1cauqgYcyNeUcNFC5JDTl56S-HMV67W-l5QicFENUP-n795fIZEB9ZqhSA7m3LwfV4vXeALEZwrjOGZrph4S9iJuJvTBkpYiTam5eWr9VKRMGDBjIKElHDS1zhSxMIvMyRaNA8eGv4ZTppF9dXYjzosUWMu_U86P1-_INmwGNBHsXU9U7rD0QHHVL3LkE0bZ2dNqtsWvWaxnw3xtEhJR47ruWEKC72yVGnB0JsoktA9bgijS" />
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Dr. Julian Vance, MD</h3>
+                        <p class="text-primary font-semibold text-sm mb-4 uppercase tracking-tighter">Clinical Director
+                            &amp; Head of Surgery</p>
+                        <p class="text-sm text-slate-500 line-clamp-3">Board-certified plastic surgeon with over 20
+                            years of experience in advanced facial rejuvenation and aesthetic innovations.</p>
+                    </div>
+                    <!-- Faculty member 2 -->
+                    <div
+                        class="group bg-background-light dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 shadow-sm">
+                        <div class="aspect-[4/5] mb-6 rounded-xl overflow-hidden bg-slate-200">
+                            <img alt=""
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="Professional portrait of a female dermatologist"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7aL94X2QZNkJdklTdgt68sCeqx_BtgmPsnClRXHzJJqlmoxY6XxIwSaIFjWOfNhl_KCfHDf9PoAQ_wNqfr3LwHC646fhe9AJ4KnT10DeySwv2tN3oVMS1RWRwY-0A3ypUHZHiauFf0FSPKR--A3wE49T7PdT9FZATuTh5jsHLnUdv6PDYTssfi5DcU3FlGdKOUK04xcsUJQZpzQ0Ry4IGL1MuGhetPc2tlxPMHg7KaA9ML24VIMWSKVI_Auht3LXzDG-bpwNjzBZ9" />
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Dr. Elena Rodriguez, MD</h3>
+                        <p class="text-primary font-semibold text-sm mb-4 uppercase tracking-tighter">Chief Anatomist
+                        </p>
+                        <p class="text-sm text-slate-500 line-clamp-3">Specializing in ultrasound-guided filler
+                            placement and high-fidelity anatomical dissections for safe practice.</p>
+                    </div>
+                    <!-- Faculty member 3 -->
+                    <div
+                        class="group bg-background-light dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 shadow-sm">
+                        <div class="aspect-[4/5] mb-6 rounded-xl overflow-hidden bg-slate-200">
+                            <img alt=""
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="Professional portrait of a male facial surgeon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW6QGHntLlOvY3TzdxW7bfHYKVSz2ne9JPTloXhwsxQq2Jiz2ZuWLL2fo9o-bW9U9RwZw7QnE0ELhvSB9wQ6m98VkpFtYr_ElhQtUS-F83tHBd7HRuiYMTvsaURPliborFGJkkypsyEwprbLYyhFOB5uhOS9cwGHvbM7wBBjxmNekPUBeaq6JkZMRAonV15wU8L-yg3_09PwK4zzeepkYGEv3gYcJiu8H9ZwRJIXeb2tuZLc0OponaYbi3cfkx9Eo3WLOs_kvvYVHp" />
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Dr. Marcus Chen, MD</h3>
+                        <p class="text-primary font-semibold text-sm mb-4 uppercase tracking-tighter">Laser &amp; Tech
+                            Specialist</p>
+                        <p class="text-sm text-slate-500 line-clamp-3">Pioneer in multi-modality treatment protocols and
+                            energy-based device integration for superior patient outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 4 : ABOUT THE COURSE -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    4 : ABOUT THE COURSE</span>
+                <div class="max-w-4xl">
+                    <h2 class="text-4xl font-bold mb-10 leading-tight">A Curriculum Built for the <span
+                            class="italic text-primary">Future of Aesthetics</span></h2>
+                    <div class="grid md:grid-cols-2 gap-12 text-slate-600 dark:text-slate-400">
+                        <div class="space-y-4">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                                <span class="material-icons">architecture</span>
+                            </div>
+                            <h4 class="text-slate-900 dark:text-slate-100 font-bold text-xl">Anatomical Precision</h4>
+                            <p>We go beyond the surface. Participants engage in high-fidelity anatomy reviews to master
+                                the complex layers of the face, ensuring maximum safety and predictability in every
+                                procedure.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                                <span class="material-icons">visibility</span>
+                            </div>
+                            <h4 class="text-slate-900 dark:text-slate-100 font-bold text-xl">The Aesthetic Eye</h4>
+                            <p>Training your vision is as critical as training your hands. We focus on facial harmony,
+                                golden ratios, and personalized treatment mapping for ethnically diverse patient
+                                profiles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 5 : PROGRAM STRUCTURE & LEARNING FORMAT -->
+        <section class="py-24 bg-primary/5">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    5 : PROGRAM STRUCTURE &amp; LEARNING FORMAT</span>
+                <h2 class="text-4xl font-bold mb-16 text-center">Hybrid Learning Excellence</h2>
+                <div
+                    class="grid md:grid-cols-3 gap-0 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-xl bg-background-light dark:bg-background-dark">
+                    <div
+                        class="p-10 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 flex flex-col items-center text-center">
+                        <span class="text-primary font-black text-4xl mb-4">01</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wide">Phase One: Theory</h3>
+                        <p class="text-slate-500 text-sm">On-demand digital lectures covering advanced facial anatomy,
+                            pharmacology, and patient psychology. Prepare at your own pace before arriving in NYC.</p>
+                    </div>
+                    <div
+                        class="p-10 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 flex flex-col items-center text-center">
+                        <span class="text-primary font-black text-4xl mb-4">02</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wide">Phase Two: In-Person</h3>
+                        <p class="text-slate-500 text-sm">3 days of intensive clinical immersion in our Manhattan
+                            facility. Live demonstrations, hands-on practice, and real-time faculty feedback.</p>
+                    </div>
+                    <div class="p-10 flex flex-col items-center text-center">
+                        <span class="text-primary font-black text-4xl mb-4">03</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wide">Phase Three: Mentorship</h3>
+                        <p class="text-slate-500 text-sm">90 days of post-course support via our exclusive clinician
+                            portal. Case reviews and ongoing guidance as you implement new skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 6 : WHAT YOU WILL LEARN -->
+        <section class="py-24" id="curriculum">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    6 : WHAT YOU WILL LEARN</span>
+                <div class="grid lg:grid-cols-12 gap-16">
+                    <div class="lg:col-span-4">
+                        <h2 class="text-4xl font-bold mb-6">Comprehensive Curriculum</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8">A deep dive into the 6 pillars of modern
+                            facial aesthetics. Each module is designed to provide actionable clinical protocols.</p>
+                        <div class="bg-primary/10 p-6 rounded-2xl border-l-4 border-primary">
+                            <p class="text-sm font-semibold italic">"Our curriculum is updated every quarter to include
+                                the latest FDA-cleared products and advanced injection techniques."</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8 space-y-4">
+                        <!-- Accordion Module 1 -->
+                        <div
+                            class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-white/5">
+                            <h4 class="font-bold flex items-center justify-between cursor-pointer">
+                                <span>Module 1: Advanced Neuromodulators</span>
+                                <span class="material-icons text-primary">expand_more</span>
+                            </h4>
+                            <p class="mt-4 text-sm text-slate-500">Beyond standard patterns: Upper face mastery, lower
+                                face slimming, and the 'Aesthetic Micro-Tox' technique.</p>
+                        </div>
+                        <!-- Accordion Module 2 -->
+                        <div
+                            class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-white/5">
+                            <h4 class="font-bold flex items-center justify-between cursor-pointer">
+                                <span>Module 2: Dermal Fillers &amp; Volumization</span>
+                                <span class="material-icons text-primary">expand_more</span>
+                            </h4>
+                            <p class="mt-4 text-sm text-slate-500">Mastering the mid-face, jawline contouring, and the
+                                delicate art of peri-orbital rejuvenation using cannula and needle.</p>
+                        </div>
+                        <!-- Accordion Module 3 -->
+                        <div
+                            class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-white/5">
+                            <h4 class="font-bold flex items-center justify-between cursor-pointer">
+                                <span>Module 3: Biostimulators &amp; Skin Quality</span>
+                                <span class="material-icons text-primary">expand_more</span>
+                            </h4>
+                            <p class="mt-4 text-sm text-slate-500">Integrating PLLA and CaHA for long-term structural
+                                support and skin texture improvement.</p>
+                        </div>
+                        <!-- Accordion Module 4 -->
+                        <div
+                            class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-white/5">
+                            <h4 class="font-bold flex items-center justify-between cursor-pointer">
+                                <span>Module 4: Complication Management</span>
+                                <span class="material-icons text-primary">expand_more</span>
+                            </h4>
+                            <p class="mt-4 text-sm text-slate-500">Critical safety protocols: Identifying and treating
+                                vascular occlusions, ultrasound use, and emergency kit setup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 7 : HANDS-ON CLINICAL EXPERIENCE -->
+        <section class="py-24 bg-background-dark text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <img alt="" class="w-full h-full object-cover"
+                    data-alt="Close up of medical hands performing a procedure"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyfAoRHa3x-C1vNJRvPm8hedPOx4EAUhFSgrpZSydsekugUd2efl6Ds6HrqfgQ0EDZJsqn1Ad1BnFrzjo9LHx7W4zwvUXYasWUNisqQtGo6NZ__LVkwshquSQmeHMVcnEHjzO-0FGAvEFU6-8OiBQrs4xLyvAHUVIOIJLKqi3PTCIr1GCce3GXbBr09FvCOIRJuTQYzMNDWrtSwNuR6zb3v97qcsLVmru3VtzV0klDF3fxKmzkhzRPYFBA0EvqWL1kKYgxf02_hi9m" />
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    7 : HANDS-ON CLINICAL EXPERIENCE</span>
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h2 class="text-4xl font-extrabold mb-8 leading-tight">Master Skill Through <br /><span
+                                class="text-primary italic">Live Patient Practice</span></h2>
+                        <p class="text-lg text-slate-400 mb-8">Theory only goes so far. At NYFAF, you will treat
+                            pre-screened patients under the direct supervision of our faculty. We maintain a strict 1:3
+                            faculty-to-student ratio to ensure you receive personalized guidance on every injection.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Small group rotations (max 3 per station)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Premium FDA-approved products provided</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Real-time feedback on needle depth and angle</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                            <img alt=""
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                                data-alt="Doctor in scrubs preparing an injection"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SUDl7OV63_cAQJl7FYpSvHpoyjvOYSfcMvn1uBUpv4GfJz_sgQtWvppTg_F56781mMoBMZaQrQns320qzoPMxVO6YKiTNhF1C8zlQVYsUxMabfD77ctFfxrMkc0x2iWAx3sEYeXIEiWxxQoJVdIaDpNK28HpZIZMd622q6MkKraQyxQ9Rwkhk6nhZT5GdblnWGX5wJ4vboRToOLOnyQ_InyBrYC3teZaHYFsukov_2VIBcU7FDYWMDuo-J-AA96wxLROZc4DQPXS" />
+                        </div>
+                        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl mt-8">
+                            <img alt=""
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                                data-alt="Modern medical treatment room detail"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkGiarOj0cYXmjo3sF3miDbB4MISLD3q_Zvs9_W8dNBZNsjawnlSDgqVuUNB9QfsNF_COAbgbyEXfCpj6NbXnT9GpcYVbYg0jNoAbiq4D8lh1W5DQU0KuzUNJp-FJEIkAPbvTrCP0CrJvQ0E30PiLjMD7_j2bHUdgOb66qh134wQUKWcM1REt7lvPZSHRIAlSEvacg8dH57-xHPSOMFZ8Kd1ltCeZxDxY44bvkWaXCocEG_Apf3uFYCk-H3dE15R5c_fZFLIGm96fP" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 8 : CERTIFICATION -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    8 : CERTIFICATION</span>
+                <div class="max-w-3xl mx-auto border-2 border-primary/20 p-12 rounded-3xl relative">
+                    <div
+                        class="absolute -top-6 left-1/2 -translate-x-1/2 bg-background-light dark:bg-background-dark px-6">
+                        <span class="material-icons text-5xl text-primary">verified_user</span>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-6 mt-4">Prestigious NYFAF Certification</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-10 text-lg">Upon successful completion of the course
+                        and final clinical assessment, you will be awarded the Official NYFAF Certificate of Clinical
+                        Competence. This credential signifies your commitment to excellence and high-level proficiency
+                        in facial aesthetics.</p>
+                    <div
+                        class="flex flex-wrap justify-center gap-8 items-center border-t border-slate-200 dark:border-slate-800 pt-10">
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-slate-400 mb-2">military_tech</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest opacity-50">CME Credits
+                                Available</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-slate-400 mb-2">workspace_premium</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest opacity-50">Global
+                                Recognition</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-slate-400 mb-2">share</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest opacity-50">Digital
+                                Badge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 9 : WHY TRAIN WITH US -->
+        <section class="py-24 bg-slate-100 dark:bg-slate-900/30">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    9 : WHY TRAIN WITH US</span>
+                <h2 class="text-4xl font-bold mb-16">The NYFAF Advantage</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-primary mb-6"><span class="material-icons text-4xl">location_city</span></div>
+                        <h4 class="font-bold text-lg mb-3">NYC Innovation Hub</h4>
+                        <p class="text-sm text-slate-500">Train in the global epicenter of luxury aesthetics and medical
+                            innovation.</p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-primary mb-6"><span class="material-icons text-4xl">groups</span></div>
+                        <h4 class="font-bold text-lg mb-3">Elite Networking</h4>
+                        <p class="text-sm text-slate-500">Connect with a cohort of ambitious clinicians and world-class
+                            faculty.</p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-primary mb-6"><span class="material-icons text-4xl">psychology</span></div>
+                        <h4 class="font-bold text-lg mb-3">Business Intelligence</h4>
+                        <p class="text-sm text-slate-500">Learn how to position your aesthetic clinic for high-end
+                            growth and ROI.</p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-primary mb-6"><span class="material-icons text-4xl">safety_check</span></div>
+                        <h4 class="font-bold text-lg mb-3">Safety First Culture</h4>
+                        <p class="text-sm text-slate-500">Zero-compromise approach to anatomical safety and patient
+                            outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 10 : COURSE FORMAT & SCHEDULE -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    10 : COURSE FORMAT &amp; SCHEDULE</span>
+                <div
+                    class="bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="p-8 lg:p-12 border-b border-slate-200 dark:border-slate-800 bg-primary/5">
+                        <h2 class="text-3xl font-bold">The Immersion Schedule</h2>
+                        <p class="text-slate-500 mt-2">Next Cohort: October 15th - 17th, 2024</p>
+                    </div>
+                    <div class="divide-y divide-slate-200 dark:divide-slate-800">
+                        <div class="p-8 lg:p-12 flex flex-col md:flex-row gap-8">
+                            <div class="md:w-32 flex-shrink-0 font-black text-2xl text-primary">DAY 1</div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-3">Advanced Facial Anatomy &amp; Marking</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Full day of anatomical mapping, ultrasound
+                                    techniques, and treatment planning across all facial zones.</p>
+                            </div>
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col md:flex-row gap-8">
+                            <div class="md:w-32 flex-shrink-0 font-black text-2xl text-primary">DAY 2</div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-3">Live Injections: Upper &amp; Mid-Face</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Morning faculty demonstrations followed by
+                                    afternoon 1:1 supervised hands-on practice with live patients.</p>
+                            </div>
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col md:flex-row gap-8">
+                            <div class="md:w-32 flex-shrink-0 font-black text-2xl text-primary">DAY 3</div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-3">The Sculpted Profile &amp; Final Mastery</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Lower face rejuvenation, complications
+                                    seminar, business of aesthetics workshop, and certification ceremony.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 11 : INTERNATIONAL PARTICIPANTS -->
+        <section class="py-24 bg-background-dark text-white">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    11 : INTERNATIONAL PARTICIPANTS</span>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8">Global Access Support</h2>
+                        <p class="text-slate-400 mb-8 leading-relaxed">We welcome practitioners from across the globe.
+                            To ensure your journey to New York is seamless, we provide a dedicated logistics concierge
+                            for all international attendees.</p>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                                    <span class="material-icons">card_travel</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold">Visa Assistance</h5>
+                                    <p class="text-sm text-slate-500">Official invitation letters and guidance for
+                                        professional training visas.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                                    <span class="material-icons">hotel</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold">Partner Lodging</h5>
+                                    <p class="text-sm text-slate-500">Preferential rates at 5-star Manhattan hotels
+                                        within walking distance of the forum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl overflow-hidden h-[400px] border border-white/10">
+                        <img alt="" class="w-full h-full object-cover"
+                            data-alt="Map of Manhattan highlighting luxury district" data-location="New York City"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL2IpJULiNM5_xdhC9qgBMjWFMqMRECHpo5XZsPPZyw-NFjtfOUQ2SS44t5JdLPQ9aqGucwWjw8PrpX30gCe7GpLOk420fA_7RaaphahBi3Cv74pv4BcQRjdXw6gcByZ01rmtJdrt1hIw2oOQ9xAklFFdiaI1bWZKRTtOfRGNpOckzeXH3G4taE9eei36OL3zuAgc2hjM64I2BorY8FZt0DV1CofBd0ETIVGq_ZCllAbp_0ZDzNonLVcGj3qdfdbpOBrKj1pM4ssgg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 12 : PRICING & ENROLLMENT -->
+        <section class="py-24" id="pricing">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                        12 : PRICING &amp; ENROLLMENT</span>
+                    <h2 class="text-4xl font-bold">Invest in Your Excellence</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Basic -->
+                    <div
+                        class="p-10 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800">
+                        <h4 class="text-xl font-bold mb-2">Didactic Foundation</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-primary">$1,250</span>
+                            <span class="text-slate-500 font-bold uppercase text-[10px]">USD</span>
+                        </div>
+                        <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-green-500 text-sm">check</span> 12-Month Access to
+                                Digital Curriculum</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-green-500 text-sm">check</span> Live Webinar Q&amp;A
+                                Sessions</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-green-500 text-sm">check</span> Course Materials &amp;
+                                Downloads</li>
+                            <li class="flex items-center gap-3 text-slate-400"><span
+                                    class="material-icons text-sm">close</span> Hands-On Clinical Practice</li>
+                        </ul>
+                        <button
+                            class="w-full py-4 rounded-xl font-bold border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Select
+                            Plan</button>
+                    </div>
+                    <!-- Pro -->
+                    <div
+                        class="p-10 rounded-3xl bg-background-dark text-white border-2 border-primary relative overflow-hidden">
+                        <div
+                            class="absolute top-6 right-6 bg-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                            Recommended</div>
+                        <h4 class="text-xl font-bold mb-2">Master Clinician (Full Access)</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-primary">$4,950</span>
+                            <span class="text-slate-400 font-bold uppercase text-[10px]">USD</span>
+                        </div>
+                        <ul class="space-y-4 mb-10 text-slate-300">
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-primary text-sm">check_circle</span> 3-Day NYC Hands-On
+                                Residency</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-primary text-sm">check_circle</span> 1:3 Faculty
+                                Supervised Injections</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-primary text-sm">check_circle</span> Full Digital
+                                Curriculum Access</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-primary text-sm">check_circle</span> 90-Day Post-Course
+                                Mentorship</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-icons text-primary text-sm">check_circle</span> Official NYFAF
+                                Certification</li>
+                        </ul>
+                        <button
+                            class="w-full py-4 rounded-xl font-bold bg-primary hover:bg-primary/90 transition-transform hover:scale-[1.02] shadow-xl shadow-primary/20">Enroll
+                            in Fellowship</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 13 : FREQUENTLY ASKED QUESTIONS -->
+        <section class="py-24 bg-slate-100 dark:bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    13 : FREQUENTLY ASKED QUESTIONS</span>
+                <h2 class="text-4xl font-bold mb-16 text-center">Your Questions Answered</h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div
+                        class="bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <h5 class="font-bold mb-3">Who is eligible to participate?</h5>
+                        <p class="text-sm text-slate-500">NYFAF is open to MDs, DOs, NPs, PAs, and RNs with an active
+                            medical license. Some international equivalents are accepted following license verification.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <h5 class="font-bold mb-3">Are models provided for hands-on?</h5>
+                        <p class="text-sm text-slate-500">Yes, NYFAF provides all pre-screened patient models for the
+                            hands-on clinical portion. You are also welcome to bring a specific model if requested in
+                            advance.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <h5 class="font-bold mb-3">Is there a group discount?</h5>
+                        <p class="text-sm text-slate-500">We offer a 15% tuition reduction for practices enrolling 3 or
+                            more clinicians in the same cohort.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 14 : FINAL CTA -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-primary opacity-10"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full border border-primary text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">SECTION
+                    14 : TAKE THE NEXT STEP</span>
+                <h2 class="text-5xl font-extrabold mb-6">Elevate Your Clinical Practice</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">Limited seats remain for
+                    our October cohort. Join the next generation of aesthetic leaders in New York City.</p>
+                <div class="mb-12">
+                    <div
+                        class="inline-flex gap-8 bg-background-light dark:bg-background-dark p-8 rounded-3xl border border-primary/20 shadow-2xl">
+                        <div class="text-center">
+                            <span class="block text-4xl font-black text-primary">06</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-500">Seats Left</span>
+                        </div>
+                        <div class="w-px h-12 bg-slate-200 dark:bg-slate-800 self-center"></div>
+                        <div class="text-center">
+                            <span class="block text-4xl font-black text-primary">14</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-500">Days Out</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button
+                        class="bg-primary text-white px-12 py-6 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/40 uppercase tracking-widest">Enroll
+                        Today</button>
+                    <button
+                        class="bg-white dark:bg-white/5 px-12 py-6 rounded-2xl font-black text-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors uppercase tracking-widest">Speak
+                        to Faculty</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-500 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-6 text-white">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg italic">
+                            NY</div>
+                        <span class="text-lg font-extrabold tracking-tight uppercase">NYFAF</span>
+                    </div>
+                    <p class="max-w-sm mb-8">Setting the standard for excellence in medical aesthetic education. Join us
+                        in NYC for the ultimate clinical immersion experience.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Quick Links</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="hover:text-primary" href="#">Curriculum</a></li>
+                        <li><a class="hover:text-primary" href="#">Faculty</a></li>
+                        <li><a class="hover:text-primary" href="#">Pricing</a></li>
+                        <li><a class="hover:text-primary" href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Legal</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+                        <li><a class="hover:text-primary" href="#">CME Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-[10px] uppercase font-bold tracking-[0.3em] text-center">
+                © 2024 New York Facial Aesthetics Forum. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

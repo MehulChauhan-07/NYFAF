@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Designs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        :root {
+            --primary-bg: #0b1120;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-bg);
+            background-image:
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .badge {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            white-space: nowrap;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover .btn {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .btn svg {
+            transform: translateX(6px);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            width: 100%;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        /* Search / Filter Bar */
+        .controls {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .search-inner {
+            position: relative;
+            flex-grow: 1;
+            max-width: 400px;
+        }
+
+        .search-inner svg {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            padding: 0.875rem 1rem 0.875rem 3rem;
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(12px);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .stats {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: rgba(30, 41, 59, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-inner {
+                max-width: 100%;
+            }
+
+            .stats {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Design Previews</h1>
+        <p class="subtitle">Explore our dynamic collection of landing page variations and UI concepts.</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-inner">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search pages...">
+        </div>
+        <div class="stats" id="statsDisplay">Loading...</div>
+    </div>
+
+    <main class="grid" id="gridContainer">
+        <!-- Cards will be injected here dynamically via JS -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Design Previews. Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        // Centralized configuration for dynamic pages
+        // Simply add new objects here when new html pages are created.
+        const pages = [
+            {
+                url: "landing-page-v1.html",
+                title: "Version 1",
+                badge: "V1",
+                description: "The primary landing page design conceptualized with the original aesthetic."
+            },
+            {
+                url: "landing-page-v2.html",
+                title: "Version 2",
+                badge: "V2",
+                description: "An alternative layout exploring different typography and structural hierarchy."
+            },
+            {
+                url: "landing-page-v3.html",
+                title: "Version 3",
+                badge: "V3",
+                description: "A modernized approach focusing on bold imagery and distinct contrasts."
+            },
+            {
+                url: "landing-page-v5.html",
+                title: "Version 5",
+                badge: "V5",
+                description: "Advanced layout with rich features and comprehensive spacing."
+            },
+            {
+                url: "landing-page-v6.html",
+                title: "Version 6",
+                badge: "V6",
+                description: "Highly polished version featuring interactive elements and modern flair."
+            },
+            {
+                url: "about-v1.html",
+                title: "About Us",
+                badge: "About",
+                description: "Company information and team details page layout."
+            },
+            {
+                url: "our_coursec-v1.html",
+                title: "Our Courses",
+                badge: "Courses",
+                description: "Listing page for available courses and educational offerings."
+            }
+        ];
+
+        const gridContainer = document.getElementById('gridContainer');
+        const searchInput = document.getElementById('searchInput');
+        const statsDisplay = document.getElementById('statsDisplay');
+
+        function renderCards(filterText = "") {
+            gridContainer.innerHTML = "";
+            const lowerFilter = filterText.toLowerCase();
+
+            const filteredPages = pages.filter(page =>
+                page.title.toLowerCase().includes(lowerFilter) ||
+                page.description.toLowerCase().includes(lowerFilter) ||
+                page.badge.toLowerCase().includes(lowerFilter)
+            );
+
+            statsDisplay.textContent = `Showing ${filteredPages.length} of ${pages.length} pages`;
+
+            if (filteredPages.length === 0) {
+                gridContainer.innerHTML = `<p style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem;">No pages found matching "${filterText}".</p>`;
+                return;
+            }
+
+            filteredPages.forEach((page, index) => {
+                const card = document.createElement('a');
+                card.href = page.url;
+                card.className = 'card';
+                // Staggered animation delay
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2>${page.title}</h2>
+                        <span class="badge">${page.badge}</span>
+                    </div>
+                    <p>${page.description}</p>
+                    <div class="btn">
+                        <span>Preview Design</span>
+                        <svg fill="none" class="w-6 h-6" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                `;
+
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Search event listener
+        searchInput.addEventListener('input', (e) => {
+            renderCards(e.target.value);
+        });
+
+        // Initial render
+        renderCards();
+    </script>
+</body>
+
+</html>

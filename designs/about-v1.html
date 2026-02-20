@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>NYFAC | Professional Medical Training</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container -->
+<div class="relative flex h-auto min-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 py-4 lg:px-20">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-tight uppercase">NYFAC</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Programs</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Faculty</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-primary hover:bg-primary/90 text-slate-900 rounded-lg px-6 py-2.5 text-sm font-bold transition-all shadow-sm">
+                    Register Now
+                </button>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="flex-1 max-w-7xl mx-auto px-6 py-12 lg:py-20">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase rounded-full">
+                            Excellence in Aesthetics
+                        </span>
+<h1 class="text-4xl lg:text-6xl font-black tracking-tight leading-[1.1]">
+                            About Our <br/><span class="text-primary">Training Programs</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                            New York Facial Aesthetics Mentorship (NYFAC) offers structured, hands-on injectable training programs designed for licensed medical professionals at different stages of their aesthetic journey.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-slate-900 px-8 py-4 rounded-lg font-bold text-base hover:shadow-lg transition-all flex items-center gap-2">
+                            Explore Programs <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-slate-300 dark:border-slate-700 px-8 py-4 rounded-lg font-bold text-base hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                            View Schedule
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
+<img alt="Medical professional training session" class="w-full h-full object-cover" data-alt="Professional clinical setting with medical practitioners in training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDmNTbO7TcaKWN2kVdTdqcAhmgl98011jc0p0b-eEBTs5gSY3OGjQMD22pd5ehIpMeTpCK9Y6xCSfSohmHKSBpR6aF39p6HhINzJx-FkpyNJUNprRDoj6aL6prlJo0x7U_jF5xc9ImJixKJAfXnqr9PlXU5Eu2Ue_YO3-xWl-Xn6kI6G0mGLNVHU8KJjYuZORMYSrpn1kCkE6zXkKLosk64QYCHsvjd7woajcQeQufndOM0pyXu1JpQuoALu6g95W8bGxOMH20Gp27"/>
+</div>
+</div>
+</div>
+<!-- Core Principles Grid -->
+<section class="mt-24 lg:mt-32">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+<h2 class="text-3xl font-bold tracking-tight">Our Core Principles</h2>
+<p class="text-slate-600 dark:text-slate-400">We maintain the highest standards in aesthetic medical education through four foundational pillars designed for clinical excellence.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Principle 1 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-xl shadow-sm hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Evidence-Based Education</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Rigorous academic standards rooted in the latest clinical research and peer-reviewed data.</p>
+</div>
+<!-- Principle 2 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-xl shadow-sm hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Anatomy &amp; Safety</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">A deep emphasis on detailed facial anatomy to ensure maximum precision and patient safety.</p>
+</div>
+<!-- Principle 3 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-xl shadow-sm hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Live Model Experience</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Supervised clinical experience with live models for hands-on, real-world practical skill mastery.</p>
+</div>
+<!-- Principle 4 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-xl shadow-sm hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">target</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Small Group Instruction</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Focused learning environments with strictly limited participants for personalized mentorship.</p>
+</div>
+</div>
+</section>
+<!-- Secondary Content / The Advantage -->
+<section class="mt-24 lg:mt-32 pt-16 border-t border-slate-200 dark:border-slate-800">
+<div class="grid lg:grid-cols-3 gap-12">
+<div class="space-y-4">
+<h4 class="text-primary font-bold tracking-widest uppercase text-xs">Clinical Excellence</h4>
+<p class="text-lg font-medium leading-relaxed">
+                            Our programs combine didactic education with hands-on clinical training, ensuring participants develop both the knowledge and practical confidence required for real-world aesthetic practice.
+                        </p>
+</div>
+<div class="space-y-4">
+<h4 class="text-primary font-bold tracking-widest uppercase text-xs">NYC Based Training</h4>
+<p class="text-lg font-medium leading-relaxed">
+                            Training is conducted in New York City and is led by experienced aesthetic medical professionals who actively practice in elite clinical settings.
+                        </p>
+</div>
+<div class="space-y-4">
+<h4 class="text-primary font-bold tracking-widest uppercase text-xs">Ethical Growth</h4>
+<p class="text-lg font-medium leading-relaxed">
+                            NYFAC courses are designed to support responsible skill development, ethical practice growth, and uncompromising patient-centered care.
+                        </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Highlight -->
+<footer class="bg-slate-900 dark:bg-black text-white py-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="space-y-2">
+<p class="text-primary font-bold">Ready to advance your aesthetic career?</p>
+<p class="text-slate-400 text-sm">Join the next cohort of medical professionals in New York City.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-slate-900 px-8 py-3 rounded font-bold text-sm hover:opacity-90 transition-opacity">
+                        View Upcoming Dates
+                    </button>
+<button class="border border-slate-700 px-8 py-3 rounded font-bold text-sm hover:bg-slate-800 transition-all">
+                        Contact Faculty
+                    </button>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 New York Facial Aesthetics Mentorship (NYFAC). All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

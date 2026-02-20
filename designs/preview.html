@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Page Previews</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        :root {
+            --primary-bg: #0b1120;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-bg);
+            background-image:
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+        }
+
+        .nav-link.active {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .nav-link.inactive {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+
+        .nav-link.inactive:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 3rem;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .preview-container {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background-color: #ffffff;
+            /* Default background for iframes */
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 
+         * Scale down a large iframe to fit exactly within the preview container.
+         * We make the iframe 300% width and 300% height, then scale it by 0.333 to fit.
+         * This produces a "zoomed out" desktop view for the card.
+         */
+        .preview-iframe {
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.333333);
+            transform-origin: top left;
+            border: none;
+            pointer-events: none;
+            /* Crucial so scrolling inside iframe is disabled */
+            background: #fff;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            white-space: nowrap;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn-open {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            padding: 0.875rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 100%;
+        }
+
+        .card:hover .btn-open {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-open svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .btn-open svg {
+            transform: translateX(4px);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            width: 100%;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Live Previews</h1>
+        <p class="subtitle">Experience our designs in real-time without leaving this page.</p>
+
+        <div class="nav-links">
+            <a href="index.html" class="nav-link inactive">List View</a>
+            <a href="preview.html" class="nav-link active">Live Previews</a>
+        </div>
+    </header>
+
+    <main class="grid" id="gridContainer">
+        <!-- Live Preview Cards will be injected dynamically -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Design Previews. Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        const pages = [
+            {
+                url: "hero-v1.html",
+                title: "Hero v1",
+                badge: "Hero",
+                description: "Hero section layout."
+            },
+            {
+                url: "about-v1.html",
+                title: "About Us v1",
+                badge: "About",
+                description: "Company information and team details page layout."
+            },
+            {
+                url: "about-v2.html",
+                title: "About Us v2",
+                badge: "About",
+                description: "Company information and team details page layout."
+            },
+            {
+                url: "who-can-apply-v1.html",
+                title: "who can apply v1",
+                badge: "Who can apply",
+                description: "Who can apply page layout."
+            },
+            {
+                url: "our_courses-v1.html",
+                title: "Our Courses v1",
+                badge: "Courses",
+                description: "Listing page for available courses and educational offerings."
+            },
+            {
+                url: "landing-page-v1.html",
+                title: "Version 1",
+                badge: "V1",
+                description: "The primary landing page design conceptualized with the original aesthetic."
+            },
+            {
+                url: "landing-page-v2.html",
+                title: "Version 2",
+                badge: "V2",
+                description: "An alternative layout exploring different typography and structural hierarchy."
+            },
+            {
+                url: "landing-page-v3.html",
+                title: "Version 3",
+                badge: "V3",
+                description: "A modernized approach focusing on bold imagery and distinct contrasts."
+            },
+            {
+                url: "landing-page-v5.html",
+                title: "Version 5",
+                badge: "final design 0 - V5",
+                description: "Advanced layout with rich features and comprehensive spacing."
+            },
+            {
+                url: "landing-page-v6.html",
+                title: "Version 6(industry & cources)",
+                badge: "final design 1 -v6",
+                description: "Highly polished version featuring interactive elements and modern flair."
+            },
+        ];
+
+        const gridContainer = document.getElementById('gridContainer');
+
+        function renderPreviewCards() {
+            gridContainer.innerHTML = "";
+
+            pages.forEach((page, index) => {
+                const card = document.createElement('a');
+                card.href = page.url;
+                card.className = 'card';
+                card.style.animationDelay = `${index * 0.15}s`;
+
+                card.innerHTML = `
+                    <div class="preview-container">
+                        <iframe src="${page.url}" class="preview-iframe" scrolling="no" tabindex="-1"></iframe>
+                    </div>
+                    <div class="card-header">
+                        <h2>${page.title}</h2>
+                        <span class="badge">${page.badge}</span>
+                    </div>
+                    <p>${page.description}</p>
+                    <div class="btn-open">
+                        <span>Open Details</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </div>
+                `;
+
+                gridContainer.appendChild(card);
+            });
+        }
+
+        renderPreviewCards();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NYFAF - Facial Aesthetics Certification NYC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d49735 0%, #b37b2a 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+    <!-- Scarcity Top Bar -->
+    <div
+        class="bg-slate-900 text-white py-2 px-4 text-center text-xs sm:text-sm font-medium tracking-wide sticky top-0 z-50">
+        <span class="inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-lg">error</span>
+            🚨 ONLY 3 SEATS REMAINING FOR MARCH 28-29 BATCH
+        </span>
+    </div>
+    <!-- Navigation -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-9 z-40">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="text-primary">
+                    <svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                            d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <span class="text-2xl font-black tracking-tighter">NYFAF</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider">
+                <a class="hover:text-primary transition-colors" href="#program">Program</a>
+                <a class="hover:text-primary transition-colors" href="#faculty">Faculty</a>
+                <a class="hover:text-primary transition-colors" href="#international">International</a>
+                <a class="hover:text-primary transition-colors" href="#faq">FAQ</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a class="hidden sm:flex items-center gap-2 text-sm font-bold text-green-600 dark:text-green-400"
+                    href="https://wa.me/123456789">
+                    <span class="material-symbols-outlined">chat</span>
+                    WhatsApp
+                </a>
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20">
+                    RESERVE SEAT
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-slate-900/60 z-10"></div>
+                <img class="w-full h-full object-cover"
+                    data-alt="Cinematic high angle view of New York City skyline at dusk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCldi8KTVkheRLSF8868q9mUhR32g7BaJ8c-6_gAvTTGb22je5xLryAj0OORcp90sWA4W6sMZ-vAzcBpc5uXXtlIb16UuFgAtNzQkQ91sBBohFGvevXtZbFZ0zxEOB9gKabx155T0QWgicVEudaKM-UIwdY1HQayjDV4rxIITMhCy_5bOgLu1E-X_6ES8IhGro-6RTJ-mZ1LwqlgAN8UAcK7mu2ue_qHzX8hfofaSxflCbr1eiRasBh8N2KtamcTePSHQrTuhMVBnxr" />
+            </div>
+            <div class="max-w-7xl mx-auto px-4 relative z-20 grid lg:grid-cols-2 gap-12 py-20">
+                <div class="text-white flex flex-col justify-center">
+                    <div
+                        class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1 self-start mb-6">
+                        <span class="material-symbols-outlined text-primary text-sm">verified</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Certified NYC
+                            Training</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black leading-[1.1] mb-6 tracking-tight">
+                        Master Facial Aesthetics in the <span class="text-primary italic">Heart</span> of NYC
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-xl font-light leading-relaxed">
+                        Hands-On BOTOX® &amp; Dermal Filler Certification for Licensed Medical Professionals. Join our
+                        elite small-group training in Midtown Manhattan.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-slate-900 px-8 py-4 rounded-lg font-black text-lg transition-all flex items-center gap-2">
+                            Reserve Your Seat Now
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <button
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 px-8 py-4 rounded-lg font-bold text-lg transition-all flex items-center gap-2">
+                            WhatsApp Admissions
+                        </button>
+                    </div>
+                    <!-- Countdown -->
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center min-w-[70px]">
+                            <div
+                                class="bg-white/10 border border-white/20 rounded-lg w-full aspect-square flex items-center justify-center text-3xl font-black">
+                                14</div>
+                            <span class="text-[10px] uppercase font-bold mt-2 text-slate-400">Days</span>
+                        </div>
+                        <div class="flex flex-col items-center min-w-[70px]">
+                            <div
+                                class="bg-white/10 border border-white/20 rounded-lg w-full aspect-square flex items-center justify-center text-3xl font-black">
+                                08</div>
+                            <span class="text-[10px] uppercase font-bold mt-2 text-slate-400">Hours</span>
+                        </div>
+                        <div class="flex flex-col items-center min-w-[70px]">
+                            <div
+                                class="bg-white/10 border border-white/20 rounded-lg w-full aspect-square flex items-center justify-center text-3xl font-black">
+                                45</div>
+                            <span class="text-[10px] uppercase font-bold mt-2 text-slate-400">Mins</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center justify-center">
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/20 p-8 rounded-2xl w-full max-w-md">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">event_available</span>
+                            Next Session
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                                <span class="text-slate-300">Date</span>
+                                <span class="font-bold">March 28-29, 2024</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                                <span class="text-slate-300">Location</span>
+                                <span class="font-bold">Midtown, Manhattan</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                                <span class="text-slate-300">Seats Available</span>
+                                <span class="text-primary font-black">ONLY 3 LEFT</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300">Investment</span>
+                                <span class="text-2xl font-black">$1,499 USD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trust & Faculty -->
+        <section class="py-24 bg-white dark:bg-background-dark" id="faculty">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black mb-4">Train with NYC-Based Expert Faculty</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">Learn from industry leaders who have spent decades
+                        perfecting the art of facial aesthetics in the world's beauty capital.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Faculty Card 1 -->
+                    <div
+                        class="group bg-background-light dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
+                        <div
+                            class="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
+                            <div
+                                class="size-48 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Professional portrait of Olga Klempner RN in clinical attire"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDItY2SZJnt10lFDRuJuhpMWb5suqZcasJP5ub2kTY2mKVcLe6oG52_XGhHzdqrX4vOS2Ihn-pDZU8fgc0OZvpWAe6Nn7V8k8susR4HNZapMVpBNDrwrigXgvPr8lUjITZNOkpVU5Kfplp3WDaLsy_JvPuo0za_13vVuVtUiQSb2TVrByafO7ECv52WWpDajILU-CnEzAaAdqsGA20LSE-vttLWIofWN0BYWYuBR3lcZfZwYEQPJ6C8BtMQGJUpmyR8-vXtbng9SI" />
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-1">Olga Klempner, RN</h3>
+                                <p class="text-primary font-bold mb-4">Lead Aesthetics Instructor</p>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    A veteran in clinical aesthetics with over 15 years of experience in NYC. Specialist
+                                    in advanced injectable techniques and facial mapping.
+                                </p>
+                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                    <span
+                                        class="bg-white dark:bg-slate-800 px-3 py-1 rounded text-xs font-bold uppercase">Injectables
+                                        Expert</span>
+                                    <span
+                                        class="bg-white dark:bg-slate-800 px-3 py-1 rounded text-xs font-bold uppercase">Clinical
+                                        Director</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Faculty Card 2 -->
+                    <div
+                        class="group bg-background-light dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
+                        <div
+                            class="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
+                            <div
+                                class="size-48 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Professional portrait of Dr Oleg Klempner DDS in medical office"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEqWeCcc_ImLFa9-z4hTyy-OXjTPoAPqUWVrq8ljnrd9LpkkUusFKCpJEXbX41nLFxDao-szALVPXYTMwsGFQNdzDRv62Rm1p-QtF3W9fbNNsUQyJyZrgVE42Dm-4H0fb7WiRjjyW7J3bhZMUUftZPx4gY6rTHCaB0_XjI0aQN6q0D0h9shj_bO01Jg9D6KqfZ39Bbhw5euVj8tUSvQDBzoSaxOYqtYQdiaOiEdL1l7E0Y9xZ54qYBnIsc9iPI913XlzyPI2cm1s4g" />
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-1">Dr. Oleg Klempner, DDS</h3>
+                                <p class="text-primary font-bold mb-4">Board Certified Dentist</p>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    Specialist in facial anatomy and structure. Dr. Klempner provides deep anatomical
+                                    insights critical for safe and effective aesthetic procedures.
+                                </p>
+                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                    <span
+                                        class="bg-white dark:bg-slate-800 px-3 py-1 rounded text-xs font-bold uppercase">Anatomy
+                                        Specialist</span>
+                                    <span
+                                        class="bg-white dark:bg-slate-800 px-3 py-1 rounded text-xs font-bold uppercase">DDS
+                                        Degree</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Program Highlights -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-900/20 border-y border-slate-200 dark:border-slate-800"
+            id="program">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-black mb-8 leading-tight">Who Is This Program For?</h2>
+                        <div class="grid sm:grid-cols-2 gap-4 mb-12">
+                            <div
+                                class="flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                <span class="material-symbols-outlined text-primary">medical_services</span>
+                                <span class="font-bold">Physicians</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                <span class="material-symbols-outlined text-primary">dentistry</span>
+                                <span class="font-bold">Dentists</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                <span class="material-symbols-outlined text-primary">emergency_home</span>
+                                <span class="font-bold">NPs &amp; PAs</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                <span class="material-symbols-outlined text-primary">breastfeeding</span>
+                                <span class="font-bold">RNs</span>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary">group</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Small Groups (Max 10)</h4>
+                                    <p class="text-slate-500">Personalized attention to ensure every student masters the
+                                        injection depth and pressure.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary">person_check</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Live Model Practice</h4>
+                                    <p class="text-slate-500">Unlike other courses, we provide live models for hands-on
+                                        application of BOTOX® and fillers.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary">workspace_premium</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Official Certification</h4>
+                                    <p class="text-slate-500">Earn a prestigious certificate from the NY Facial
+                                        Aesthetics Forum to elevate your career.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl relative">
+                            <img class="w-full h-full object-cover"
+                                data-alt="Close up of medical training session with needle and model"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbWKeox9tWwkH-kID-sWkEpXimhwnyhNrMsU5DYh1Mhfk0PDJ-AllgA-rgvuJenMDP5INLYJxvmFjsrRmcpfp5E0Xhc_gpNdnKO-wVyPUQycfm3fcLENr7XbSFv6kX2CL0y1Xn62o0sr8o9waLSVxNaOSKmW_kOPst5waGZyY4F2b-ra8Mfuwrcsko74DAt0wc119GumqupdVk8UusZQKqGbQ0s6vun2ux_U6s4U9ukRkSYm7gh3dYRVIxWWNqetYYdprNpoUMFWtV" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                                <div class="text-white">
+                                    <p class="text-3xl font-black mb-1">100% Hands-On</p>
+                                    <p class="text-sm font-medium opacity-80 uppercase tracking-widest">Confidence built
+                                        through practice</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-primary p-6 rounded-2xl shadow-xl text-slate-900 hidden sm:block max-w-[200px]">
+                            <p class="text-sm font-black uppercase mb-1">Upcoming Date</p>
+                            <p class="text-xl font-bold leading-tight">March 28-29 Manhattan, NY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- International Section -->
+        <section class="py-24 bg-white dark:bg-background-dark" id="international">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black mb-4">Traveling to NYC? We’ve Made It Easy.</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">Welcoming students from East Asia, the Middle East, and
+                        across the globe.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div
+                        class="bg-background-light dark:bg-slate-900/50 p-10 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">flight_takeoff</span>
+                        <h3 class="text-2xl font-black mb-4">Visa Support</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            We provide formal invitation letters for medical professionals to assist with B1/B2 Visa
+                            applications. Our team is experienced in supporting international practitioners through the
+                            travel process.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 font-semibold">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Official Invitation Letters
+                            </li>
+                            <li class="flex items-center gap-2 font-semibold">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Course Enrollment Verification
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-slate-900/50 p-10 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">apartment</span>
+                        <h3 class="text-2xl font-black mb-4">Preferred Accommodations</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Stay in the heart of the city. We have partnerships with luxury hotels in Midtown Manhattan,
+                            all within walking distance of the training facility.
+                        </p>
+                        <div
+                            class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="font-bold">Preferred Partner: Midtown Hilton</p>
+                                <p class="text-xs text-slate-500">5-minute walk to facility • Special NYFAF Rates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing & Value Stack -->
+        <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2"></div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-black mb-8">Invest in Your Excellence</h2>
+                        <p class="text-slate-400 mb-12 text-lg">The $1,499 program fee is a complete investment in your
+                            professional aesthetic career. No hidden costs.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="material-symbols-outlined text-primary">done_all</span>
+                                <span class="font-medium">Hands-On Training &amp; Live Models</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="material-symbols-outlined text-primary">done_all</span>
+                                <span class="font-medium">All Training Materials &amp; Injectables Included</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="material-symbols-outlined text-primary">done_all</span>
+                                <span class="font-medium">Framed Professional Certificate</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="material-symbols-outlined text-primary">done_all</span>
+                                <span class="font-medium">Catered Lunch Both Days</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="material-symbols-outlined text-primary">done_all</span>
+                                <span class="font-medium">6 Months Post-Course Mentorship Access</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div
+                            class="w-full max-w-md bg-white text-slate-900 rounded-3xl p-10 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-primary px-6 py-2 rounded-bl-2xl">
+                                <span class="text-xs font-black tracking-widest text-slate-900">MOST POPULAR</span>
+                            </div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-2">FULL
+                                CERTIFICATION</p>
+                            <div class="flex items-baseline gap-2 mb-8">
+                                <span class="text-6xl font-black">$1,499</span>
+                                <span class="text-slate-500 font-bold">USD</span>
+                            </div>
+                            <div class="bg-red-50 border border-red-100 rounded-xl p-4 mb-8">
+                                <p
+                                    class="text-red-600 font-black text-sm text-center flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">alarm</span>
+                                    Only 3 Seats Remaining for March
+                                </p>
+                            </div>
+                            <button
+                                class="w-full bg-slate-900 hover:bg-slate-800 text-white py-5 rounded-2xl font-black text-xl transition-all mb-4 flex items-center justify-center gap-2">
+                                Reserve My Seat
+                                <span class="material-symbols-outlined">payments</span>
+                            </button>
+                            <p class="text-center text-xs text-slate-400 font-medium italic">Secure your spot with a
+                                $500 deposit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="py-24 bg-white dark:bg-background-dark" id="faq">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black mb-4">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-6">
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-900/30">
+                        <h4 class="font-black text-lg mb-3">What happens if my visa is denied?</h4>
+                        <p class="text-slate-600 dark:text-slate-400">We offer a 100% deposit refund or credit towards a
+                            future session if you provide proof of visa denial at least 14 days before the course start
+                            date.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-900/30">
+                        <h4 class="font-black text-lg mb-3">Do I need to bring my own models?</h4>
+                        <p class="text-slate-600 dark:text-slate-400">No. We provide all live models for the hands-on
+                            portion of the training, though students are welcome to bring a model if they prefer (please
+                            notify us in advance).</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-900/30">
+                        <h4 class="font-black text-lg mb-3">How close is the hotel to the training center?</h4>
+                        <p class="text-slate-600 dark:text-slate-400">Our preferred hotel partners are within a 5-10
+                            minute walking distance from our Midtown training facility. You won't need to worry about
+                            NYC traffic or taxis.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-900/30">
+                        <h4 class="font-black text-lg mb-3">Is this course for beginners or advanced practitioners?</h4>
+                        <p class="text-slate-600 dark:text-slate-400">We cover both Basic and Advanced techniques. The
+                            small class size allows us to tailor the level of instruction to each individual
+                            practitioner's experience level.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section class="py-24 bg-primary flex flex-col items-center justify-center text-center px-4">
+            <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 max-w-3xl leading-tight">Train in NYC.
+                Elevate Your Professional Career.</h2>
+            <p class="text-slate-900/80 font-bold mb-10 text-xl">Join the elite ranks of aesthetic practitioners trained
+                by NYFAF.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button
+                    class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-2xl hover:scale-105 transition-transform shadow-2xl">
+                    RESERVE YOUR SEAT NOW
+                </button>
+            </div>
+            <p class="mt-8 text-slate-900 font-bold uppercase tracking-tighter flex items-center gap-2">
+                <span class="material-symbols-outlined">warning</span>
+                ONLY 3 SEATS LEFT FOR MARCH 28-29
+            </p>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-500 py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2 text-white">
+                <div class="text-primary">
+                    <svg class="w-6 h-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                            d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <span class="text-xl font-black tracking-tighter">NYFAF</span>
+            </div>
+            <div class="flex gap-8 text-sm font-semibold uppercase tracking-widest">
+                <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                <a class="hover:text-white transition-colors" href="#">Contact</a>
+            </div>
+            <p class="text-xs">© 2024 New York Facial Aesthetics Forum. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Widget -->
+    <a class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center"
+        href="https://wa.me/123456789">
+        <span class="material-symbols-outlined text-3xl">chat</span>
+        <span
+            class="absolute -top-2 -left-2 bg-red-500 text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse uppercase">Online</span>
+    </a>
+</body>
+
+</html>
