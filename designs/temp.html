@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NYFAF - Facial Aesthetics Certification NYC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    animation: {
+                        'infinite-scroll': 'infinite-scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        'infinite-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        }
+                    },
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                        brand: {
+                            gold: "#d49735",
+                            dark: "#0f172a",
+                            navy: "#1e293b",
+                            lightGold: "#fdf8f0",
+                        },
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d49735 0%, #b37b2a 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+    <main>
+        <!-- BEGIN: AboutSection -->
+        <section class="py-24 bg-white" id="about">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div data-purpose="content">
+                        <div
+                            class="inline-block bg-brand-lightGold text-brand-gold px-4 py-1 rounded text-xs font-bold uppercase mb-4">
+                            Established in Manhattan
+                        </div>
+                        <h2 class="text-4xl font-extrabold mb-6 leading-tight">
+                            Advanced Injectable Training in
+                            <span class="text-brand-gold">New York City</span>
+                        </h2>
+                        <p class="text-lg mb-8 leading-relaxed text-gray-600">
+                            New York Facial Aesthetics Mentorship (NYFAC) is a New York City-based training institute
+                            dedicated to hands-on, practical education in aesthetic medicine for licensed medical
+                            professionals. <br>Conducted in Midtown Manhattan, our programs are designed for clinicians
+                            who want
+                            real clinical experience...
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div
+                                    class="bg-brand-gold/10 text-brand-gold w-10 h-10 rounded flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20">
+                                        <path
+                                            d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2V7a5 5 0 00-5-5zM7 7a3 3 0 016 0v2H7V7z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold mb-1">
+                                    Clinical Confidence
+                                </h4>
+                                <p class="text-sm text-gray-500">
+                                    Master procedures with direct supervision.
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div
+                                    class="bg-brand-gold/10 text-brand-gold w-10 h-10 rounded flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20">
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                        <path clip-rule="evenodd"
+                                            d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold mb-1">Patient Safety</h4>
+                                <p class="text-sm text-gray-500">
+                                    Rigorous protocols for optimal outcomes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img alt="Clinical Environment" class="rounded-2xl shadow-2xl"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE0Tf2DOXd_gj5O3N8glb8IQlnmu_tlKdBAxPR5i9uNliB4S3N15v24BJzurQr2Eu7K9pfi4W02TjmkzZoMoJoRXOJROFOZwhppYvhiQXAD82n8_UNSzFPqPLAeJfQ4V-K2pEbHUFmf42h1u7FciCUEjn9a3n9cds_51SFUF7dsvzHSiUYcwVOGZXcPuo1U93r02ies4lwa9XN0P2Lfi4x4mkPhNzlQS8VYH3f5jKb50luCuONdDMNhirdlNcHnEghEBacWVed8euV" />
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-brand-gold text-white p-6 rounded-lg max-w-xs shadow-xl">
+                            <p class="text-sm italic">
+                                "Real clinical experience in a high-demand NYC
+                                environment."
+                            </p>
+                            <p class="text-xs mt-2 opacity-80 uppercase tracking-tighter">
+                                Midtown Manhattan Clinic
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Why NYC -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h3 class="text-3xl font-bold mb-4">
+                        Why Medical Professionals Choose NYC
+                    </h3>
+                    <p class="text-gray-600">
+                        The global capital of aesthetics offers unparalleled
+                        opportunities for clinical growth and professional
+                        networking.
+                    </p>
+                    <!-- Swipe indicator removed -->
+                </div>
+                <div
+                    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group pb-8">
+                    <ul
+                        class="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">public</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">International Clinical Exposure</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Exposure to global aesthetic
+                                trends and diverse patient demographics in the world's most international city.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Global Professional Advantage</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Training in NYC provides a
+                                prestigious credential recognized worldwide by the global aesthetic community.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Real-World Practice Standards</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Learn within the framework of
+                                rigorous US clinical protocols, ensuring safety and excellence in every procedure.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Professional Networking</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Connect with elite
+                                practitioners and fellow medical professionals in the global capital of aesthetics.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">stat_3</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Experience New York City</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Combine high-level medical
+                                education with the cultural and professional vibrancy of Manhattan's iconic atmosphere.
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll group-hover:[animation-play-state:paused]"
+                        aria-hidden="true">
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">public</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">International Clinical Exposure</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Exposure to global aesthetic
+                                trends and diverse patient demographics in the world's most international city.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Global Professional Advantage</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Training in NYC provides a
+                                prestigious credential recognized worldwide by the global aesthetic community.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Real-World Practice Standards</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Learn within the framework of
+                                rigorous US clinical protocols, ensuring safety and excellence in every procedure.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Professional Networking</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Connect with elite
+                                practitioners and fellow medical professionals in the global capital of aesthetics.</p>
+                        </li>
+                        <li
+                            class="min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-slate-900/50 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-sm cursor-pointer group/card">
+                            <div
+                                class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover/card:scale-110 group-hover/card:bg-primary/20 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-3xl">stat_3</span>
+                            </div>
+                            <h4 class="text-xl font-black mb-4">Experience New York City</h4>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Combine high-level medical
+                                education with the cultural and professional vibrancy of Manhattan's iconic atmosphere.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Why the Aesthetic Industry -->
+                <div class="mt-24 pt-24 border-t border-gray-100">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div
+                            class="inline-block bg-brand-lightGold text-brand-gold px-4 py-1 rounded text-xs font-bold uppercase mb-4 tracking-widest">
+                            SECTION 4 — CAREER CONTEXT
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-extrabold mb-6">
+                            Why Medical Professionals Are Expanding Into
+                            <span class="text-brand-gold">Aesthetic Medicine</span>
+                        </h3>
+                        <p class="text-gray-600 text-lg">
+                            The aesthetic medicine industry continues to grow as
+                            patient demand for non-invasive, results-driven
+                            treatments increases worldwide. Many licensed
+                            medical professionals choose to add aesthetics to
+                            their practice as a clinical extension, not a
+                            replacement, of their existing work. This field
+                            allows practitioners to apply medical knowledge in a
+                            setting that emphasizes precision, patient outcomes,
+                            and long-term relationships.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(0,min-content)]">
+                        <!-- Reason 1: Wide Dark Card -->
+                        <div
+                            class="col-span-1 md:col-span-2 lg:col-span-2 bg-slate-900 text-white rounded-3xl p-8 lg:p-10 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                            <div
+                                class="absolute -top-24 -right-24 w-64 h-64 bg-brand-gold/20 rounded-full blur-3xl group-hover:bg-brand-gold/30 transition-colors duration-500">
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row gap-6 lg:gap-8 items-start sm:items-center relative z-10 h-full">
+                                <div class="shrink-0 p-4 bg-white/10 rounded-2xl backdrop-blur-md">
+                                    <svg class="w-10 h-10 text-brand-gold" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-black mb-3 text-white">Growing Patient Demand</h4>
+                                    <p class="text-slate-300 leading-relaxed">
+                                        Non-invasive aesthetic treatments are increasingly requested across age groups
+                                        and regions, making aesthetics a relevant and sustainable area of practice.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reason 2: Gradient Accent Card -->
+                        <div
+                            class="col-span-1 rounded-3xl p-8 lg:p-10 shadow-lg relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300 gold-gradient text-white flex flex-col justify-center">
+                            <div class="relative z-10">
+                                <div
+                                    class="inline-block p-4 bg-white/20 rounded-2xl backdrop-blur-md mb-6 shadow-inner">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-black mb-3">Practice Diversification</h4>
+                                <p class="text-white/90 text-sm leading-relaxed">
+                                    Aesthetic services allow medical professionals to diversify their offerings while
+                                    remaining within clinical, patient-facing care.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Reason 3: Small Light Card -->
+                        <div
+                            class="col-span-1 bg-white border border-slate-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-brand-gold/30 transition-all duration-300 group flex flex-col justify-center">
+                            <div
+                                class="inline-block self-start p-4 bg-slate-50 rounded-2xl mb-6 group-hover:bg-brand-lightGold transition-colors">
+                                <svg class="w-8 h-8 text-brand-gold" fill="currentColor" viewbox="0 0 24 24">
+                                    <path
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-slate-900">Clinical Satisfaction</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Many providers value the ability to see visible outcomes, engage in detailed
+                                consultations, and deliver personalized treatment plans.
+                            </p>
+                        </div>
+
+                        <!-- Reason 4: Wide Light Card -->
+                        <div
+                            class="col-span-1 md:col-span-2 lg:col-span-2 bg-slate-50 rounded-3xl p-8 lg:p-10 shadow-inner group hover:-translate-y-1 hover:bg-slate-100 transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row gap-6 lg:gap-8 items-start sm:items-center h-full">
+                                <div
+                                    class="shrink-0 p-4 bg-white rounded-2xl shadow-sm text-brand-gold group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-10 h-10" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-black mb-3 text-slate-900">Predictable, Non-Invasive Care
+                                    </h4>
+                                    <p class="text-slate-600 leading-relaxed">
+                                        Aesthetic medicine focuses largely on non-surgical treatments, allowing for
+                                        structured workflows and controlled clinical environments.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reason 5: Final Standard Card -->
+                        <div
+                            class="col-span-1 bg-white border border-slate-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-brand-gold/30 transition-all duration-300 group flex flex-col justify-center">
+                            <div
+                                class="inline-block self-start p-4 bg-slate-50 rounded-2xl mb-6 group-hover:bg-brand-lightGold transition-colors">
+                                <svg class="w-8 h-8 text-brand-gold" fill="currentColor" viewbox="0 0 24 24">
+                                    <path
+                                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-slate-900">Professional Skill Expansion</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Aesthetics builds on anatomy, assessment, and procedural precision — skills already
+                                familiar to licensed clinicians.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: AboutSection -->
+    </main>
+
+    <a class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center"
+        href="https://wa.me/123456789">
+        <span class="material-symbols-outlined text-3xl">chat</span>
+        <span
+            class="absolute -top-2 -left-2 bg-red-500 text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse uppercase">Online</span>
+    </a>
+
+</body>
+
+</html>

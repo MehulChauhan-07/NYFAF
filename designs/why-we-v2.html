@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About NYFAC | Advanced Injectable Training NYC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                        brand: {
+                            gold: "#d49735",
+                            dark: "#0f172a",
+                            navy: "#1e293b",
+                            lightGold: "#fdf8f0",
+                        },
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d49735 0%, #b37b2a 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+
+    <main>
+        <!-- Main Content Section -->
+        <section class="py-20 bg-background-light dark:bg-background-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-8">
+
+                        <div data-purpose="content">
+                            <div
+                                class="inline-block bg-brand-lightGold text-brand-gold px-4 py-1 rounded text-xs font-bold uppercase mb-4">
+                                Established in Manhattan
+                            </div>
+                            <h2 class="text-4xl font-extrabold mb-6 leading-tight">
+                                Advanced Injectable Training in
+                                <span class="text-brand-gold">New York City</span>
+                            </h2>
+                            <p class="text-lg mb-8 leading-relaxed text-gray-600">
+                                New York Facial Aesthetics Mentorship (NYFAC) is a New York City-based training
+                                institute
+                                dedicated to hands-on, practical education in aesthetic medicine for licensed medical
+                                professionals. <br>Conducted in Midtown Manhattan, our programs are designed for
+                                clinicians
+                                who want
+                                real clinical experience...
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 flex flex-col gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Clinical Confidence</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Master procedures with direct
+                                    supervision.</p>
+                            </div>
+                            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 flex flex-col gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl">health_and_safety</span>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Patient Safety</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Rigorous protocols for optimal
+                                    outcomes.</p>
+                            </div>
+                            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 flex flex-col gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl">biotech</span>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Anatomy-Driven</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Techniques based on structural
+                                    science.</p>
+                            </div>
+                            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 flex flex-col gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Ethical Practice</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Compliant and professional
+                                    standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl group-hover:bg-primary/20 transition-all">
+                        </div>
+                        <img class="relative rounded-2xl shadow-2xl border border-white/10 w-full aspect-square object-cover"
+                            data-alt="Modern high-end medical aesthetic clinic interior in Manhattan"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlrTJtQsx7KVGu0YorwjkKjO-OvsmqLKkF2yTbpZW2N9vGoWN0oY5_xcPgHsSPLmn0QsJA6FSLWt3blc_0lOXx-MPcsYtB1cV42TFRajpwZyCNqMxdJ7tpC9yqGSUDAztih5kZBht0EXfqWwFpbZiwSutfUpvzUQRnEdjWizmcDGxjcmTuFqLG7JdPGNRHMzBRZE9aXehltY0dDXKBWUKx-S7LGNv3flau7kZWvh9KLTsKFnKDNDqC6N5XPBFjRcaglHdEr6QE3koh" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why NYC Section -->
+        <section class="py-24 bg-white dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Why Medical
+                        Professionals Choose NYC</h2>
+                    <p class="text-slate-600 dark:text-slate-400">The global capital of aesthetics offers unparalleled
+                        opportunities for clinical growth and professional networking.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-background-light dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col h-full">
+                        <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">public</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">International Clinical Exposure</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Train in one of the world’s most
+                            competitive markets, encountering a diverse patient demographic and advanced case studies.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-background-light dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col h-full">
+                        <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">military_tech</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Global Professional Advantage</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Training in the USA enhances
+                            professional credibility worldwide, giving you a distinct edge in your local and
+                            international practice.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-background-light dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col h-full">
+                        <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">medical_services</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Real-World Practice Standards</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Learn the exact protocols and
+                            safety standards used in the highest-demand aesthetic clinics in Midtown Manhattan.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-background-light dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col h-full">
+                        <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">hub</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Professional Networking</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Connect with high-caliber
+                            practitioners from East Asia, the Middle East, and beyond in a collaborative environment.
+                        </p>
+                    </div>
+                    <!-- Card 5 (Double wide on medium screens) -->
+                    <div
+                        class="md:col-span-2 bg-primary p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center gap-8 text-white relative overflow-hidden group">
+                        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                            <img class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700"
+                                data-alt="Abstract view of New York City lights at night"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbpUgybntj8o-AduEswtXBOuOgV5Q_dvwneQltMYCN235BNiBAKQKe7gm2XrdhR213uPa2Z_Znv1AdJMkS9xL9EQJdr6b7y0QXyEthzZYAAwoZIvAoWf7rcjPDLgQMmS1o1LP8C3W0MIhSIniiO87VUS7HbjA1iyCAH9BdWkV3OegkKPESvuYYWRcKl4gq-Qul3oLJobvCFsU701DI5tMJ7lnXpbw4EYpF7ZXCCxlV07I0O8phaB5AACcpwgVZDZgEq_vQUTEHanXQ" />
+                        </div>
+                        <div class="relative z-10 flex-1">
+                            <h3 class="text-2xl md:text-3xl font-black mb-4 italic">Experience New York City</h3>
+                            <p class="text-white/90 text-lg leading-relaxed">Combine intensive medical training with a
+                                world-class travel experience. Explore iconic landmarks, fine dining, and cultural
+                                heritage just steps away from our training facility.</p>
+                        </div>
+                        <div class="relative z-10 flex-shrink-0">
+                            <span class="material-symbols-outlined text-[80px] text-white/40">explore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
