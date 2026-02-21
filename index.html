@@ -410,6 +410,12 @@
                 description: "Who can apply page layout."
             },
             {
+                url: "designs/why-we-v1.html",
+                title: "Why We v1",
+                badge: "Why We",
+                description: "Why we are the best choice for aesthetic training."
+            },
+            {
                 url: "designs/our_courses-v1.html",
                 title: "Our Courses v1",
                 badge: "Courses",
@@ -462,7 +468,7 @@
             );
 
             statsDisplay.textContent = `Showing ${filteredPages.length} of ${pages.length} pages`;
-            
+
             if (filteredPages.length === 0) {
                 gridContainer.innerHTML = `<p style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem;">No pages found matching "${filterText}".</p>`;
                 return;
