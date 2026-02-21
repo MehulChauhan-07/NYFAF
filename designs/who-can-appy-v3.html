@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Medical Training Academy - Enrollment Eligibility</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Main Content Container -->
+        <div class="layout-container flex h-full grow flex-col items-center">
+            <div class="w-full max-w-[1200px] px-6 py-12 md:py-24">
+                <!-- Page Heading Section -->
+                <div class="flex flex-col items-center text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 mb-4 rounded-full bg-primary/10">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                    </div>
+                    <h1
+                        class="text-slate-900 dark:text-slate-50 text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
+                        Designed for Licensed Medical Professionals
+                    </h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl font-normal leading-relaxed">
+                        Join an elite community of practitioners at our world-class medical training academy. Our
+                        curriculum is tailored exclusively for high-level clinical excellence.
+                    </p>
+                    <div class="mt-8">
+                        <button
+                            class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors">
+                            <span>View Enrollment Requirements</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Professional Eligibility Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                    <!-- Physicians -->
+                    <div
+                        class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 hover:border-primary/50 transition-all">
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">stethoscope</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Physicians
+                            </h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">MD, DO</p>
+                        </div>
+                    </div>
+                    <!-- Dentists -->
+                    <div
+                        class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 hover:border-primary/50 transition-all">
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">dentistry</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Dentists</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">DDS, DMD</p>
+                        </div>
+                    </div>
+                    <!-- Nurse Practitioners -->
+                    <div
+                        class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 hover:border-primary/50 transition-all">
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">medical_services</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Nurse
+                                Practitioners</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Advanced Practice</p>
+                        </div>
+                    </div>
+                    <!-- Physician Assistants -->
+                    <div
+                        class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 hover:border-primary/50 transition-all">
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">clinical_notes</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Physician
+                                Assistants</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Certified PA</p>
+                        </div>
+                    </div>
+                    <!-- Registered Nurses -->
+                    <div
+                        class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 hover:border-primary/50 transition-all">
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">emergency</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Registered
+                                Nurses*</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Clinical Specialists</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footnote Section -->
+                <div class="px-4 mb-16">
+                    <p class="text-slate-400 dark:text-slate-500 text-xs italic font-normal text-center">
+                        *Scope varies by jurisdiction. Please consult your local medical board for specific practice
+                        guidelines and eligibility for procedural training.
+                    </p>
+                </div>
+                <div
+                    class="relative overflow-hidden rounded-2xl bg-slate-900 dark:bg-primary/10 p-10 md:p-12 text-center max-w-4xl mx-auto border border-primary/20">
+                    <!-- Abstract Decorative Elements -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-4xl">public</span>
+                        </div>
+                        <p class="text-xl md:text-2xl text-slate-100 font-medium leading-relaxed italic">
+                            "We welcome international participants from East Asia, the Middle East, and beyond."
+                        </p>
+                        <div
+                            class="mt-8 flex flex-wrap justify-center gap-4 text-primary/80 text-sm font-semibold uppercase tracking-widest">
+                            <span>East Asia</span>
+                            <span class="text-primary/30">•</span>
+                            <span>Middle East</span>
+                            <span class="text-primary/30">•</span>
+                            <span>Global Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Section -->
+                <footer class="mt-24 border-t border-slate-200 dark:border-slate-800 pt-12">
+                    <div class="flex flex-col items-center gap-8 text-center">
+                        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                                href="#">Privacy Policy</a>
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                                href="#">Terms of Service</a>
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                                href="#">Accreditation Details</a>
+                        </div>
+                        <div class="flex justify-center gap-6">
+                            <a class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">public</span>
+                            </a>
+                            <a class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">share</span>
+                            </a>
+                            <a class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">contact_support</span>
+                            </a>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-primary text-sm font-bold tracking-tighter uppercase italic">Elite Clinical
+                                Excellence</p>
+                            <p class="text-slate-400 dark:text-slate-500 text-xs font-normal">
+                                © 2024 Medical Training Academy. All rights reserved. Registered medical training
+                                institution.
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
