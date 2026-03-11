@@ -1,0 +1,317 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#d49735",
+                            "background-light": "#f8f7f6",
+                            "background-dark": "#201b12",
+                        },
+                        fontFamily: {
+                            display: ["Inter", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.25rem",
+                            lg: "0.5rem",
+                            xl: "0.75rem",
+                            full: "9999px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .dropdown-group:hover .dropdown-menu {
+                display: block;
+            }
+        </style>
+    </head>
+    <body
+        class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased"
+    >
+        <nav
+            class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 shadow-sm"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="text-primary flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-8 h-8"
+                                fill="none"
+                                viewbox="0 0 48 48"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#logo_clip)">
+                                    <path
+                                        clip-rule="evenodd"
+                                        d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                    ></path>
+                                </g>
+                                <defs>
+                                    <clippath id="logo_clip">
+                                        <rect
+                                            fill="white"
+                                            height="48"
+                                            width="48"
+                                        ></rect>
+                                    </clippath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span
+                            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+                            >NYFAF</span
+                        >
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a
+                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                            href="#"
+                            >Home</a
+                        >
+                        <div class="relative dropdown-group py-6">
+                            <button
+                                class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors duration-200"
+                            >
+                                Courses
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >expand_more</span
+                                >
+                            </button>
+                            <div
+                                class="dropdown-menu hidden absolute left-0 top-full w-80 bg-white dark:bg-background-dark border border-primary/10 shadow-xl rounded-xl overflow-hidden mt-1"
+                            >
+                                <div class="flex flex-col py-2">
+                                    <a
+                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                        href="#"
+                                    >
+                                        <p
+                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
+                                        >
+                                            Basic BOTOX® &amp; Dermal Filler
+                                            Certification
+                                        </p>
+                                        <p class="text-xs text-slate-500 mt-1">
+                                            Foundation level injectable training
+                                        </p>
+                                    </a>
+                                    <a
+                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                        href="#"
+                                    >
+                                        <p
+                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
+                                        >
+                                            Comprehensive Training (2-Day)
+                                        </p>
+                                        <p class="text-xs text-slate-500 mt-1">
+                                            Deep dive into advanced aesthetics
+                                        </p>
+                                    </a>
+                                    <a
+                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                        href="#"
+                                    >
+                                        <p
+                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
+                                        >
+                                            Advanced BOTOX® &amp; Dermal Filler
+                                        </p>
+                                        <p class="text-xs text-slate-500 mt-1">
+                                            Master classes for experienced
+                                            injectors
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<a
+                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                            href="#"
+                            >Faculty</a
+                        >-->
+                        <a
+                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                            href="#"
+                            >About</a
+                        >
+                        <a
+                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                            href="#"
+                            >FAQ</a
+                        >
+                        <a
+                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                            href="#"
+                            >Contact</a
+                        >
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="hidden sm:flex bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold py-2.5 px-6 rounded-lg transition-all shadow-md active:scale-95"
+                        >
+                            Apply Now
+                        </button>
+                        <div class="flex md:hidden">
+                            <span
+                                class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer"
+                                >menu</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="relative">
+            <div
+                class="relative h-[600px] flex items-center justify-center overflow-hidden"
+            >
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-black/40 z-10"></div>
+                    <img
+                        alt="Clinic Interior"
+                        class="w-full h-full object-cover"
+                        data-alt="Luxury medical aesthetic clinic interior with soft lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd-E1rV_-pUMyl4zIyHrXyqj50kKjQkkZLpZN2fHjoA4SLWIhMl3S3TfqWnasjyLAKacdUm_6Xe_Y7vOlSJuhQkqxq9WCvd_qIHxEWJ3HEd7ruYwZDo72LXblxbPLuywygoY_sk1nSpAv6cUzHLAUUtYZBrgKoVF7Ze9Papa5fFSsZCc2GoCDR8fOHy8rwiLD_zaMOX53PqWEhf-8JrOEPgoJ_rIo16vUB7vcmSv-jol5bdOqtk8k717zY2DZmCpWnTdCO8w1SO7vY"
+                    />
+                </div>
+                <div class="relative z-20 text-center max-w-4xl px-4">
+                    <h1
+                        class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+                    >
+                        Elevate Your Aesthetic Mastery
+                    </h1>
+                    <p
+                        class="text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light"
+                    >
+                        Join New York's premier fellowship for medical
+                        professionals seeking excellence in non-surgical facial
+                        aesthetics.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="bg-primary text-background-dark font-bold py-4 px-10 rounded-lg text-lg hover:brightness-110 transition-all"
+                        >
+                            View Our Courses
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold py-4 px-10 rounded-lg text-lg hover:bg-white/20 transition-all"
+                        >
+                            Meet Our Faculty
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div
+                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-4xl mb-4"
+                            >clinical_notes</span
+                        >
+                        <h3 class="text-xl font-bold mb-3">
+                            Certified Excellence
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400">
+                            Accredited certification programs recognized by
+                            leading aesthetic organizations nationwide.
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-4xl mb-4"
+                            >school</span
+                        >
+                        <h3 class="text-xl font-bold mb-3">
+                            Hands-on Mentorship
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400">
+                            Limited class sizes ensuring personalized training
+                            with real patient models.
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-4xl mb-4"
+                            >workspace_premium</span
+                        >
+                        <h3 class="text-xl font-bold mb-3">Expert Faculty</h3>
+                        <p class="text-slate-600 dark:text-slate-400">
+                            Learn from board-certified practitioners with over
+                            20 years of collective experience.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer
+            class="bg-background-dark text-slate-400 py-12 border-t border-white/5"
+        >
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8"
+            >
+                <div class="flex items-center gap-3">
+                    <div class="text-primary flex items-center justify-center">
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            viewbox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                clip-rule="evenodd"
+                                d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-white">NYFAF</span>
+                </div>
+                <div class="flex gap-8 text-sm">
+                    <a class="hover:text-primary" href="#">Privacy Policy</a>
+                    <a class="hover:text-primary" href="#">Terms of Service</a>
+                    <a class="hover:text-primary" href="#"
+                        >Medical Disclaimer</a
+                    >
+                </div>
+                <p class="text-sm">
+                    © 2024 NYFAF Academy. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
