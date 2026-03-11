@@ -1,317 +1,317 @@
 <!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: "#d49735",
-                            "background-light": "#f8f7f6",
-                            "background-dark": "#201b12",
-                        },
-                        fontFamily: {
-                            display: ["Inter", "sans-serif"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.25rem",
-                            lg: "0.5rem",
-                            xl: "0.75rem",
-                            full: "9999px",
-                        },
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#1a160f",
+                    },
+                    fontFamily: {
+                        display: ["Inter"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
                     },
                 },
-            };
-        </script>
-        <style>
-            .dropdown-group:hover .dropdown-menu {
-                display: block;
-            }
-        </style>
-    </head>
-    <body
-        class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased"
-    >
-        <nav
-            class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 shadow-sm"
-        >
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="text-primary flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-8 h-8"
-                                fill="none"
-                                viewbox="0 0 48 48"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <g clip-path="url(#logo_clip)">
-                                    <path
-                                        clip-rule="evenodd"
-                                        d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
-                                        fill="currentColor"
-                                        fill-rule="evenodd"
-                                    ></path>
-                                </g>
-                                <defs>
-                                    <clippath id="logo_clip">
-                                        <rect
-                                            fill="white"
-                                            height="48"
-                                            width="48"
-                                        ></rect>
-                                    </clippath>
-                                </defs>
-                            </svg>
-                        </div>
-                        <span
-                            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
-                            >NYFAF</span
-                        >
-                    </div>
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a
-                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
-                            href="#"
-                            >Home</a
-                        >
-                        <div class="relative dropdown-group py-6">
-                            <button
-                                class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors duration-200"
-                            >
-                                Courses
-                                <span
-                                    class="material-symbols-outlined text-[18px]"
-                                    >expand_more</span
-                                >
-                            </button>
-                            <div
-                                class="dropdown-menu hidden absolute left-0 top-full w-80 bg-white dark:bg-background-dark border border-primary/10 shadow-xl rounded-xl overflow-hidden mt-1"
-                            >
-                                <div class="flex flex-col py-2">
-                                    <a
-                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
-                                        href="#"
-                                    >
-                                        <p
-                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
-                                        >
-                                            Basic BOTOX® &amp; Dermal Filler
-                                            Certification
-                                        </p>
-                                        <p class="text-xs text-slate-500 mt-1">
-                                            Foundation level injectable training
-                                        </p>
-                                    </a>
-                                    <a
-                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
-                                        href="#"
-                                    >
-                                        <p
-                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
-                                        >
-                                            Comprehensive Training (2-Day)
-                                        </p>
-                                        <p class="text-xs text-slate-500 mt-1">
-                                            Deep dive into advanced aesthetics
-                                        </p>
-                                    </a>
-                                    <a
-                                        class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
-                                        href="#"
-                                    >
-                                        <p
-                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight"
-                                        >
-                                            Advanced BOTOX® &amp; Dermal Filler
-                                        </p>
-                                        <p class="text-xs text-slate-500 mt-1">
-                                            Master classes for experienced
-                                            injectors
-                                        </p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--<a
-                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
-                            href="#"
-                            >Faculty</a
-                        >-->
-                        <a
-                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
-                            href="#"
-                            >About</a
-                        >
-                        <a
-                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
-                            href="#"
-                            >FAQ</a
-                        >
-                        <a
-                            class="text-sm font-medium hover:text-primary transition-colors duration-200"
-                            href="#"
-                            >Contact</a
-                        >
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <button
-                            class="hidden sm:flex bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold py-2.5 px-6 rounded-lg transition-all shadow-md active:scale-95"
-                        >
-                            Apply Now
-                        </button>
-                        <div class="flex md:hidden">
-                            <span
-                                class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer"
-                                >menu</span
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <main class="relative">
-            <div
-                class="relative h-[600px] flex items-center justify-center overflow-hidden"
-            >
-                <div class="absolute inset-0 z-0">
-                    <div class="absolute inset-0 bg-black/40 z-10"></div>
-                    <img
-                        alt="Clinic Interior"
-                        class="w-full h-full object-cover"
-                        data-alt="Luxury medical aesthetic clinic interior with soft lighting"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd-E1rV_-pUMyl4zIyHrXyqj50kKjQkkZLpZN2fHjoA4SLWIhMl3S3TfqWnasjyLAKacdUm_6Xe_Y7vOlSJuhQkqxq9WCvd_qIHxEWJ3HEd7ruYwZDo72LXblxbPLuywygoY_sk1nSpAv6cUzHLAUUtYZBrgKoVF7Ze9Papa5fFSsZCc2GoCDR8fOHy8rwiLD_zaMOX53PqWEhf-8JrOEPgoJ_rIo16vUB7vcmSv-jol5bdOqtk8k717zY2DZmCpWnTdCO8w1SO7vY"
-                    />
-                </div>
-                <div class="relative z-20 text-center max-w-4xl px-4">
-                    <h1
-                        class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-                    >
-                        Elevate Your Aesthetic Mastery
-                    </h1>
-                    <p
-                        class="text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light"
-                    >
-                        Join New York's premier fellowship for medical
-                        professionals seeking excellence in non-surgical facial
-                        aesthetics.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            class="bg-primary text-background-dark font-bold py-4 px-10 rounded-lg text-lg hover:brightness-110 transition-all"
-                        >
-                            View Our Courses
-                        </button>
-                        <button
-                            class="bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold py-4 px-10 rounded-lg text-lg hover:bg-white/20 transition-all"
-                        >
-                            Meet Our Faculty
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div
-                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
-                    >
-                        <span
-                            class="material-symbols-outlined text-primary text-4xl mb-4"
-                            >clinical_notes</span
-                        >
-                        <h3 class="text-xl font-bold mb-3">
-                            Certified Excellence
-                        </h3>
-                        <p class="text-slate-600 dark:text-slate-400">
-                            Accredited certification programs recognized by
-                            leading aesthetic organizations nationwide.
-                        </p>
-                    </div>
-                    <div
-                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
-                    >
-                        <span
-                            class="material-symbols-outlined text-primary text-4xl mb-4"
-                            >school</span
-                        >
-                        <h3 class="text-xl font-bold mb-3">
-                            Hands-on Mentorship
-                        </h3>
-                        <p class="text-slate-600 dark:text-slate-400">
-                            Limited class sizes ensuring personalized training
-                            with real patient models.
-                        </p>
-                    </div>
-                    <div
-                        class="p-8 bg-white dark:bg-background-dark rounded-2xl border border-primary/5 shadow-sm"
-                    >
-                        <span
-                            class="material-symbols-outlined text-primary text-4xl mb-4"
-                            >workspace_premium</span
-                        >
-                        <h3 class="text-xl font-bold mb-3">Expert Faculty</h3>
-                        <p class="text-slate-600 dark:text-slate-400">
-                            Learn from board-certified practitioners with over
-                            20 years of collective experience.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer
-            class="bg-background-dark text-slate-400 py-12 border-t border-white/5"
-        >
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8"
-            >
+            },
+        };
+    </script>
+    <style>
+        .dropdown-group:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+    <title>NYFAF - Premium Aesthetics Mentorship</title>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+    <nav
+        class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
                     <div class="text-primary flex items-center justify-center">
-                        <svg
-                            class="w-6 h-6"
-                            fill="none"
-                            viewbox="0 0 48 48"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                clip-rule="evenodd"
-                                d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
-                                fill="currentColor"
-                                fill-rule="evenodd"
-                            ></path>
+                        <svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#logo_clip)">
+                                <path clip-rule="evenodd"
+                                    d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </g>
+                            <defs>
+                                <clippath id="logo_clip">
+                                    <rect fill="white" height="48" width="48"></rect>
+                                </clippath>
+                            </defs>
                         </svg>
                     </div>
-                    <span class="text-xl font-bold text-white">NYFAF</span>
+                    <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">NYFAF</span>
                 </div>
-                <div class="flex gap-8 text-sm">
-                    <a class="hover:text-primary" href="#">Privacy Policy</a>
-                    <a class="hover:text-primary" href="#">Terms of Service</a>
-                    <a class="hover:text-primary" href="#"
-                        >Medical Disclaimer</a
-                    >
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+                    <div class="relative dropdown-group py-6">
+                        <button
+                            class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors duration-200">
+                            Courses
+                            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden absolute left-0 top-full w-80 bg-white dark:bg-background-dark border border-primary/10 shadow-xl rounded-xl overflow-hidden mt-1">
+                            <div class="flex flex-col py-2">
+                                <a class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                    href="#">
+                                    <p class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                                        Basic BOTOX® &amp; Dermal Filler
+                                        Certification
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Foundation level injectable training
+                                    </p>
+                                </a>
+                                <a class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                    href="#">
+                                    <p class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                                        Comprehensive Training (2-Day)
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Deep dive into advanced aesthetics
+                                    </p>
+                                </a>
+                                <a class="px-6 py-4 hover:bg-primary/5 border-l-2 border-transparent hover:border-primary transition-all"
+                                    href="#">
+                                    <p class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                                        Advanced BOTOX® &amp; Dermal Filler
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Master classes for experienced
+                                        injectors
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<a
+                                class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                                href="#"
+                                >Faculty</a
+                            >-->
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">About</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">FAQ</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200"
+                        href="#">Contact</a>
                 </div>
-                <p class="text-sm">
-                    © 2024 NYFAF Academy. All rights reserved.
-                </p>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="hidden sm:flex bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold py-2.5 px-6 rounded-lg transition-all shadow-md active:scale-95">
+                        Apply Now
+                    </button>
+                    <div class="flex md:hidden">
+                        <span
+                            class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer">menu</span>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </nav>
+    <!-- Hero / Main Content Placeholder -->
+    <div class="min-h-screen flex items-center justify-center bg-white dark:bg-background-dark/50">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+                NYFAF
+            </h1>
+            <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                Advancing the art of facial aesthetics through expert-led
+                clinical mentorship in the heart of New York City.
+            </p>
+        </div>
+    </div>
+    <!-- Premium 5-Column Footer -->
+    <footer class="bg-background-dark text-slate-100 border-t border-primary/20">
+        <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+                <!-- Column 1: Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+                        <span class="text-xl font-bold tracking-tight text-white leading-tight">NYFAF</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        New York Facial Aesthetics Mentorship. Hands-on
+                        aesthetic injector training in New York City
+                        designed for licensed medical professionals seeking
+                        practical education in Botox and dermal filler
+                        procedures.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">public</span>
+                        </a>
+                        <a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">share</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Column 2: Programs -->
+                <div>
+                    <h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Programs
+                    </h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm flex items-start gap-2 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Basic BOTOX® &amp; Dermal Filler
+                                Certification
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm flex items-start gap-2 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Comprehensive BOTOX® &amp; Dermal Filler
+                                Training
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm flex items-start gap-2 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Advanced BOTOX® &amp; Dermal Filler Training
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 3: Training -->
+                <div>
+                    <h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Training
+                    </h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">About
+                                NYFAF</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Faculty</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Hands-On
+                                Training</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 4: Policies -->
+                <div>
+                    <h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Policies
+                    </h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Privacy
+                                Policy</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Refund &amp;
+                                Cancellation Policy</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Terms of
+                                Use</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors" href="#">Cookie
+                                Policy</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-300 hover:text-primary text-sm transition-colors"
+                                href="#">Disclaimer</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 5: Contact -->
+                <div>
+                    <h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Contact
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-slate-300 text-sm">
+                            <span
+                                class="material-symbols-outlined text-primary text-xl flex-shrink-0">location_on</span>
+                            <span>10 W 46th St Suite 1401<br />New York, NY
+                                10036</span>
+                        </li>
+                        <li class="flex gap-3 text-slate-300 text-sm">
+                            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">mail</span>
+                            <a class="hover:text-primary transition-colors"
+                                href="mailto:info@dddentalnyc.com">info@dddentalnyc.com</a>
+                        </li>
+                        <li class="flex gap-3 text-slate-300 text-sm">
+                            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">call</span>
+                            <a class="hover:text-primary transition-colors" href="tel:2127595595">(212) 759-5595</a>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-8 border-t border-primary/10">
+                        <div class="w-full h-24 rounded overflow-hidden relative">
+                            <div class="absolute inset-0 bg-primary/5"></div>
+                            <img class="w-full h-full object-cover grayscale opacity-50 contrast-125"
+                                data-alt="Map showing Manhattan midtown office location" data-location="New York City"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzkZrBSPceHOhsvK6YSvS-K72Z_RQwQamUWN_B68aeOYvN7SCW4QfG1vuWo6cPjY8T_cVM74xvfWSCd2HmEBkLkBMrVGeuN6sZ5wIX3XkgrJkgRP20RwYHKi23HI6rOtl-oRQZEOi1t7PmxebkqdSQn_GExaqeky-Ii3PJeePKPKsVcZ-dymnCDhkwBfQGk2rG4_rhXUqI8a4CKa9GSJmIxOAz_iDXVKBcw1DW5H-oEkdTcQy74LVWTH64BYOnNxIs0BitOeIsNcS4" />
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="bg-primary text-white p-1 rounded-full animate-pulse">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs text-center md:text-left">
+                    Copyright © 2026 New York Facial Aesthetics Forum.
+                    All rights reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-1 text-[10px] uppercase tracking-tighter text-slate-600">
+                        <span class="material-symbols-outlined text-sm">verified</span>
+                        Professional Clinical Training
+                    </div>
+                    <div class="flex items-center gap-1 text-[10px] uppercase tracking-tighter text-slate-600">
+                        <span class="material-symbols-outlined text-sm">medical_information</span>
+                        Licensed Professionals Only
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
