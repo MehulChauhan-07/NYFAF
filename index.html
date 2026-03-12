@@ -1,1401 +1,1254 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>NYFAF — Design System</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            :root {
-                --bg: #f5f2ee;
-                --bg-card: #ffffff;
-                --ink: #1a1612;
-                --ink-2: #5a524a;
-                --ink-3: #9c9188;
-                --accent: #c8522a;
-                --accent-light: #f5ede8;
-                --border: #e8e2da;
-                --border-strong: #d4ccc0;
-                --shadow-sm:
-                    0 1px 3px rgba(26, 22, 18, 0.06),
-                    0 1px 2px rgba(26, 22, 18, 0.04);
-                --shadow-lg:
-                    0 20px 40px rgba(26, 22, 18, 0.12),
-                    0 8px 16px rgba(26, 22, 18, 0.06);
-                --r: 14px;
-                --r-sm: 8px;
-                --r-pill: 100px;
-            }
-            *,
-            *::before,
-            *::after {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                font-family: "DM Sans", sans-serif;
-                background: var(--bg);
-                color: var(--ink);
-                min-height: 100vh;
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYFAF — Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #f5f2ee;
+            --bg-card: #ffffff;
+            --ink: #1a1612;
+            --ink-2: #5a524a;
+            --ink-3: #9c9188;
+            --accent: #c8522a;
+            --accent-light: #f5ede8;
+            --border: #e8e2da;
+            --border-strong: #d4ccc0;
+            --shadow-sm: 0 1px 3px rgba(26, 22, 18, .06), 0 1px 2px rgba(26, 22, 18, .04);
+            --shadow-lg: 0 20px 40px rgba(26, 22, 18, .12), 0 8px 16px rgba(26, 22, 18, .06);
+            --r: 14px;
+            --r-sm: 8px;
+            --r-pill: 100px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh
+        }
+
+        /* TOPBAR */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(245, 242, 238, .9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .topbar-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+            text-decoration: none
+        }
+
+        .logo span {
+            color: var(--accent)
+        }
+
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            max-width: 360px
+        }
+
+        .search-wrap svg {
+            position: absolute;
+            left: .875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--ink-3);
+            width: 16px;
+            height: 16px;
+            pointer-events: none
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-pill);
+            padding: .6rem 1rem .6rem 2.5rem;
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s
+        }
+
+        .search-input::placeholder {
+            color: var(--ink-3)
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(200, 82, 42, .12)
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            flex-shrink: 0
+        }
+
+        .count-pill {
+            background: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid rgba(200, 82, 42, .2);
+            padding: .35rem .875rem;
+            border-radius: var(--r-pill);
+            font-size: .8rem;
+            font-weight: 500;
+            white-space: nowrap
+        }
+
+        .btn-add-top {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--r-pill);
+            padding: .5rem 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s, box-shadow .2s;
+            box-shadow: 0 2px 8px rgba(200, 82, 42, .3)
+        }
+
+        .btn-add-top:hover {
+            background: #b04520
+        }
+
+        /* PAGE */
+        .page-wrap {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem
+        }
+
+        /* HERO */
+        .hero {
+            padding: 4.5rem 0 3rem;
+            animation: fadeUp .7s ease-out both
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid rgba(200, 82, 42, .2);
+            border-radius: var(--r-pill);
+            padding: .35rem .875rem;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            letter-spacing: -.03em;
+            margin-bottom: 1rem;
+            max-width: 700px
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent)
+        }
+
+        .hero p {
+            color: var(--ink-2);
+            font-size: 1.05rem;
+            font-weight: 300;
+            max-width: 500px;
+            line-height: 1.7
+        }
+
+        /* FILTERS */
+        .filter-section {
+            padding-bottom: 2.5rem;
+            animation: fadeUp .7s .1s ease-out both
+        }
+
+        .filter-label {
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: .75rem
+        }
+
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem
+        }
+
+        .filter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .42rem 1rem;
+            border-radius: var(--r-pill);
+            font-size: .83rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1.5px solid var(--border);
+            background: var(--bg-card);
+            color: var(--ink-2);
+            transition: all .2s;
+            user-select: none
+        }
+
+        .filter-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-light)
+        }
+
+        .filter-pill.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff
+        }
+
+        .pill-count {
+            background: rgba(255, 255, 255, .25);
+            font-size: .7rem;
+            font-weight: 700;
+            padding: .1rem .4rem;
+            border-radius: 100px
+        }
+
+        .filter-pill:not(.active) .pill-count {
+            background: var(--bg);
+            color: var(--ink-3)
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            gap: 2rem;
+            padding-bottom: 6rem;
+            animation: fadeUp .7s .2s ease-out both
+        }
+
+        /* CARD */
+        .card {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s, border-color .2s;
+            position: relative
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-strong)
+        }
+
+        .card.is-custom {
+            border-color: rgba(200, 82, 42, .4);
+            background: linear-gradient(145deg, #fff 80%, #fdf3ef)
+        }
+
+        .card.is-custom::before {
+            content: 'Custom';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            background: var(--accent);
+            color: #fff;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            padding: .18rem .5rem;
+            border-radius: var(--r-pill)
+        }
+
+        .preview-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            position: relative;
+            background: #f0ebe4;
+            border-bottom: 1.5px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .preview-iframe {
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(.3333);
+            transform-origin: top left;
+            border: none;
+            pointer-events: none;
+            background: #fff
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 22, 18, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            transition: background .25s
+        }
+
+        .card:hover .preview-overlay {
+            background: rgba(26, 22, 18, .38)
+        }
+
+        .overlay-btn {
+            opacity: 0;
+            transform: scale(.85) translateY(6px);
+            background: #fff;
+            color: var(--ink);
+            border: none;
+            border-radius: var(--r-pill);
+            padding: .55rem 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            cursor: pointer;
+            transition: opacity .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+            text-decoration: none
+        }
+
+        .card:hover .overlay-btn {
+            opacity: 1;
+            transform: scale(1) translateY(0)
+        }
+
+        .overlay-btn.danger {
+            background: #fee2e2;
+            color: #dc2626
+        }
+
+        .overlay-btn.code {
+            background: #1a1612;
+            color: #fff
+        }
+
+        .card-body {
+            padding: 1.2rem 1.5rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: .75rem;
+            margin-bottom: .45rem
+        }
+
+        .card-title {
+            font-size: .98rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.3
+        }
+
+        .card-badge {
+            flex-shrink: 0;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            padding: .22rem .6rem;
+            border-radius: var(--r-pill);
+            border: 1px solid
+        }
+
+        .card-desc {
+            font-size: .83rem;
+            color: var(--ink-3);
+            line-height: 1.55;
+            flex: 1;
+            margin-bottom: 1.1rem
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .card-path {
+            font-size: .7rem;
+            color: var(--ink-3);
+            background: var(--bg);
+            padding: .22rem .55rem;
+            border-radius: var(--r-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
+            font-family: monospace
+        }
+
+        .card-arrow {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-3);
+            transition: all .2s;
+            flex-shrink: 0;
+            text-decoration: none
+        }
+
+        .card:hover .card-arrow {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: rotate(-45deg)
+        }
+
+        .b-reg {
+            background: #edf2ff;
+            color: #3b5bdb;
+            border-color: rgba(59, 91, 219, .25)
+        }
+
+        .b-bot {
+            background: #fff0f6;
+            color: #c2255c;
+            border-color: rgba(194, 37, 92, .25)
+        }
+
+        .b-land {
+            background: #ebfbee;
+            color: #2f9e44;
+            border-color: rgba(47, 158, 68, .25)
+        }
+
+        .b-about {
+            background: #fff9db;
+            color: #e67700;
+            border-color: rgba(230, 119, 0, .25)
+        }
+
+        .b-comp {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: rgba(200, 82, 42, .25)
+        }
+
+        .b-crs {
+            background: #f3f0ff;
+            color: #7048e8;
+            border-color: rgba(112, 72, 232, .25)
+        }
+
+        .b-def {
+            background: var(--bg);
+            color: var(--ink-2);
+            border-color: var(--border)
+        }
+
+        /* EMPTY */
+        .empty {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 2rem
+        }
+
+        .empty-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem
+        }
+
+        .empty h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: .5rem
+        }
+
+        .empty p {
+            color: var(--ink-2);
+            font-size: .9rem
+        }
+
+        /* SECTION DIVIDER */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin: 0 0 1.5rem;
+            grid-column: 1/-1
+        }
+
+        .section-divider span {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            white-space: nowrap
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border)
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: rgba(26, 22, 18, .55);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 540px;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(24px) scale(.97);
+            transition: transform .35s cubic-bezier(.34, 1.56, .64, 1);
+            overflow: hidden
+        }
+
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1)
+        }
+
+        .modal-head {
+            padding: 1.75rem 2rem 1.1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .modal-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem
+        }
+
+        .modal-title em {
+            font-style: italic;
+            color: var(--accent)
+        }
+
+        .modal-sub {
+            font-size: .82rem;
+            color: var(--ink-3);
+            margin-top: .3rem;
+            font-weight: 300;
+            line-height: 1.5
+        }
+
+        .modal-sub strong {
+            color: var(--accent);
+            font-weight: 600
+        }
+
+        .btn-close {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-2);
+            transition: all .2s;
+            flex-shrink: 0
+        }
+
+        .btn-close:hover {
+            background: var(--bg)
+        }
+
+        .modal-body {
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem
+        }
+
+        .field label {
+            font-size: .76rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-3)
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-sm);
+            padding: .7rem .9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .9rem;
+            color: var(--ink);
+            outline: none;
+            transition: border-color .2s, box-shadow .2s
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(200, 82, 42, .1)
+        }
+
+        .field textarea {
+            resize: vertical;
+            min-height: 75px
+        }
+
+        .field select {
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239c9188' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right .9rem center;
+            padding-right: 2.5rem
+        }
+
+        .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+        .modal-foot {
+            padding: 1rem 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: .75rem;
+            justify-content: flex-end
+        }
+
+        .btn-cancel {
+            background: transparent;
+            border: 1.5px solid var(--border);
+            color: var(--ink-2);
+            border-radius: var(--r-pill);
+            padding: .6rem 1.25rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .2s
+        }
+
+        .btn-cancel:hover {
+            background: var(--bg)
+        }
+
+        .btn-save {
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            border-radius: var(--r-pill);
+            padding: .6rem 1.5rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .btn-save:hover:not(:disabled) {
+            background: #b04520
+        }
+
+        .btn-save:disabled {
+            opacity: .5;
+            cursor: not-allowed
+        }
+
+        .spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, .3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin .6s linear infinite;
+            display: none
+        }
+
+        .loading .spinner {
+            display: block
+        }
+
+        .loading .save-lbl {
+            display: none
+        }
+
+        /* LOADING STATE */
+        .loading-state {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--ink-3);
+            font-size: .95rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .loading-ring {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin .8s linear infinite
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: var(--ink);
+            color: #fff;
+            padding: .75rem 1.25rem;
+            border-radius: var(--r-sm);
+            font-size: .85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(12px);
+            opacity: 0;
+            transition: all .3s;
+            pointer-events: none;
+            max-width: 360px;
+            line-height: 1.5
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .toast.success {
+            background: #166534
+        }
+
+        .toast.error {
+            background: #991b1b
+        }
+
+        /* REPO WARNING BANNER */
+        .repo-warn {
+            display: none;
+            align-items: center;
+            gap: .75rem;
+            background: #fff9db;
+            border: 1.5px solid #f59f00;
+            border-radius: var(--r-sm);
+            padding: .75rem 1.1rem;
+            margin-bottom: 2rem;
+            font-size: .85rem;
+            color: #7d5a00
+        }
+
+        .repo-warn.visible {
+            display: flex
+        }
+
+        .repo-warn strong {
+            font-weight: 700
+        }
+
+        .repo-warn code {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 4px;
+            padding: .1rem .4rem;
+            font-family: monospace;
+            font-size: .8rem
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--ink-3);
+            font-size: .85rem
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
             }
 
-            /* TOPBAR */
-            .topbar {
-                position: sticky;
-                top: 0;
-                z-index: 200;
-                background: rgba(245, 242, 238, 0.9);
-                backdrop-filter: blur(20px);
-                border-bottom: 1px solid var(--border);
+            to {
+                opacity: 1;
+                transform: translateY(0)
             }
-            .topbar-inner {
-                max-width: 1320px;
-                margin: 0 auto;
-                padding: 0 2rem;
-                height: 64px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 1rem;
-            }
-            .logo {
-                font-family: "DM Serif Display", serif;
-                font-size: 1.5rem;
-                color: var(--ink);
-                text-decoration: none;
-            }
-            .logo span {
-                color: var(--accent);
-            }
-            .search-wrap {
-                position: relative;
-                flex: 1;
-                max-width: 360px;
-            }
-            .search-wrap svg {
-                position: absolute;
-                left: 0.875rem;
-                top: 50%;
-                transform: translateY(-50%);
-                color: var(--ink-3);
-                width: 16px;
-                height: 16px;
-                pointer-events: none;
-            }
-            .search-input {
-                width: 100%;
-                background: var(--bg-card);
-                border: 1.5px solid var(--border);
-                border-radius: var(--r-pill);
-                padding: 0.6rem 1rem 0.6rem 2.5rem;
-                color: var(--ink);
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.9rem;
-                outline: none;
-                transition:
-                    border-color 0.2s,
-                    box-shadow 0.2s;
-            }
-            .search-input::placeholder {
-                color: var(--ink-3);
-            }
-            .search-input:focus {
-                border-color: var(--accent);
-                box-shadow: 0 0 0 3px rgba(200, 82, 42, 0.12);
-            }
-            .topbar-right {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                flex-shrink: 0;
-            }
-            .count-pill {
-                background: var(--accent-light);
-                color: var(--accent);
-                border: 1px solid rgba(200, 82, 42, 0.2);
-                padding: 0.35rem 0.875rem;
-                border-radius: var(--r-pill);
-                font-size: 0.8rem;
-                font-weight: 500;
-                white-space: nowrap;
-            }
-            .btn-add-top {
-                display: flex;
-                align-items: center;
-                gap: 0.4rem;
-                background: var(--accent);
-                color: #fff;
-                border: none;
-                border-radius: var(--r-pill);
-                padding: 0.5rem 1.1rem;
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.85rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition:
-                    background 0.2s,
-                    box-shadow 0.2s;
-                box-shadow: 0 2px 8px rgba(200, 82, 42, 0.3);
-            }
-            .btn-add-top:hover {
-                background: #b04520;
-            }
+        }
 
-            /* PAGE */
-            .page-wrap {
-                max-width: 1320px;
-                margin: 0 auto;
-                padding: 0 2rem;
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
             }
+        }
 
-            /* HERO */
-            .hero {
-                padding: 4.5rem 0 3rem;
-                animation: fadeUp 0.7s ease-out both;
-            }
-            .hero-eyebrow {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                background: var(--accent-light);
-                color: var(--accent);
-                border: 1px solid rgba(200, 82, 42, 0.2);
-                border-radius: var(--r-pill);
-                padding: 0.35rem 0.875rem;
-                font-size: 0.8rem;
-                font-weight: 600;
-                letter-spacing: 0.06em;
-                text-transform: uppercase;
-                margin-bottom: 1.25rem;
-            }
-            .hero-eyebrow::before {
-                content: "";
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: var(--accent);
-                flex-shrink: 0;
-            }
-            .hero h1 {
-                font-family: "DM Serif Display", serif;
-                font-size: clamp(2.6rem, 5vw, 4.2rem);
-                line-height: 1.05;
-                letter-spacing: -0.03em;
-                margin-bottom: 1rem;
-                max-width: 700px;
-            }
-            .hero h1 em {
-                font-style: italic;
-                color: var(--accent);
-            }
-            .hero p {
-                color: var(--ink-2);
-                font-size: 1.05rem;
-                font-weight: 300;
-                max-width: 500px;
-                line-height: 1.7;
-            }
+        .card-appear {
+            animation: fadeUp .45s ease-out both
+        }
 
-            /* FILTERS */
-            .filter-section {
-                padding-bottom: 2.5rem;
-                animation: fadeUp 0.7s 0.1s ease-out both;
-            }
-            .filter-label {
-                font-size: 0.72rem;
-                font-weight: 600;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                color: var(--ink-3);
-                margin-bottom: 0.75rem;
-            }
-            .filter-pills {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-            .filter-pill {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.4rem;
-                padding: 0.42rem 1rem;
-                border-radius: var(--r-pill);
-                font-size: 0.83rem;
-                font-weight: 500;
-                cursor: pointer;
-                border: 1.5px solid var(--border);
-                background: var(--bg-card);
-                color: var(--ink-2);
-                transition: all 0.2s;
-                user-select: none;
-            }
-            .filter-pill:hover {
-                border-color: var(--accent);
-                color: var(--accent);
-                background: var(--accent-light);
-            }
-            .filter-pill.active {
-                background: var(--accent);
-                border-color: var(--accent);
-                color: #fff;
-            }
-            .pill-count {
-                background: rgba(255, 255, 255, 0.25);
-                font-size: 0.7rem;
-                font-weight: 700;
-                padding: 0.1rem 0.4rem;
-                border-radius: 100px;
-            }
-            .filter-pill:not(.active) .pill-count {
-                background: var(--bg);
-                color: var(--ink-3);
-            }
-
-            /* GRID */
+        @media(max-width:900px) {
             .grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-                gap: 2rem;
-                padding-bottom: 6rem;
-                animation: fadeUp 0.7s 0.2s ease-out both;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.25rem
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .page-wrap,
+            .topbar-inner {
+                padding: 0 1rem
             }
 
-            /* CARD */
-            .card {
-                background: var(--bg-card);
-                border: 1.5px solid var(--border);
-                border-radius: var(--r);
-                overflow: hidden;
-                text-decoration: none;
-                color: inherit;
-                display: flex;
-                flex-direction: column;
-                box-shadow: var(--shadow-sm);
-                transition:
-                    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    box-shadow 0.3s,
-                    border-color 0.2s;
-                position: relative;
-            }
-            .card:hover {
-                transform: translateY(-6px);
-                box-shadow: var(--shadow-lg);
-                border-color: var(--border-strong);
-            }
-            .card.is-custom {
-                border-color: rgba(200, 82, 42, 0.4);
-                background: linear-gradient(145deg, #fff 80%, #fdf3ef);
-            }
-            .card.is-custom::before {
-                content: "Custom";
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                z-index: 10;
-                background: var(--accent);
-                color: #fff;
-                font-size: 0.62rem;
-                font-weight: 700;
-                letter-spacing: 0.07em;
-                text-transform: uppercase;
-                padding: 0.18rem 0.5rem;
-                border-radius: var(--r-pill);
+            .hero {
+                padding: 3rem 0 2rem
             }
 
-            .preview-container {
-                width: 100%;
-                aspect-ratio: 16/9;
-                overflow: hidden;
-                position: relative;
-                background: #f0ebe4;
-                border-bottom: 1.5px solid var(--border);
-                flex-shrink: 0;
-            }
-            .preview-iframe {
-                width: 300%;
-                height: 300%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: scale(0.3333);
-                transform-origin: top left;
-                border: none;
-                pointer-events: none;
-                background: #fff;
-            }
-            .preview-overlay {
-                position: absolute;
-                inset: 0;
-                background: rgba(26, 22, 18, 0);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 0.6rem;
-                transition: background 0.25s;
-            }
-            .card:hover .preview-overlay {
-                background: rgba(26, 22, 18, 0.38);
-            }
-            .overlay-btn {
-                opacity: 0;
-                transform: scale(0.85) translateY(6px);
-                background: #fff;
-                color: var(--ink);
-                border: none;
-                border-radius: var(--r-pill);
-                padding: 0.55rem 1.1rem;
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.82rem;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 0.4rem;
-                cursor: pointer;
-                transition:
-                    opacity 0.2s,
-                    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                text-decoration: none;
-            }
-            .card:hover .overlay-btn {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-            .overlay-btn.danger {
-                background: #fee2e2;
-                color: #dc2626;
+            .hero h1 {
+                font-size: 2.2rem
             }
 
-            .card-body {
-                padding: 1.2rem 1.5rem 1.4rem;
-                display: flex;
-                flex-direction: column;
-                flex: 1;
-            }
-            .card-top {
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                gap: 0.75rem;
-                margin-bottom: 0.45rem;
-            }
-            .card-title {
-                font-size: 0.98rem;
-                font-weight: 600;
-                color: var(--ink);
-                line-height: 1.3;
-            }
-            .card-badge {
-                flex-shrink: 0;
-                font-size: 0.68rem;
-                font-weight: 700;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
-                padding: 0.22rem 0.6rem;
-                border-radius: var(--r-pill);
-                border: 1px solid;
-            }
-            .card-desc {
-                font-size: 0.83rem;
-                color: var(--ink-3);
-                line-height: 1.55;
-                flex: 1;
-                margin-bottom: 1.1rem;
-            }
-            .card-footer {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .card-path {
-                font-size: 0.7rem;
-                color: var(--ink-3);
-                background: var(--bg);
-                padding: 0.22rem 0.55rem;
-                border-radius: var(--r-sm);
-                border: 1px solid var(--border);
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                max-width: 200px;
-                font-family: monospace;
-            }
-            .card-arrow {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: 1.5px solid var(--border);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--ink-3);
-                transition: all 0.2s;
-                flex-shrink: 0;
-                text-decoration: none;
-            }
-            .card:hover .card-arrow {
-                background: var(--accent);
-                border-color: var(--accent);
-                color: #fff;
-                transform: rotate(-45deg);
+            .grid {
+                grid-template-columns: 1fr
             }
 
-            .b-reg {
-                background: #edf2ff;
-                color: #3b5bdb;
-                border-color: rgba(59, 91, 219, 0.25);
-            }
-            .b-bot {
-                background: #fff0f6;
-                color: #c2255c;
-                border-color: rgba(194, 37, 92, 0.25);
-            }
-            .b-land {
-                background: #ebfbee;
-                color: #2f9e44;
-                border-color: rgba(47, 158, 68, 0.25);
-            }
-            .b-about {
-                background: #fff9db;
-                color: #e67700;
-                border-color: rgba(230, 119, 0, 0.25);
-            }
-            .b-comp {
-                background: var(--accent-light);
-                color: var(--accent);
-                border-color: rgba(200, 82, 42, 0.25);
-            }
-            .b-crs {
-                background: #f3f0ff;
-                color: #7048e8;
-                border-color: rgba(112, 72, 232, 0.25);
-            }
-            .b-def {
-                background: var(--bg);
-                color: var(--ink-2);
-                border-color: var(--border);
+            .search-wrap {
+                max-width: 100%
             }
 
-            /* EMPTY */
-            .empty {
-                grid-column: 1/-1;
-                text-align: center;
-                padding: 5rem 2rem;
-            }
-            .empty-icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 50%;
-                background: var(--accent-light);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 1rem;
-            }
-            .empty h3 {
-                font-family: "DM Serif Display", serif;
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-            .empty p {
-                color: var(--ink-2);
-                font-size: 0.9rem;
-            }
-
-            /* SECTION DIVIDER */
-            .section-divider {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                margin: 0 0 1.5rem;
-                grid-column: 1/-1;
-            }
-            .section-divider span {
-                font-size: 0.72rem;
-                font-weight: 700;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                color: var(--ink-3);
-                white-space: nowrap;
-            }
-            .section-divider::before,
-            .section-divider::after {
-                content: "";
-                flex: 1;
-                height: 1px;
-                background: var(--border);
-            }
-
-            /* MODAL */
-            .modal-overlay {
-                position: fixed;
-                inset: 0;
-                z-index: 500;
-                background: rgba(26, 22, 18, 0.55);
-                backdrop-filter: blur(8px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 1.5rem;
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.25s;
-            }
-            .modal-overlay.open {
-                opacity: 1;
-                pointer-events: all;
-            }
             .modal {
-                background: var(--bg-card);
-                border: 1.5px solid var(--border);
-                border-radius: 20px;
-                width: 100%;
-                max-width: 540px;
-                box-shadow: var(--shadow-lg);
-                transform: translateY(24px) scale(0.97);
-                transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-                overflow: hidden;
+                border-radius: 16px
             }
-            .modal-overlay.open .modal {
-                transform: translateY(0) scale(1);
-            }
-            .modal-head {
-                padding: 1.75rem 2rem 1.1rem;
-                border-bottom: 1px solid var(--border);
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                gap: 1rem;
-            }
-            .modal-title {
-                font-family: "DM Serif Display", serif;
-                font-size: 1.6rem;
-            }
-            .modal-title em {
-                font-style: italic;
-                color: var(--accent);
-            }
-            .modal-sub {
-                font-size: 0.82rem;
-                color: var(--ink-3);
-                margin-top: 0.3rem;
-                font-weight: 300;
-                line-height: 1.5;
-            }
-            .modal-sub strong {
-                color: var(--accent);
-                font-weight: 600;
-            }
-            .btn-close {
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                border: 1.5px solid var(--border);
-                background: transparent;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--ink-2);
-                transition: all 0.2s;
-                flex-shrink: 0;
-            }
-            .btn-close:hover {
-                background: var(--bg);
-            }
-            .modal-body {
-                padding: 1.5rem 2rem;
-                display: flex;
-                flex-direction: column;
-                gap: 1.1rem;
-            }
-            .field {
-                display: flex;
-                flex-direction: column;
-                gap: 0.4rem;
-            }
-            .field label {
-                font-size: 0.76rem;
-                font-weight: 600;
-                letter-spacing: 0.06em;
-                text-transform: uppercase;
-                color: var(--ink-3);
-            }
-            .field input,
-            .field select,
-            .field textarea {
-                background: var(--bg);
-                border: 1.5px solid var(--border);
-                border-radius: var(--r-sm);
-                padding: 0.7rem 0.9rem;
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.9rem;
-                color: var(--ink);
-                outline: none;
-                transition:
-                    border-color 0.2s,
-                    box-shadow 0.2s;
-            }
-            .field input:focus,
-            .field select:focus,
-            .field textarea:focus {
-                border-color: var(--accent);
-                box-shadow: 0 0 0 3px rgba(200, 82, 42, 0.1);
-            }
-            .field textarea {
-                resize: vertical;
-                min-height: 75px;
-            }
-            .field select {
-                appearance: none;
-                cursor: pointer;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239c9188' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-                background-repeat: no-repeat;
-                background-position: right 0.9rem center;
-                padding-right: 2.5rem;
-            }
-            .row-2 {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
+
+            .modal-head,
+            .modal-body,
             .modal-foot {
-                padding: 1rem 2rem 1.5rem;
-                border-top: 1px solid var(--border);
-                display: flex;
-                gap: 0.75rem;
-                justify-content: flex-end;
-            }
-            .btn-cancel {
-                background: transparent;
-                border: 1.5px solid var(--border);
-                color: var(--ink-2);
-                border-radius: var(--r-pill);
-                padding: 0.6rem 1.25rem;
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.88rem;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-            .btn-cancel:hover {
-                background: var(--bg);
-            }
-            .btn-save {
-                background: var(--accent);
-                border: none;
-                color: #fff;
-                border-radius: var(--r-pill);
-                padding: 0.6rem 1.5rem;
-                font-family: "DM Sans", sans-serif;
-                font-size: 0.88rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: background 0.2s;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-            .btn-save:hover:not(:disabled) {
-                background: #b04520;
-            }
-            .btn-save:disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-            }
-            .spinner {
-                width: 14px;
-                height: 14px;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                border-top-color: #fff;
-                border-radius: 50%;
-                animation: spin 0.6s linear infinite;
-                display: none;
-            }
-            .loading .spinner {
-                display: block;
-            }
-            .loading .save-lbl {
-                display: none;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem
             }
 
-            /* LOADING STATE */
-            .loading-state {
-                grid-column: 1/-1;
-                text-align: center;
-                padding: 5rem 2rem;
-                color: var(--ink-3);
-                font-size: 0.95rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            .loading-ring {
-                width: 40px;
-                height: 40px;
-                border: 3px solid var(--border);
-                border-top-color: var(--accent);
-                border-radius: 50%;
-                animation: spin 0.8s linear infinite;
+            .row-2 {
+                grid-template-columns: 1fr
             }
 
-            /* TOAST */
-            .toast {
-                position: fixed;
-                bottom: 2rem;
-                right: 2rem;
-                z-index: 999;
-                background: var(--ink);
-                color: #fff;
-                padding: 0.75rem 1.25rem;
-                border-radius: var(--r-sm);
-                font-size: 0.85rem;
-                font-weight: 500;
-                box-shadow: var(--shadow-lg);
-                transform: translateY(12px);
-                opacity: 0;
-                transition: all 0.3s;
-                pointer-events: none;
-                max-width: 360px;
-                line-height: 1.5;
+            .topbar-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding-top: .75rem;
+                padding-bottom: .75rem;
+                gap: .5rem
             }
-            .toast.show {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .toast.success {
-                background: #166534;
-            }
-            .toast.error {
-                background: #991b1b;
-            }
+        }
+    </style>
+</head>
 
-            /* FOOTER */
-            footer {
-                border-top: 1px solid var(--border);
-                padding: 2rem 0;
-                text-align: center;
-                color: var(--ink-3);
-                font-size: 0.85rem;
-            }
-            footer a {
-                color: var(--accent);
-                text-decoration: none;
-            }
+<body>
 
-            @keyframes fadeUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(16px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            @keyframes spin {
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-            .card-appear {
-                animation: fadeUp 0.45s ease-out both;
-            }
-
-            @media (max-width: 900px) {
-                .grid {
-                    grid-template-columns: repeat(
-                        auto-fill,
-                        minmax(300px, 1fr)
-                    );
-                    gap: 1.25rem;
-                }
-            }
-            @media (max-width: 600px) {
-                .page-wrap,
-                .topbar-inner {
-                    padding: 0 1rem;
-                }
-                .hero {
-                    padding: 3rem 0 2rem;
-                }
-                .hero h1 {
-                    font-size: 2.2rem;
-                }
-                .grid {
-                    grid-template-columns: 1fr;
-                }
-                .search-wrap {
-                    max-width: 100%;
-                }
-                .modal {
-                    border-radius: 16px;
-                }
-                .modal-head,
-                .modal-body,
-                .modal-foot {
-                    padding-left: 1.25rem;
-                    padding-right: 1.25rem;
-                }
-                .row-2 {
-                    grid-template-columns: 1fr;
-                }
-                .topbar-inner {
-                    flex-wrap: wrap;
-                    height: auto;
-                    padding-top: 0.75rem;
-                    padding-bottom: 0.75rem;
-                    gap: 0.5rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- TOPBAR -->
-        <header class="topbar">
-            <div class="topbar-inner">
-                <a href="#" class="logo">NYF<span>AF</span></a>
-                <div class="search-wrap">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="#" class="logo">NYF<span>AF</span></a>
+            <div class="search-wrap">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, category…" />
+            </div>
+            <div class="topbar-right">
+                <div class="count-pill" id="statsDisplay">Loading…</div>
+                <button class="btn-add-top" id="openModalBtn">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
                     </svg>
-                    <input
-                        type="text"
-                        id="searchInput"
-                        class="search-input"
-                        placeholder="Search by name, category…"
-                    />
-                </div>
-                <div class="topbar-right">
-                    <div class="count-pill" id="statsDisplay">Loading…</div>
-                    <button class="btn-add-top" id="openModalBtn">
-                        <svg
-                            width="14"
-                            height="14"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2.5"
-                                d="M12 4v16m8-8H4"
-                            />
-                        </svg>
-                        Add Design
-                    </button>
-                </div>
+                    Add Design
+                </button>
             </div>
-        </header>
+        </div>
+    </header>
 
+    <div class="page-wrap">
+        <section class="hero">
+            <div class="hero-eyebrow">Design System</div>
+            <h1>All <em>Designs,</em><br>One Place.</h1>
+            <p>Browse, preview, and open every HTML design for NYFAF. Forgot to add a file? Hit <strong>Add
+                    Design</strong> — it goes live for everyone instantly.</p>
+        </section>
+
+        <!-- REPO WARNING — shown only if REPO variable is not configured -->
+        <div class="repo-warn" id="repoWarn">
+            <svg width="18" height="18" fill="none" stroke="#d97706" viewBox="0 0 24 24" style="flex-shrink:0">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+            </svg>
+            <span><strong>View Code buttons are hidden.</strong> Open this file, set
+                <code>const REPO = "username/repo-name"</code> at the top of the &lt;script&gt;, push — every card gets
+                the correct GitHub link automatically.</span>
+        </div>
+
+        <section class="filter-section">
+            <div class="filter-label">Filter by category</div>
+            <div class="filter-pills" id="filterPills"></div>
+        </section>
+
+        <main class="grid" id="gridContainer">
+            <div class="loading-state">
+                <div class="loading-ring"></div>
+                <span>Loading designs…</span>
+            </div>
+        </main>
+    </div>
+
+    <footer>
         <div class="page-wrap">
-            <section class="hero">
-                <div class="hero-eyebrow">Design System</div>
-                <h1>All <em>Designs,</em><br />One Place.</h1>
-                <p>
-                    Browse, preview, and open every HTML design for NYFAF.
-                    Forgot to add a file? Hit <strong>Add Design</strong> — it
-                    goes live for everyone instantly.
-                </p>
-            </section>
-
-            <section class="filter-section">
-                <div class="filter-label">Filter by category</div>
-                <div class="filter-pills" id="filterPills"></div>
-            </section>
-
-            <main class="grid" id="gridContainer">
-                <div class="loading-state">
-                    <div class="loading-ring"></div>
-                    <span>Loading designs…</span>
-                </div>
-            </main>
+            <p>© 2026 NYFAF Design System · Hosted on <a href="https://pages.github.com/" target="_blank">GitHub
+                    Pages</a></p>
         </div>
+    </footer>
 
-        <footer>
-            <div class="page-wrap">
-                <p>
-                    © 2026 NYFAF Design System · Hosted on
-                    <a href="https://pages.github.com/" target="_blank"
-                        >GitHub Pages</a
-                    >
-                </p>
+    <!-- ADD DESIGN MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-head">
+                <div>
+                    <div class="modal-title">Add <em>Design</em></div>
+                    <div class="modal-sub">Saved to <strong>shared cloud storage</strong> — visible to every visitor
+                        immediately. No push needed.</div>
+                </div>
+                <button class="btn-close" id="closeModalBtn" aria-label="Close">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-        </footer>
-
-        <!-- ADD DESIGN MODAL -->
-        <div class="modal-overlay" id="modalOverlay">
-            <div class="modal" role="dialog" aria-modal="true">
-                <div class="modal-head">
-                    <div>
-                        <div class="modal-title">Add <em>Design</em></div>
-                        <div class="modal-sub">
-                            Saved to <strong>shared cloud storage</strong> —
-                            visible to every visitor immediately. No push
-                            needed.
-                        </div>
-                    </div>
-                    <button
-                        class="btn-close"
-                        id="closeModalBtn"
-                        aria-label="Close"
-                    >
-                        <svg
-                            width="14"
-                            height="14"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2.5"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </button>
+            <div class="modal-body">
+                <div class="field">
+                    <label>File URL / Path *</label>
+                    <input type="text" id="f-url" placeholder="designs/my-new-page-v1.html" />
                 </div>
-                <div class="modal-body">
+                <div class="row-2">
                     <div class="field">
-                        <label>File URL / Path *</label>
-                        <input
-                            type="text"
-                            id="f-url"
-                            placeholder="designs/my-new-page-v1.html"
-                        />
-                    </div>
-                    <div class="row-2">
-                        <div class="field">
-                            <label>Page Title *</label>
-                            <input
-                                type="text"
-                                id="f-title"
-                                placeholder="My Page v1"
-                            />
-                        </div>
-                        <div class="field">
-                            <label>Category *</label>
-                            <select id="f-cat">
-                                <option value="">— Pick one —</option>
-                                <option>Landing Page</option>
-                                <option>Registration</option>
-                                <option>BOTOX®</option>
-                                <option>About</option>
-                                <option>Who Can Apply</option>
-                                <option>Why We</option>
-                                <option>Faculty</option>
-                                <option>Courses</option>
-                                <option>Component</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
+                        <label>Page Title *</label>
+                        <input type="text" id="f-title" placeholder="My Page v1" />
                     </div>
                     <div class="field">
-                        <label
-                            >Badge Label
-                            <span
-                                style="
-                                    color: var(--ink-3);
-                                    font-weight: 400;
-                                    text-transform: none;
-                                    letter-spacing: 0;
-                                "
-                                >(leave blank to use category)</span
-                            ></label
-                        >
-                        <input
-                            type="text"
-                            id="f-badge"
-                            placeholder="e.g. Landing, v3, Final…"
-                        />
-                    </div>
-                    <div class="field">
-                        <label>Description</label>
-                        <textarea
-                            id="f-desc"
-                            placeholder="One sentence about what this page does…"
-                        ></textarea>
+                        <label>Category *</label>
+                        <select id="f-cat">
+                            <option value="">— Pick one —</option>
+                            <option>Landing Page</option>
+                            <option>Registration</option>
+                            <option>BOTOX®</option>
+                            <option>About</option>
+                            <option>Who Can Apply</option>
+                            <option>Why We</option>
+                            <option>Faculty</option>
+                            <option>Courses</option>
+                            <option>Component</option>
+                            <option>Other</option>
+                        </select>
                     </div>
                 </div>
-                <div class="modal-foot">
-                    <button class="btn-cancel" id="closeModalBtn2">
-                        Cancel
-                    </button>
-                    <button class="btn-save" id="saveBtn">
-                        <div class="spinner"></div>
-                        <span class="save-lbl">Save &amp; Publish Live</span>
-                    </button>
+                <div class="field">
+                    <label>Badge Label <span
+                            style="color:var(--ink-3);font-weight:400;text-transform:none;letter-spacing:0">(leave blank
+                            to use category)</span></label>
+                    <input type="text" id="f-badge" placeholder="e.g. Landing, v3, Final…" />
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea id="f-desc" placeholder="One sentence about what this page does…"></textarea>
                 </div>
             </div>
+            <div class="modal-foot">
+                <button class="btn-cancel" id="closeModalBtn2">Cancel</button>
+                <button class="btn-save" id="saveBtn">
+                    <div class="spinner"></div>
+                    <span class="save-lbl">Save &amp; Publish Live</span>
+                </button>
+            </div>
         </div>
+    </div>
 
-        <div class="toast" id="toast"></div>
+    <div class="toast" id="toast"></div>
 
-        <script>
-            /* ─── BASE PAGES ────────────────────────────────────────────────────────────
-   These are hardcoded. They always show. They cannot be deleted from the UI.
-   To add more here, just push a new object into this array and deploy.
-   ───────────────────────────────────────────────────────────────────────── */
-            const BASE = [
-                {
-                    url: "designs/header-footer-v1.html",
-                    title: "Header & Footer v1",
-                    category: "Component",
-                    badge: "Component",
-                    description:
-                        "Shared header and footer layout used across all pages.",
-                },
-                {
-                    url: "designs/hero-v1.html",
-                    title: "Hero Section v1",
-                    category: "Component",
-                    badge: "Component",
-                    description:
-                        "Hero banner with headline, subtext, and CTA button.",
-                },
-                {
-                    url: "designs/registration/registration-page-v2.html",
-                    title: "Registration Page v2",
-                    category: "Registration",
-                    badge: "Registration",
-                    description: "Main course enrollment registration form.",
-                },
-                {
-                    url: "designs/registration/email-confirmation-v1.html",
-                    title: "Email Confirmation v1",
-                    category: "Registration",
-                    badge: "Registration",
-                    description: "Post-registration email confirmation screen.",
-                },
-                {
-                    url: "designs/registration/confirm-application-v1.html",
-                    title: "Confirm Application v1",
-                    category: "Registration",
-                    badge: "Registration",
-                    description:
-                        "Application review and final submission confirmation.",
-                },
-                {
-                    url: "designs/registration/payment-page-v1.html",
-                    title: "Payment Page v1",
-                    category: "Registration",
-                    badge: "Registration",
-                    description: "Secure payment page for course registration.",
-                },
-                {
-                    url: "designs/basic-botox-v1.html",
-                    title: "Basic BOTOX® v1",
-                    category: "BOTOX®",
-                    badge: "BOTOX®",
-                    description:
-                        "Introductory BOTOX® training course landing page.",
-                },
-                {
-                    url: "designs/basic-botox-v2.html",
-                    title: "Basic BOTOX® v2",
-                    category: "BOTOX®",
-                    badge: "BOTOX®",
-                    description: "Revised layout for Basic BOTOX® training.",
-                },
-                {
-                    url: "designs/advance-botox-v1.html",
-                    title: "Advanced BOTOX® v1",
-                    category: "BOTOX®",
-                    badge: "BOTOX®",
-                    description:
-                        "Advanced BOTOX® training — SEO-optimised variant.",
-                },
-                {
-                    url: "designs/advance-botox-v2.html",
-                    title: "Advanced BOTOX® v2",
-                    category: "BOTOX®",
-                    badge: "BOTOX®",
-                    description:
-                        "Alternative layout for advanced BOTOX® course.",
-                },
-                {
-                    url: "designs/advance-botox-v3.html",
-                    title: "Advanced BOTOX® v3",
-                    category: "BOTOX®",
-                    badge: "BOTOX®",
-                    description:
-                        "Third iteration of the Advanced BOTOX® training page.",
-                },
-                {
-                    url: "designs/about-v1.html",
-                    title: "About Us v1",
-                    category: "About",
-                    badge: "About",
-                    description:
-                        "Company profile and team information — first design.",
-                },
-                {
-                    url: "designs/about-v2.html",
-                    title: "About Us v2",
-                    category: "About",
-                    badge: "About",
-                    description:
-                        "Redesigned About page with updated hierarchy.",
-                },
-                {
-                    url: "designs/who-can-apply-v1.html",
-                    title: "Who Can Apply v1",
-                    category: "Who Can Apply",
-                    badge: "Eligibility",
-                    description: "Eligibility criteria page — first version.",
-                },
-                {
-                    url: "designs/who-can-apply-v2.html",
-                    title: "Who Can Apply v2",
-                    category: "Who Can Apply",
-                    badge: "Eligibility",
-                    description:
-                        "Updated eligibility layout with clearer sections.",
-                },
-                {
-                    url: "designs/who-can-apply-v3.html",
-                    title: "Who Can Apply v3",
-                    category: "Who Can Apply",
-                    badge: "Eligibility",
-                    description:
-                        "Final eligibility page with improved visual flow.",
-                },
-                {
-                    url: "designs/why-we-v1.html",
-                    title: "Why Us v1",
-                    category: "Why We",
-                    badge: "Why We",
-                    description:
-                        "Value proposition page explaining training advantages.",
-                },
-                {
-                    url: "designs/why-we-v2.html",
-                    title: "Why Us v2",
-                    category: "Why We",
-                    badge: "Why We",
-                    description:
-                        "Enhanced Why We page with testimonials and stats.",
-                },
-                {
-                    url: "designs/faculty-v1.html",
-                    title: "Faculty v1",
-                    category: "Faculty",
-                    badge: "Faculty",
-                    description:
-                        "Instructor profiles with credentials and bios.",
-                },
-                {
-                    url: "designs/faculty-v2.html",
-                    title: "Faculty v2",
-                    category: "Faculty",
-                    badge: "Faculty",
-                    description:
-                        "Refined faculty section with improved card layout.",
-                },
-                {
-                    url: "designs/hand-on-v1.html",
-                    title: "Hands-On Training v1",
-                    category: "Courses",
-                    badge: "Courses",
-                    description:
-                        "Hands-on clinical training section with live model info.",
-                },
-                {
-                    url: "designs/program-structure-v1.html",
-                    title: "Program Structure v1",
-                    category: "Courses",
-                    badge: "Courses",
-                    description:
-                        "Full curriculum breakdown and program schedule.",
-                },
-                {
-                    url: "designs/our_courses-v1.html",
-                    title: "Our Courses v1",
-                    category: "Courses",
-                    badge: "Courses",
-                    description:
-                        "Course listing overview with all available programmes.",
-                },
-                {
-                    url: "designs/landing-page-v1.html",
-                    title: "Landing Page v1",
-                    category: "Landing Page",
-                    badge: "Landing",
-                    description:
-                        "First landing page concept — original aesthetic.",
-                },
-                {
-                    url: "designs/landing-page-v2.html",
-                    title: "Landing Page v2",
-                    category: "Landing Page",
-                    badge: "Landing",
-                    description:
-                        "Alternative layout with different typographic hierarchy.",
-                },
-                {
-                    url: "designs/landing-page-v3.html",
-                    title: "Landing Page v3",
-                    category: "Landing Page",
-                    badge: "Landing",
-                    description:
-                        "Modernized approach with bold imagery and contrasts.",
-                },
-                {
-                    url: "designs/landing-page-v5.html",
-                    title: "Landing Page v5",
-                    category: "Landing Page",
-                    badge: "Final — v5",
-                    description:
-                        "Advanced layout with rich features and generous spacing.",
-                },
-                {
-                    url: "designs/landing-page-v6.html",
-                    title: "Landing Page v6",
-                    category: "Landing Page",
-                    badge: "Final — v6",
-                    description:
-                        "Polished version with industry section and course cards.",
-                },
-                {
-                    url: "designs/landing-page-v7.html",
-                    title: "Landing Page v7",
-                    category: "Landing Page",
-                    badge: "Final — v7",
-                    description:
-                        "Most refined: courses, industry, and eligibility combined.",
-                },
-            ];
+    <script>
+        /* ================================================================
+           ✏️  CONFIG — SET THIS ONCE AFTER YOU PUSH TO GITHUB
+           ================================================================
+           Format:  "github-username/repository-name"
+           Example: "johnsmith/nyfaf-designs"
+        
+           This builds the "View Code" link on every card automatically:
+           → https://github.com/REPO/blob/BRANCH/designs/your-file.html
+        
+           After setting this, every existing + future card gets the
+           correct GitHub link with zero extra work.
+           ================================================================ */
+        const REPO = "YOUR-USERNAME/YOUR-REPO-NAME";  // ← only line you change
+        const BRANCH = "main";                           // ← or "master" if needed
+        /* ================================================================ */
 
-            const BADGE_CLS = {
-                Registration: "b-reg",
-                "BOTOX®": "b-bot",
-                "Landing Page": "b-land",
-                About: "b-about",
-                Component: "b-comp",
-                Courses: "b-crs",
-                "Who Can Apply": "b-crs",
-                "Why We": "b-about",
-                Faculty: "b-reg",
-            };
+        /* ─── BASE PAGES ────────────────────────────────────────────────────────────
+           These are hardcoded. They always show. They cannot be deleted from the UI.
+           To add more here, just push a new object into this array and deploy.
+           ───────────────────────────────────────────────────────────────────────── */
+        const BASE = [
+            { url: "designs/header-footer-v1.html", title: "Header & Footer v1", category: "Component", badge: "Component", description: "Shared header and footer layout used across all pages." },
+            { url: "designs/hero-v1.html", title: "Hero Section v1", category: "Component", badge: "Component", description: "Hero banner with headline, subtext, and CTA button." },
+            { url: "designs/registration/registration-page-v2.html", title: "Registration Page v2", category: "Registration", badge: "Registration", description: "Main course enrollment registration form." },
+            { url: "designs/registration/email-confirmation-v1.html", title: "Email Confirmation v1", category: "Registration", badge: "Registration", description: "Post-registration email confirmation screen." },
+            { url: "designs/registration/confirm-application-v1.html", title: "Confirm Application v1", category: "Registration", badge: "Registration", description: "Application review and final submission confirmation." },
+            { url: "designs/registration/payment-page-v1.html", title: "Payment Page v1", category: "Registration", badge: "Registration", description: "Secure payment page for course registration." },
+            { url: "designs/basic-botox-v1.html", title: "Basic BOTOX® v1", category: "BOTOX®", badge: "BOTOX®", description: "Introductory BOTOX® training course landing page." },
+            { url: "designs/basic-botox-v2.html", title: "Basic BOTOX® v2", category: "BOTOX®", badge: "BOTOX®", description: "Revised layout for Basic BOTOX® training." },
+            { url: "designs/advance-botox-v1.html", title: "Advanced BOTOX® v1", category: "BOTOX®", badge: "BOTOX®", description: "Advanced BOTOX® training — SEO-optimised variant." },
+            { url: "designs/advance-botox-v2.html", title: "Advanced BOTOX® v2", category: "BOTOX®", badge: "BOTOX®", description: "Alternative layout for advanced BOTOX® course." },
+            { url: "designs/advance-botox-v3.html", title: "Advanced BOTOX® v3", category: "BOTOX®", badge: "BOTOX®", description: "Third iteration of the Advanced BOTOX® training page." },
+            { url: "designs/about-v1.html", title: "About Us v1", category: "About", badge: "About", description: "Company profile and team information — first design." },
+            { url: "designs/about-v2.html", title: "About Us v2", category: "About", badge: "About", description: "Redesigned About page with updated hierarchy." },
+            { url: "designs/who-can-apply-v1.html", title: "Who Can Apply v1", category: "Who Can Apply", badge: "Eligibility", description: "Eligibility criteria page — first version." },
+            { url: "designs/who-can-apply-v2.html", title: "Who Can Apply v2", category: "Who Can Apply", badge: "Eligibility", description: "Updated eligibility layout with clearer sections." },
+            { url: "designs/who-can-apply-v3.html", title: "Who Can Apply v3", category: "Who Can Apply", badge: "Eligibility", description: "Final eligibility page with improved visual flow." },
+            { url: "designs/why-we-v1.html", title: "Why Us v1", category: "Why We", badge: "Why We", description: "Value proposition page explaining training advantages." },
+            { url: "designs/why-we-v2.html", title: "Why Us v2", category: "Why We", badge: "Why We", description: "Enhanced Why We page with testimonials and stats." },
+            { url: "designs/faculty-v1.html", title: "Faculty v1", category: "Faculty", badge: "Faculty", description: "Instructor profiles with credentials and bios." },
+            { url: "designs/faculty-v2.html", title: "Faculty v2", category: "Faculty", badge: "Faculty", description: "Refined faculty section with improved card layout." },
+            { url: "designs/hand-on-v1.html", title: "Hands-On Training v1", category: "Courses", badge: "Courses", description: "Hands-on clinical training section with live model info." },
+            { url: "designs/program-structure-v1.html", title: "Program Structure v1", category: "Courses", badge: "Courses", description: "Full curriculum breakdown and program schedule." },
+            { url: "designs/our_courses-v1.html", title: "Our Courses v1", category: "Courses", badge: "Courses", description: "Course listing overview with all available programmes." },
+            { url: "designs/landing-page-v1.html", title: "Landing Page v1", category: "Landing Page", badge: "Landing", description: "First landing page concept — original aesthetic." },
+            { url: "designs/landing-page-v2.html", title: "Landing Page v2", category: "Landing Page", badge: "Landing", description: "Alternative layout with different typographic hierarchy." },
+            { url: "designs/landing-page-v3.html", title: "Landing Page v3", category: "Landing Page", badge: "Landing", description: "Modernized approach with bold imagery and contrasts." },
+            { url: "designs/landing-page-v5.html", title: "Landing Page v5", category: "Landing Page", badge: "Final — v5", description: "Advanced layout with rich features and generous spacing." },
+            { url: "designs/landing-page-v6.html", title: "Landing Page v6", category: "Landing Page", badge: "Final — v6", description: "Polished version with industry section and course cards." },
+            { url: "designs/landing-page-v7.html", title: "Landing Page v7", category: "Landing Page", badge: "Final — v7", description: "Most refined: courses, industry, and eligibility combined." },
+        ];
 
-            const STORAGE_KEY = "nyfaf-custom-pages-v1";
+        const BADGE_CLS = {
+            "Registration": "b-reg", "BOTOX®": "b-bot", "Landing Page": "b-land",
+            "About": "b-about", "Component": "b-comp", "Courses": "b-crs",
+            "Who Can Apply": "b-crs", "Why We": "b-about", "Faculty": "b-reg"
+        };
 
-            let customPages = [];
-            let activeCategory = "All";
-            let searchQuery = "";
-            let isReady = false;
+        const STORAGE_KEY = "nyfaf-custom-pages-v1";
 
-            /* ─── STORAGE ──────────────────────────────────────────────── */
-            async function loadCustom() {
-                try {
-                    const res = await window.storage.get(STORAGE_KEY, true);
-                    customPages = res ? JSON.parse(res.value) : [];
-                } catch {
-                    customPages = [];
-                }
+        let customPages = [];
+        let activeCategory = "All";
+        let searchQuery = "";
+        let isReady = false;
+
+        /* ─── STORAGE ──────────────────────────────────────────────── */
+        async function loadCustom() {
+            try {
+                const res = await window.storage.get(STORAGE_KEY, true);
+                customPages = res ? JSON.parse(res.value) : [];
+            } catch { customPages = []; }
+        }
+
+        async function persistCustom() {
+            await window.storage.set(STORAGE_KEY, JSON.stringify(customPages), true);
+        }
+
+        /* ─── GITHUB URL BUILDER ───────────────────────────────────── */
+        // Builds: https://github.com/USER/REPO/blob/BRANCH/path/to/file.html
+        function githubUrl(filePath) {
+            if (!REPO || REPO.includes("YOUR-USERNAME")) return null; // not configured yet
+            return `https://github.com/${REPO}/blob/${BRANCH}/${filePath}`;
+        }
+
+        /* ─── COMBINED LIST ────────────────────────────────────────── */
+        const all = () => [...BASE, ...customPages.map(p => ({ ...p, _custom: true }))];
+
+        /* ─── PILLS ────────────────────────────────────────────────── */
+        function renderPills() {
+            const el = document.getElementById("filterPills");
+            const cats = ["All", ...new Set(all().map(p => p.category))];
+            el.innerHTML = "";
+            cats.forEach(cat => {
+                const n = cat === "All" ? all().length : all().filter(p => p.category === cat).length;
+                const btn = document.createElement("button");
+                btn.className = "filter-pill" + (cat === activeCategory ? " active" : "");
+                btn.innerHTML = `${cat} <span class="pill-count">${n}</span>`;
+                btn.onclick = () => { activeCategory = cat; renderPills(); renderGrid(); };
+                el.appendChild(btn);
+            });
+        }
+
+        /* ─── GRID ─────────────────────────────────────────────────── */
+        function renderGrid() {
+            const container = document.getElementById("gridContainer");
+            const stats = document.getElementById("statsDisplay");
+
+            if (!isReady) {
+                container.innerHTML = `<div class="loading-state"><div class="loading-ring"></div><span>Loading designs…</span></div>`;
+                return;
             }
 
-            async function persistCustom() {
-                await window.storage.set(
-                    STORAGE_KEY,
-                    JSON.stringify(customPages),
-                    true,
-                );
-            }
+            const q = searchQuery.toLowerCase();
+            const filtered = all().filter(p => {
+                const ok_cat = activeCategory === "All" || p.category === activeCategory;
+                const ok_q = !q || [p.title, p.category, p.badge, p.description].join(" ").toLowerCase().includes(q);
+                return ok_cat && ok_q;
+            });
 
-            /* ─── COMBINED LIST ────────────────────────────────────────── */
-            const all = () => [
-                ...BASE,
-                ...customPages.map((p) => ({ ...p, _custom: true })),
-            ];
+            const cCount = customPages.length;
+            stats.textContent = `${filtered.length} / ${all().length} pages${cCount ? ` · ${cCount} custom` : ""}`;
 
-            /* ─── PILLS ────────────────────────────────────────────────── */
-            function renderPills() {
-                const el = document.getElementById("filterPills");
-                const cats = ["All", ...new Set(all().map((p) => p.category))];
-                el.innerHTML = "";
-                cats.forEach((cat) => {
-                    const n =
-                        cat === "All"
-                            ? all().length
-                            : all().filter((p) => p.category === cat).length;
-                    const btn = document.createElement("button");
-                    btn.className =
-                        "filter-pill" +
-                        (cat === activeCategory ? " active" : "");
-                    btn.innerHTML = `${cat} <span class="pill-count">${n}</span>`;
-                    btn.onclick = () => {
-                        activeCategory = cat;
-                        renderPills();
-                        renderGrid();
-                    };
-                    el.appendChild(btn);
-                });
-            }
+            container.innerHTML = "";
 
-            /* ─── GRID ─────────────────────────────────────────────────── */
-            function renderGrid() {
-                const container = document.getElementById("gridContainer");
-                const stats = document.getElementById("statsDisplay");
-
-                if (!isReady) {
-                    container.innerHTML = `<div class="loading-state"><div class="loading-ring"></div><span>Loading designs…</span></div>`;
-                    return;
-                }
-
-                const q = searchQuery.toLowerCase();
-                const filtered = all().filter((p) => {
-                    const ok_cat =
-                        activeCategory === "All" ||
-                        p.category === activeCategory;
-                    const ok_q =
-                        !q ||
-                        [p.title, p.category, p.badge, p.description]
-                            .join(" ")
-                            .toLowerCase()
-                            .includes(q);
-                    return ok_cat && ok_q;
-                });
-
-                const cCount = customPages.length;
-                stats.textContent = `${filtered.length} / ${all().length} pages${cCount ? ` · ${cCount} custom` : ""}`;
-
-                container.innerHTML = "";
-
-                if (!filtered.length) {
-                    container.innerHTML = `
+            if (!filtered.length) {
+                container.innerHTML = `
             <div class="empty">
                 <div class="empty-icon"><svg width="22" height="22" fill="none" stroke="#c8522a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                 <h3>No pages found</h3>
                 <p>Try a different search or filter.</p>
             </div>`;
-                    return;
-                }
+                return;
+            }
 
-                const base_f = filtered.filter((p) => !p._custom);
-                const custom_f = filtered.filter((p) => p._custom);
+            const base_f = filtered.filter(p => !p._custom);
+            const custom_f = filtered.filter(p => p._custom);
 
-                const mkCard = (p, i) => {
-                    const cls = BADGE_CLS[p.category] || "b-def";
-                    const card = document.createElement("div");
-                    card.className =
-                        "card card-appear" + (p._custom ? " is-custom" : "");
-                    card.style.animationDelay = `${i * 0.05}s`;
-                    card.innerHTML = `
+            const mkCard = (p, i) => {
+                const cls = BADGE_CLS[p.category] || "b-def";
+                const card = document.createElement("div");
+                card.className = "card card-appear" + (p._custom ? " is-custom" : "");
+                card.style.animationDelay = `${i * 0.05}s`;
+                card.innerHTML = `
             <div class="preview-container">
                 <iframe src="${p.url}" class="preview-iframe" scrolling="no" tabindex="-1" loading="lazy"></iframe>
                 <div class="preview-overlay">
@@ -1403,14 +1256,15 @@
                         <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                         Open Page
                     </a>
-                    ${
-                        p._custom
-                            ? `<button class="overlay-btn danger" onclick="removeCustom('${p.url.replace(/'/g, "\\'")}')">
+                    ${githubUrl(p.url) ? `
+                    <a href="${githubUrl(p.url)}" class="overlay-btn code" target="_blank">
+                        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        View Code
+                    </a>` : ""}
+                    ${p._custom ? `<button class="overlay-btn danger" onclick="removeCustom('${p.url.replace(/'/g, "\\'")}')">
                         <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                         Remove
-                    </button>`
-                            : ""
-                    }
+                    </button>` : ""}
                 </div>
             </div>
             <div class="card-body">
@@ -1426,140 +1280,109 @@
                     </a>
                 </div>
             </div>`;
-                    container.appendChild(card);
-                };
-
-                base_f.forEach((p, i) => mkCard(p, i));
-
-                if (custom_f.length) {
-                    const sep = document.createElement("div");
-                    sep.className = "section-divider";
-                    sep.innerHTML = `<span>Custom Additions (${custom_f.length})</span>`;
-                    container.appendChild(sep);
-                    custom_f.forEach((p, i) => mkCard(p, base_f.length + i));
-                }
-            }
-
-            /* ─── REMOVE CUSTOM ────────────────────────────────────────── */
-            window.removeCustom = async (url) => {
-                if (
-                    !confirm(
-                        `Remove "${url}" from the index?\n\nThe actual file on GitHub is NOT deleted.`,
-                    )
-                )
-                    return;
-                customPages = customPages.filter((p) => p.url !== url);
-                await persistCustom();
-                toast("Entry removed from index.", "success");
-                renderPills();
-                renderGrid();
+                container.appendChild(card);
             };
 
-            /* ─── MODAL ────────────────────────────────────────────────── */
-            const overlay = document.getElementById("modalOverlay");
-            const openBtn = document.getElementById("openModalBtn");
-            const saveBtn = document.getElementById("saveBtn");
+            base_f.forEach((p, i) => mkCard(p, i));
 
-            const fields = () => ({
-                url: document.getElementById("f-url").value.trim(),
-                title: document.getElementById("f-title").value.trim(),
-                cat: document.getElementById("f-cat").value,
-                badge: document.getElementById("f-badge").value.trim(),
-                desc: document.getElementById("f-desc").value.trim(),
-            });
-
-            function openModal() {
-                overlay.classList.add("open");
-                document.getElementById("f-url").focus();
+            if (custom_f.length) {
+                const sep = document.createElement("div");
+                sep.className = "section-divider";
+                sep.innerHTML = `<span>Custom Additions (${custom_f.length})</span>`;
+                container.appendChild(sep);
+                custom_f.forEach((p, i) => mkCard(p, base_f.length + i));
             }
-            function closeModal() {
-                overlay.classList.remove("open");
-                ["f-url", "f-title", "f-badge", "f-desc"].forEach(
-                    (id) => (document.getElementById(id).value = ""),
-                );
-                document.getElementById("f-cat").value = "";
-            }
+        }
 
-            openBtn.addEventListener("click", openModal);
-            document
-                .getElementById("closeModalBtn")
-                .addEventListener("click", closeModal);
-            document
-                .getElementById("closeModalBtn2")
-                .addEventListener("click", closeModal);
-            overlay.addEventListener("click", (e) => {
-                if (e.target === overlay) closeModal();
-            });
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "Escape") closeModal();
-            });
+        /* ─── REMOVE CUSTOM ────────────────────────────────────────── */
+        window.removeCustom = async (url) => {
+            if (!confirm(`Remove "${url}" from the index?\n\nThe actual file on GitHub is NOT deleted.`)) return;
+            customPages = customPages.filter(p => p.url !== url);
+            await persistCustom();
+            toast("Entry removed from index.", "success");
+            renderPills();
+            renderGrid();
+        };
 
-            saveBtn.addEventListener("click", async () => {
-                const { url, title, cat, badge, desc } = fields();
-                if (!url || !title || !cat) {
-                    toast("URL, Title, and Category are required.", "error");
-                    return;
-                }
-                if (all().some((p) => p.url === url)) {
-                    toast("A page with this URL already exists.", "error");
-                    return;
-                }
+        /* ─── MODAL ────────────────────────────────────────────────── */
+        const overlay = document.getElementById("modalOverlay");
+        const openBtn = document.getElementById("openModalBtn");
+        const saveBtn = document.getElementById("saveBtn");
 
-                saveBtn.classList.add("loading");
-                saveBtn.disabled = true;
+        const fields = () => ({
+            url: document.getElementById("f-url").value.trim(),
+            title: document.getElementById("f-title").value.trim(),
+            cat: document.getElementById("f-cat").value,
+            badge: document.getElementById("f-badge").value.trim(),
+            desc: document.getElementById("f-desc").value.trim(),
+        });
 
-                const entry = {
-                    url,
-                    title,
-                    category: cat,
-                    badge: badge || cat,
-                    description: desc,
-                    addedAt: new Date().toISOString(),
-                };
+        function openModal() { overlay.classList.add("open"); document.getElementById("f-url").focus(); }
+        function closeModal() {
+            overlay.classList.remove("open");
+            ["f-url", "f-title", "f-badge", "f-desc"].forEach(id => document.getElementById(id).value = "");
+            document.getElementById("f-cat").value = "";
+        }
 
-                try {
-                    customPages.push(entry);
-                    await persistCustom();
-                    closeModal();
-                    renderPills();
-                    renderGrid();
-                    toast(
-                        `"${title}" is now live for all visitors!`,
-                        "success",
-                    );
-                } catch (err) {
-                    customPages.pop();
-                    toast("Save failed — please try again.", "error");
-                    console.error(err);
-                } finally {
-                    saveBtn.classList.remove("loading");
-                    saveBtn.disabled = false;
-                }
-            });
+        openBtn.addEventListener("click", openModal);
+        document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+        document.getElementById("closeModalBtn2").addEventListener("click", closeModal);
+        overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
-            /* ─── SEARCH ───────────────────────────────────────────────── */
-            document
-                .getElementById("searchInput")
-                .addEventListener("input", (e) => {
-                    searchQuery = e.target.value;
-                    renderGrid();
-                });
+        saveBtn.addEventListener("click", async () => {
+            const { url, title, cat, badge, desc } = fields();
+            if (!url || !title || !cat) { toast("URL, Title, and Category are required.", "error"); return; }
+            if (all().some(p => p.url === url)) { toast("A page with this URL already exists.", "error"); return; }
 
-            /* ─── TOAST ────────────────────────────────────────────────── */
-            function toast(msg, type = "success") {
-                const el = document.getElementById("toast");
-                el.textContent = msg;
-                el.className = `toast ${type} show`;
-                setTimeout(() => el.classList.remove("show"), 3800);
-            }
+            saveBtn.classList.add("loading");
+            saveBtn.disabled = true;
 
-            /* ─── INIT ─────────────────────────────────────────────────── */
-            (async () => {
-                await loadCustom();
-                isReady = true;
+            const entry = { url, title, category: cat, badge: badge || cat, description: desc, addedAt: new Date().toISOString() };
+
+            try {
+                customPages.push(entry);
+                await persistCustom();
+                closeModal();
                 renderPills();
                 renderGrid();
-            })();
-        </script>
-    </body>
+                toast(`"${title}" is now live for all visitors!`, "success");
+            } catch (err) {
+                customPages.pop();
+                toast("Save failed — please try again.", "error");
+                console.error(err);
+            } finally {
+                saveBtn.classList.remove("loading");
+                saveBtn.disabled = false;
+            }
+        });
+
+        /* ─── SEARCH ───────────────────────────────────────────────── */
+        document.getElementById("searchInput").addEventListener("input", e => {
+            searchQuery = e.target.value;
+            renderGrid();
+        });
+
+        /* ─── TOAST ────────────────────────────────────────────────── */
+        function toast(msg, type = "success") {
+            const el = document.getElementById("toast");
+            el.textContent = msg;
+            el.className = `toast ${type} show`;
+            setTimeout(() => el.classList.remove("show"), 3800);
+        }
+
+        /* ─── INIT ─────────────────────────────────────────────────── */
+        (async () => {
+            // Show warning if REPO not configured
+            if (!REPO || REPO.includes("MehulChauhan-07")) {
+                document.getElementById("repoWarn").classList.add("visible");
+            }
+            await loadCustom();
+            isReady = true;
+            renderPills();
+            renderGrid();
+        })();
+    </script>
+</body>
+
 </html>
