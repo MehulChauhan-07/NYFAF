@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d49735",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201b12",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>NYFAF Course Enrollment Registration</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <div class="layout-container flex h-full grow flex-col">
+        <!-- Navigation -->
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 lg:px-40 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+            <div class="flex items-center gap-3">
+                <div class="size-10 flex items-center justify-center rounded-lg bg-primary text-white">
+                    <span class="material-symbols-outlined">medical_services</span>
+                </div>
+                <div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">NYFAF
+                        Academy</h2>
+                    <p class="text-primary text-[10px] uppercase tracking-widest font-semibold">Medical Aesthetics
+                        Training</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined">help_outline</span>
+                </button>
+                <button
+                    class="hidden md:flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-4 text-sm font-bold tracking-wide border border-primary/20">
+                    Log In
+                </button>
+            </div>
+        </header>
+        <main class="flex flex-1 justify-center py-8 lg:py-12 px-4 md:px-10">
+            <div class="layout-content-container flex flex-col max-w-[800px] flex-1">
+                <!-- Enrollment Intro -->
+                <div class="mb-10 space-y-8">
+                    <div class="flex flex-col items-center text-center gap-4">
+                        <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Course Enrollment</span>
+                        <div class="space-y-3">
+                            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+                                Registration</h1>
+                            <div class="mx-auto h-1 w-20 rounded-full bg-primary"></div>
+                        </div>
+                        <p class="max-w-2xl text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Complete the enrollment flow one section at a time. Each step is verified before applicants
+                            continue to final application review and payment.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="rounded-2xl border border-primary/15 bg-white dark:bg-slate-900/50 p-5 shadow-sm">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="size-11 rounded-xl bg-primary text-white flex items-center justify-center font-bold">
+                                    1</div>
+                                <div>
+                                    <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-primary">Phase 1
+                                    </p>
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Application Submission
+                                    </h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Applicants complete
+                                the structured registration form, including program selection, contact details,
+                                credentials, and application statement.</p>
+                        </div>
+                        <div class="rounded-2xl border border-primary/10 bg-primary/5 dark:bg-primary/10 p-5 shadow-sm">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="size-11 rounded-xl bg-white/90 dark:bg-slate-950 text-primary flex items-center justify-center">
+                                    <span class="material-symbols-outlined">mark_email_read</span>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-primary">Phase 2
+                                    </p>
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Email Confirmation →
+                                        Final Application + Payment</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">After verification,
+                                applicants receive a confirmation email with the next steps required to finalize
+                                enrollment and complete payment.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Progress Tracker -->
+                <div
+                    class="mb-10 rounded-[2rem] border border-primary/10 bg-white/70 dark:bg-slate-900/40 px-5 md:px-8 py-8 shadow-sm backdrop-blur-sm">
+                    <div class="relative pt-4">
+                        <div class="absolute left-0 right-0 top-[82px] h-px bg-primary/30"></div>
+                        <div id="progress-bar"
+                            class="absolute left-0 top-[82px] h-[2px] bg-primary transition-all duration-500 ease-out"
+                            style="width: 0%;"></div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 relative">
+                            <button type="button" data-step-trigger="1"
+                                class="step-trigger flex flex-col items-center text-center gap-3 group">
+                                <span
+                                    class="text-sm md:text-[15px] font-bold leading-snug text-primary transition-colors">Program<br />Selection</span>
+                                <span
+                                    class="step-dot size-4 rounded-full border-2 border-primary bg-primary shadow-[0_0_0_6px_rgba(212,151,53,0.12)] transition-all"></span>
+                            </button>
+                            <button type="button" data-step-trigger="2"
+                                class="step-trigger flex flex-col items-center text-center gap-3 group">
+                                <span
+                                    class="text-sm md:text-[15px] font-bold leading-snug text-slate-800 dark:text-slate-200 transition-colors">Contact<br />Information</span>
+                                <span
+                                    class="step-dot size-4 rounded-full border-2 border-slate-900 dark:border-slate-200 bg-slate-900 dark:bg-slate-200 transition-all"></span>
+                            </button>
+                            <button type="button" data-step-trigger="3"
+                                class="step-trigger flex flex-col items-center text-center gap-3 group">
+                                <span
+                                    class="text-sm md:text-[15px] font-bold leading-snug text-slate-800 dark:text-slate-200 transition-colors">Professional<br />Credentials</span>
+                                <span
+                                    class="step-dot size-4 rounded-full border-2 border-slate-900 dark:border-slate-200 bg-slate-900 dark:bg-slate-200 transition-all"></span>
+                            </button>
+                            <button type="button" data-step-trigger="4"
+                                class="step-trigger flex flex-col items-center text-center gap-3 group">
+                                <span
+                                    class="text-sm md:text-[15px] font-bold leading-snug text-slate-800 dark:text-slate-200 transition-colors">Personal<br />Statement</span>
+                                <span
+                                    class="step-dot size-4 rounded-full border-2 border-slate-900 dark:border-slate-200 bg-slate-900 dark:bg-slate-200 transition-all"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-6 flex items-center justify-between gap-4 text-xs font-bold uppercase tracking-[0.22em] text-slate-400">
+                        <span id="step-counter">Step 1 of 4</span>
+                        <span>Section-wise guided flow</span>
+                    </div>
+                </div>
+                <!-- Form Container -->
+                <div class="bg-white dark:bg-slate-900/50 rounded-2xl shadow-sm border border-primary/5 p-6 md:p-10">
+                    <!-- Form Sections -->
+                    <form class="space-y-10" id="enrollment-form">
+                        <!-- Step 1 -->
+                        <section class="space-y-6 form-step" data-step="1">
+                            <div
+                                class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-4 border-b border-primary/10">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-lg">
+                                        1</div>
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Step 1</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Program Selection
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-500 max-w-md">Select the training pathway you intend to
+                                    attend and choose your preferred class date.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2 md:col-span-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="program-select">Select Program</label>
+                                    <select id="program-select" name="program"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option value="basic">Basic BOTOX® &amp; Dermal Filler Certification</option>
+                                        <option value="comprehensive">Comprehensive BOTOX® &amp; Dermal Filler Training
+                                            (2-Day Program)</option>
+                                        <option value="advanced">Advanced BOTOX® &amp; Dermal Filler Training</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="class-date">Class Date</label>
+                                    <select id="class-date" name="class-date"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"></select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="referral-source">How Did You Hear About This Program? <span
+                                            class="text-slate-400 font-medium">(Optional)</span></label>
+                                    <select id="referral-source" name="referral-source"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option>Google Search</option>
+                                        <option>Social Media</option>
+                                        <option>Referral</option>
+                                        <option>Dental / Medical Colleague</option>
+                                        <option>Returning Student</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Step 2 -->
+                        <section class="space-y-6 pt-2 form-step hidden" data-step="2">
+                            <div
+                                class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-4 border-b border-primary/10">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-lg">
+                                        2</div>
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Step 2</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Contact Information
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-500 max-w-md">Collect the applicant's primary contact
+                                    details for verification and further enrollment communication.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="prefix">Prefix</label>
+                                    <select id="prefix" name="prefix"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option>Mr.</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                        <option>Dr.</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="country-residence">Country of Residence <span
+                                            class="text-red-500">*</span></label>
+                                    <select id="country-residence" name="country-residence" required
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option>United States</option>
+                                        <option>Canada</option>
+                                        <option>United Kingdom</option>
+                                        <option>Australia</option>
+                                        <option>India</option>
+                                        <option>United Arab Emirates</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="first-name">Legal First Name <span class="text-red-500">*</span></label>
+                                    <input id="first-name" name="first-name" required
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="First Name" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="last-name">Legal Last Name <span class="text-red-500">*</span></label>
+                                    <input id="last-name" name="last-name" required
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="Last Name" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="email">Email Address <span class="text-red-500">*</span></label>
+                                    <input id="email" name="email" required
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="name@example.com" type="email" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="phone">Phone Number <span class="text-red-500">*</span></label>
+                                    <div class="grid grid-cols-[120px,1fr] gap-3">
+                                        <select id="country-code" name="country-code"
+                                            class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                            <option>+1</option>
+                                            <option>+44</option>
+                                            <option>+61</option>
+                                            <option>+91</option>
+                                            <option>+971</option>
+                                        </select>
+                                        <input id="phone" name="phone" required
+                                            class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                            placeholder="Phone Number" type="tel" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Step 3 -->
+                        <section class="space-y-6 pt-2 form-step hidden" data-step="3">
+                            <div
+                                class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-4 border-b border-primary/10">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-lg">
+                                        3</div>
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Step 3</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Professional
+                                            Credentials</h3>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-500 max-w-md">Professional details are reviewed before
+                                    applicants are invited to continue with final enrollment.</p>
+                            </div>
+                            <div class="p-4 bg-primary/5 border-l-4 border-primary rounded-r-lg flex gap-4">
+                                <span class="material-symbols-outlined text-primary">verified_user</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-slate-100 text-sm">Eligibility Notice
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mt-1">This
+                                        training program is intended for licensed medical professionals. Applicants must
+                                        hold a valid professional license and comply with local regulations regarding
+                                        injectable procedures.</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="professional-category">Professional Category</label>
+                                    <select id="professional-category" name="professional-category"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option>Physician (MD / DO)</option>
+                                        <option>Dentist (DDS / DMD)</option>
+                                        <option>Nurse Practitioner (NP)</option>
+                                        <option>Physician Assistant (PA)</option>
+                                        <option>Registered Nurse (RN)</option>
+                                        <option>Other Licensed Medical Professional</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="qualification">Degree / Qualification</label>
+                                    <input id="qualification" name="qualification"
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="e.g. MBBS, MD, BDS, DDS" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="license-number">Medical License or Registration Number</label>
+                                    <input id="license-number" name="license-number"
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="License or Registration Number" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="clinical-practice">Years of Clinical Practice</label>
+                                    <select id="clinical-practice" name="clinical-practice"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option value="&lt;1">Less than 1 year</option>
+                                        <option value="1-3">1–3 years</option>
+                                        <option value="3-5">3–5 years</option>
+                                        <option value="5-10">5–10 years</option>
+                                        <option value="10+">10+ years</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2 md:col-span-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="clinic-name">Clinic / Practice Name</label>
+                                    <input id="clinic-name" name="clinic-name"
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="Clinic or Practice Name" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="practice-country">Country of Practice</label>
+                                    <select id="practice-country" name="practice-country"
+                                        class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12">
+                                        <option>United States</option>
+                                        <option>Canada</option>
+                                        <option>United Kingdom</option>
+                                        <option>Australia</option>
+                                        <option>India</option>
+                                        <option>United Arab Emirates</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="city">City</label>
+                                    <input id="city" name="city"
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="City" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2 md:col-span-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="state">State / Province</label>
+                                    <input id="state" name="state"
+                                        class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12"
+                                        placeholder="State or Province" type="text" />
+                                </div>
+                            </div>
+                            <div class="space-y-4 pt-2">
+                                <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Botox Experience —
+                                    Have you previously performed Botox injections?</p>
+                                <div class="flex gap-6 flex-wrap">
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input
+                                            class="w-5 h-5 text-primary border-primary/20 focus:ring-primary bg-background-light"
+                                            name="experience" type="radio" value="yes" />
+                                        <span
+                                            class="text-sm font-medium text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Yes</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input checked
+                                            class="w-5 h-5 text-primary border-primary/20 focus:ring-primary bg-background-light"
+                                            name="experience" type="radio" value="no" />
+                                        <span
+                                            class="text-sm font-medium text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="advanced-requirement"
+                                class="hidden p-6 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-dashed border-primary/30">
+                                <p class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Prerequisite
+                                    Confirmation</p>
+                                <p class="text-xs text-slate-500 mb-4 italic">Have you completed a Basic Botox or
+                                    Injectable Certification Course?</p>
+                                <div class="flex flex-col gap-4">
+                                    <label class="flex items-center gap-3">
+                                        <input class="w-4 h-4 text-primary border-primary/20" name="prereq" type="radio"
+                                            value="yes" />
+                                        <span class="text-sm text-slate-600 dark:text-slate-400">Yes</span>
+                                    </label>
+                                    <label class="flex items-center gap-3">
+                                        <input class="w-4 h-4 text-primary border-primary/20" name="prereq" type="radio"
+                                            value="no" />
+                                        <span class="text-sm text-slate-600 dark:text-slate-400">No</span>
+                                    </label>
+                                    <div id="advanced-warning"
+                                        class="hidden mt-2 flex items-center gap-2 text-red-500 bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border border-red-200 dark:border-red-900/50">
+                                        <span class="material-symbols-outlined text-sm">warning</span>
+                                        <span class="text-[11px] font-bold uppercase tracking-tight">Advanced training
+                                            requires prior foundational injectable education. Applicants without
+                                            previous certification may be advised to enroll in a foundational
+                                            course.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Step 4 -->
+                        <section class="space-y-6 pt-2 form-step hidden" data-step="4">
+                            <div
+                                class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-4 border-b border-primary/10">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-lg">
+                                        4</div>
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Step 4</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Application
+                                            Statement</h3>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-500 max-w-md">Provide a short statement about your goals
+                                    and confirm the accuracy of your application.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between gap-4">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                        for="application-statement">Why do you want to join this training
+                                        program?</label>
+                                    <span class="text-xs font-semibold text-slate-400"><span
+                                            id="statement-count">0</span>/300</span>
+                                </div>
+                                <textarea id="application-statement" name="application-statement" maxlength="300"
+                                    rows="5"
+                                    class="form-textarea w-full rounded-xl border-primary/20 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                    placeholder="Briefly describe your professional goals and why you are interested in aesthetic training."></textarea>
+                            </div>
+                            <label
+                                class="flex items-start gap-3 rounded-xl bg-primary/5 p-4 border border-primary/10 cursor-pointer">
+                                <input id="terms" name="terms" required
+                                    class="mt-1 w-5 h-5 text-primary border-primary/20 focus:ring-primary bg-background-light"
+                                    type="checkbox" />
+                                <span class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">I confirm that
+                                    the information provided is accurate and I agree to the program terms and
+                                    conditions.</span>
+                            </label>
+                        </section>
+                        <div
+                            class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-4 border-t border-primary/10">
+                            <div class="text-xs text-slate-400 uppercase tracking-[0.2em] font-bold">Phase 1
+                                submission only • verification required before payment</div>
+                            <div class="flex items-center gap-3">
+                                <button id="prev-button"
+                                    class="hidden md:inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-primary/20 text-slate-600 dark:text-slate-300 font-bold hover:border-primary hover:text-primary transition-all"
+                                    type="button">
+                                    <span class="material-symbols-outlined">arrow_back</span>
+                                    Previous
+                                </button>
+                                <button id="next-button"
+                                    class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary/10 text-primary font-bold border border-primary/20 hover:bg-primary/20 transition-all"
+                                    type="button">
+                                    Next Step
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                                <button id="submit-button"
+                                    class="hidden items-center justify-center gap-2 px-10 py-3 rounded-lg bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:brightness-110 transition-all"
+                                    type="submit">
+                                    Submit Application
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="confirmation-message"
+                        class="hidden mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 dark:bg-emerald-900/20 dark:border-emerald-900/40 p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="size-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-xs font-bold uppercase tracking-[0.25em] text-emerald-600">Application
+                                    Received</p>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Thank you for submitting
+                                    your training application.</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">To continue your
+                                    enrollment, please verify your email address. A confirmation link has been sent to
+                                    your email.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Meta -->
+                <div
+                    class="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400 font-medium px-4">
+                    <div class="flex items-center gap-4">
+                        <span>© 2024 NYFAF ACADEMY</span>
+                        <span class="h-1 w-1 bg-slate-300 rounded-full"></span>
+                        <a class="hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-primary">lock</span>
+                        SECURE 256-BIT ENCRYPTED APPLICATION
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 -z-10 w-full h-full pointer-events-none opacity-30">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2">
+        </div>
+    </div>
+    <script>
+        const programDates = {
+            basic: ["March 4–5, 2026", "May 14–15, 2026", "July 9–10, 2026"],
+            comprehensive: ["April 10–11, 2026", "June 12–13, 2026", "August 21–22, 2026"],
+            advanced: ["March 28, 2026", "June 26, 2026", "September 18, 2026"]
+        };
+
+        const programSelect = document.getElementById("program-select");
+        const classDateSelect = document.getElementById("class-date");
+        const advancedRequirement = document.getElementById("advanced-requirement");
+        const advancedWarning = document.getElementById("advanced-warning");
+        const prereqInputs = document.querySelectorAll('input[name="prereq"]');
+        const statementField = document.getElementById("application-statement");
+        const statementCount = document.getElementById("statement-count");
+        const enrollmentForm = document.getElementById("enrollment-form");
+        const confirmationMessage = document.getElementById("confirmation-message");
+        const formSteps = document.querySelectorAll(".form-step");
+        const progressBar = document.getElementById("progress-bar");
+        const stepCounter = document.getElementById("step-counter");
+        const stepTriggers = document.querySelectorAll("[data-step-trigger]");
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+        const submitButton = document.getElementById("submit-button");
+        let currentStep = 1;
+
+        function updateClassDates() {
+            const selectedProgram = programSelect.value;
+            const dates = programDates[selectedProgram] || [];
+            classDateSelect.innerHTML = "";
+
+            dates.forEach((date) => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                classDateSelect.appendChild(option);
+            });
+        }
+
+        function updateAdvancedState() {
+            const isAdvanced = programSelect.value === "advanced";
+            advancedRequirement.classList.toggle("hidden", !isAdvanced);
+            if (!isAdvanced) {
+                advancedWarning.classList.add("hidden");
+                prereqInputs.forEach((input) => {
+                    input.checked = false;
+                });
+            }
+        }
+
+        function updatePrerequisiteWarning() {
+            const selectedPrereq = document.querySelector('input[name="prereq"]:checked');
+            advancedWarning.classList.toggle("hidden", !(selectedPrereq && selectedPrereq.value === "no"));
+        }
+
+        function updateStatementCount() {
+            statementCount.textContent = statementField.value.length;
+        }
+
+        function getStepFields(step) {
+            const stepSection = document.querySelector(`.form-step[data-step="${step}"]`);
+            return stepSection ? Array.from(stepSection.querySelectorAll("input, select, textarea")) : [];
+        }
+
+        function validateStep(step) {
+            const fields = getStepFields(step);
+            const invalidField = fields.find((field) => !field.checkValidity());
+            if (invalidField) {
+                invalidField.reportValidity();
+                invalidField.focus();
+                return false;
+            }
+            return true;
+        }
+
+        function updateStepUI() {
+            formSteps.forEach((step) => {
+                const stepNumber = Number(step.dataset.step);
+                step.classList.toggle("hidden", stepNumber !== currentStep);
+            });
+
+            const progressPercent = ((currentStep - 1) / (formSteps.length - 1)) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            stepCounter.textContent = `Step ${currentStep} of ${formSteps.length}`;
+
+            stepTriggers.forEach((trigger) => {
+                const stepNumber = Number(trigger.dataset.stepTrigger);
+                const label = trigger.querySelector("span:first-child");
+                const dot = trigger.querySelector(".step-dot");
+                const isActive = stepNumber === currentStep;
+                const isCompleted = stepNumber < currentStep;
+
+                label.classList.toggle("text-primary", isActive);
+                label.classList.toggle("text-slate-800", !isActive);
+                label.classList.toggle("dark:text-slate-200", !isActive);
+
+                dot.classList.toggle("bg-primary", isActive || isCompleted);
+                dot.classList.toggle("border-primary", isActive || isCompleted);
+                dot.classList.toggle("shadow-[0_0_0_6px_rgba(212,151,53,0.12)]", isActive);
+                dot.classList.toggle("bg-slate-900", !isActive && !isCompleted);
+                dot.classList.toggle("dark:bg-slate-200", !isActive && !isCompleted);
+                dot.classList.toggle("border-slate-900", !isActive && !isCompleted);
+                dot.classList.toggle("dark:border-slate-200", !isActive && !isCompleted);
+            });
+
+            prevButton.classList.toggle("hidden", currentStep === 1);
+            nextButton.classList.toggle("hidden", currentStep === formSteps.length);
+            submitButton.classList.toggle("hidden", currentStep !== formSteps.length);
+            confirmationMessage.classList.add("hidden");
+        }
+
+        function goToStep(step) {
+            currentStep = Math.min(Math.max(step, 1), formSteps.length);
+            updateStepUI();
+            enrollmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        programSelect.addEventListener("change", () => {
+            updateClassDates();
+            updateAdvancedState();
+        });
+
+        prereqInputs.forEach((input) => {
+            input.addEventListener("change", updatePrerequisiteWarning);
+        });
+
+        statementField.addEventListener("input", updateStatementCount);
+
+        stepTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", () => {
+                const targetStep = Number(trigger.dataset.stepTrigger);
+                if (targetStep <= currentStep) {
+                    goToStep(targetStep);
+                    return;
+                }
+
+                for (let step = currentStep; step < targetStep; step += 1) {
+                    if (!validateStep(step)) {
+                        return;
+                    }
+                }
+
+                goToStep(targetStep);
+            });
+        });
+
+        prevButton.addEventListener("click", () => {
+            goToStep(currentStep - 1);
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            goToStep(currentStep + 1);
+        });
+
+        enrollmentForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (!validateStep(currentStep) || !enrollmentForm.reportValidity()) {
+                return;
+            }
+            confirmationMessage.classList.remove("hidden");
+            confirmationMessage.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        updateClassDates();
+        updateAdvancedState();
+        updateStatementCount();
+        updateStepUI();
+    </script>
+</body>
+
+</html>

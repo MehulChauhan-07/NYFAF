@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Confirm Your NYFAF Training Application</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0ece4;
+            font-family: 'DM Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 16px 60px;
+        }
+
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── TOP BRAND BAR ── */
+        .brand-bar {
+            text-align: center;
+            padding-bottom: 28px;
+        }
+
+        .brand-bar .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: #d49735;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1208;
+            letter-spacing: 0.02em;
+        }
+
+        .brand-sub {
+            font-size: 9px;
+            font-weight: 600;
+            color: #d49735;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            display: block;
+            text-align: left;
+            margin-top: 1px;
+        }
+
+        /* ── MAIN CARD ── */
+        .email-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 40px rgba(180, 130, 40, 0.08), 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ── HEADER STRIP ── */
+        .card-header {
+            background: linear-gradient(135deg, #201b12 0%, #2e2210 60%, #3a2c14 100%);
+            padding: 44px 48px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(212, 151, 53, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 30px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(212, 151, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #d49735;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background: #d49735;
+            vertical-align: middle;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.25;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.01em;
+        }
+
+        .header-title span {
+            color: #d49735;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ── BODY ── */
+        .card-body {
+            padding: 40px 48px;
+        }
+
+        .greeting {
+            font-size: 15px;
+            color: #1a1208;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .intro-text {
+            font-size: 13.5px;
+            color: #5a4f3f;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        /* ── SNAPSHOT CARD ── */
+        .snapshot {
+            background: #faf8f4;
+            border: 1px solid rgba(212, 151, 53, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+
+        .snapshot-header {
+            background: rgba(212, 151, 53, 0.07);
+            border-bottom: 1px solid rgba(212, 151, 53, 0.12);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .snapshot-header-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #d49735;
+        }
+
+        .snapshot-header-text {
+            font-size: 10px;
+            font-weight: 700;
+            color: #d49735;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .snapshot-rows {
+            padding: 20px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .snapshot-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .snapshot-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(212, 151, 53, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .snapshot-icon svg {
+            width: 15px;
+            height: 15px;
+            fill: #d49735;
+        }
+
+        .snapshot-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #a08050;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .snapshot-value {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #1a1208;
+            line-height: 1.4;
+        }
+
+        .snapshot-divider {
+            height: 1px;
+            background: rgba(212, 151, 53, 0.08);
+            margin: 0 20px;
+        }
+
+        /* ── EXPIRY NOTICE ── */
+        .expiry-notice {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 151, 53, 0.06);
+            border: 1px solid rgba(212, 151, 53, 0.18);
+            border-radius: 8px;
+            padding: 11px 16px;
+            margin-bottom: 28px;
+        }
+
+        .expiry-notice svg {
+            width: 15px;
+            height: 15px;
+            fill: #d49735;
+            flex-shrink: 0;
+        }
+
+        .expiry-text {
+            font-size: 12px;
+            color: #7a6040;
+            line-height: 1.5;
+        }
+
+        .expiry-text strong {
+            color: #c07820;
+            font-weight: 600;
+        }
+
+        /* ── CTA BUTTON ── */
+        .cta-wrapper {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d49735 0%, #c07820 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 16px 44px;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(212, 151, 53, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 10px 32px rgba(212, 151, 53, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .cta-sub {
+            font-size: 11.5px;
+            color: #a08868;
+            margin-top: 12px;
+            font-weight: 300;
+        }
+
+        /* ── PLAIN FALLBACK ── */
+        .fallback-link-block {
+            background: #f5f2ec;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 32px;
+        }
+
+        .fallback-link-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #9a8060;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 6px;
+        }
+
+        .fallback-link {
+            font-size: 11.5px;
+            color: #d49735;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            text-decoration: underline;
+        }
+
+        /* ── DIVIDER ── */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 151, 53, 0.2), transparent);
+            margin: 28px 0;
+        }
+
+        /* ── NOTICE ── */
+        .not-you-notice {
+            font-size: 12px;
+            color: #9a8868;
+            line-height: 1.7;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .not-you-notice a {
+            color: #d49735;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ── FOOTER ── */
+        .card-footer {
+            background: #faf8f4;
+            border-top: 1px solid rgba(212, 151, 53, 0.08);
+            padding: 24px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1208;
+            letter-spacing: 0.03em;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            font-weight: 500;
+            color: #9a8060;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-links a:hover {
+            color: #d49735;
+        }
+
+        /* ── BELOW CARD ── */
+        .below-card {
+            text-align: center;
+            padding-top: 24px;
+        }
+
+        .below-card p {
+            font-size: 11px;
+            color: #b0a090;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .below-card a {
+            color: #d49735;
+            text-decoration: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .card-header {
+                padding: 32px 28px 28px;
+            }
+
+            .card-body {
+                padding: 28px 24px;
+            }
+
+            .card-footer {
+                padding: 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-wrapper">
+
+        <!-- Brand Bar -->
+        <div class="brand-bar">
+            <div class="logo-mark">
+                <div class="logo-icon">
+                    <!-- Cross / medical icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="brand-name">NYFAF Academy</span>
+                    <span class="brand-sub">Medical Aesthetics Training</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="email-card">
+
+            <!-- Header -->
+            <div class="card-header">
+                <div class="header-label">Application Received</div>
+                <h1 class="header-title">Confirm Your<br /><span>Training Application</span></h1>
+                <p class="header-subtitle">One step away from securing your place in the program.</p>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+
+                <p class="greeting">Dear Dr. Sarah Mitchell,</p>
+
+                <p class="intro-text">
+                    Thank you for applying to the <strong style="color:#1a1208; font-weight:600;">New York Facial
+                        Aesthetics Mentorship</strong> training program. We've received your application and the details
+                    below are on file.<br /><br />
+                    Please review your application snapshot and confirm your email address to proceed to the next step
+                    of your enrollment.
+                </p>
+
+                <!-- Application Snapshot -->
+                <div class="snapshot">
+                    <div class="snapshot-header">
+                        <div class="snapshot-header-dot"></div>
+                        <span class="snapshot-header-text">Your Application Snapshot</span>
+                    </div>
+
+                    <div class="snapshot-rows">
+
+                        <!-- Applicant -->
+                        <div class="snapshot-row">
+                            <div class="snapshot-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="snapshot-label">Applicant</span>
+                                <span class="snapshot-value">Dr. Sarah Mitchell &nbsp;·&nbsp; <span
+                                        style="color:#7a6040; font-weight:400; font-size:13px;">Physician
+                                        (MD)</span></span>
+                            </div>
+                        </div>
+
+                        <div class="snapshot-divider"></div>
+
+                        <!-- Program -->
+                        <div class="snapshot-row">
+                            <div class="snapshot-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="snapshot-label">Selected Program</span>
+                                <span class="snapshot-value">Basic BOTOX® &amp; Dermal Filler Certification</span>
+                            </div>
+                        </div>
+
+                        <div class="snapshot-divider"></div>
+
+                        <!-- Date -->
+                        <div class="snapshot-row">
+                            <div class="snapshot-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="snapshot-label">Class Date</span>
+                                <span class="snapshot-value">April 10, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="snapshot-divider"></div>
+
+                        <!-- Contact -->
+                        <div class="snapshot-row">
+                            <div class="snapshot-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="snapshot-label">Email on File</span>
+                                <span class="snapshot-value">s.mitchell@cityclinic.com</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Expiry Notice -->
+                <div class="expiry-notice">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                    </svg>
+                    <span class="expiry-text">This confirmation link is valid for <strong>48 hours</strong> and will
+                        expire on <strong>March 13, 2026 at 11:59 PM EST.</strong></span>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="cta-wrapper">
+                    <a href="#" class="cta-btn">Confirm &amp; View Full Application</a>
+                    <p class="cta-sub">You'll be taken to your application page on nyfafacademy.com</p>
+                </div>
+
+                <!-- Plain Text Fallback -->
+                <div class="fallback-link-block">
+                    <div class="fallback-link-label">Button not working? Copy this link</div>
+                    <a class="fallback-link"
+                        href="#">https://nyfafacademy.com/confirm?token=a8f3d2c1e9b74f56a02d1c3e8f9b0a12</a>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Not you notice -->
+                <p class="not-you-notice">
+                    Didn't apply for this program? You can safely ignore this email — no account will be created.<br />
+                    If you believe this was sent in error, please <a href="#">contact our support team.</a>
+                </p>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer">
+                <span class="footer-brand">NYFAF Academy</span>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Unsubscribe</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Below Card -->
+        <div class="below-card">
+            <p>
+                © 2026 New York Facial Aesthetics Forum Academy. All rights reserved.<br />
+                123 Madison Avenue, New York, NY 10001 &nbsp;·&nbsp; <a href="#">support@nyfafacademy.com</a>
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

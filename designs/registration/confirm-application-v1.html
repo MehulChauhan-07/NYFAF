@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d49735",
+                        "bg-warm": "#f0ece4",
+                        "bg-card": "#ffffff",
+                        "ink": "#1a1208",
+                        "ink-muted": "#5a4f3f",
+                    },
+                    fontFamily: {
+                        display: ["Cormorant Garamond", "serif"],
+                        body: ["DM Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Field transitions */
+        .field-value {
+            transition: all 0.2s ease;
+        }
+
+        .field-input {
+            display: none;
+            width: 100%;
+            background: #faf8f4;
+            border: 1.5px solid rgba(212, 151, 53, 0.4);
+            border-radius: 8px;
+            padding: 9px 14px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            color: #1a1208;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .field-input:focus {
+            border-color: #d49735;
+            box-shadow: 0 0 0 3px rgba(212, 151, 53, 0.1);
+        }
+
+        .field-input select {
+            cursor: pointer;
+        }
+
+        /* Edit mode */
+        body.edit-mode .field-value {
+            display: none !important;
+        }
+
+        body.edit-mode .field-input {
+            display: block;
+        }
+
+        body.edit-mode .locked-field .field-input {
+            display: none;
+        }
+
+        body.edit-mode .locked-field .field-value {
+            display: block !important;
+        }
+
+        /* Locked badge */
+        .locked-badge {
+            display: none;
+            font-size: 10px;
+            font-weight: 700;
+            color: #a08050;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(212, 151, 53, 0.08);
+            border: 1px solid rgba(212, 151, 53, 0.15);
+            border-radius: 4px;
+            padding: 2px 7px;
+        }
+
+        body.edit-mode .locked-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Section divider */
+        .section-rule {
+            height: 1px;
+            background: linear-gradient(to right, rgba(212, 151, 53, 0.15), transparent);
+        }
+
+        /* Verification badge animation */
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .verify-badge {
+            animation: popIn 0.5s ease forwards;
+        }
+
+        /* Save button pulse */
+        @keyframes savePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(212, 151, 53, 0.35);
+            }
+
+            50% {
+                box-shadow: 0 6px 36px rgba(212, 151, 53, 0.6);
+            }
+        }
+
+        .save-pulse {
+            animation: savePulse 2s ease infinite;
+        }
+
+        /* Fade in page */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        .fade-up-2 {
+            animation: fadeUp 0.5s ease 0.1s both;
+        }
+
+        .fade-up-3 {
+            animation: fadeUp 0.5s ease 0.2s both;
+        }
+
+        .fade-up-4 {
+            animation: fadeUp 0.5s ease 0.3s both;
+        }
+
+        /* Toast */
+        #toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #1a1208;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 9999;
+            white-space: nowrap;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-[#f0ece4] min-h-screen py-10 px-4 antialiased">
+
+    <!-- Toast -->
+    <div id="toast">
+        <span class="material-symbols-outlined text-primary text-base" style="color:#d49735;">check_circle</span>
+        <span id="toast-msg">Changes saved successfully.</span>
+    </div>
+
+    <!-- Page wrapper -->
+    <div class="max-w-[720px] mx-auto">
+
+        <!-- Brand Bar -->
+        <div class="flex items-center gap-3 mb-8 fade-up">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#d49735;">
+                <span class="material-symbols-outlined text-white text-lg">medical_services</span>
+            </div>
+            <div>
+                <p class="font-display text-[18px] font-bold leading-tight text-[#1a1208]">NYFAF Academy</p>
+                <p class="text-[9px] font-semibold uppercase tracking-[0.18em]" style="color:#d49735;">Medical
+                    Aesthetics Training</p>
+            </div>
+        </div>
+
+        <!-- ── VERIFICATION SUCCESS BANNER ── -->
+        <div class="rounded-2xl overflow-hidden mb-6 fade-up-2"
+            style="background: linear-gradient(135deg, #201b12 0%, #2e2210 60%, #3a2c14 100%); box-shadow: 0 4px 32px rgba(180,130,40,0.15);">
+            <div class="px-8 py-7 flex items-center gap-5">
+                <div class="verify-badge w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+                    style="background: rgba(212,151,53,0.15);">
+                    <span class="material-symbols-outlined text-3xl"
+                        style="color:#d49735; font-variation-settings:'FILL' 1;">verified</span>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.2em] mb-1" style="color:#d49735;">Email
+                        Verified</p>
+                    <h1 class="font-display text-2xl font-semibold text-white leading-tight">Application Confirmed, Dr.
+                        Mitchell</h1>
+                    <p class="text-sm mt-1 font-light" style="color: rgba(255,255,255,0.5);">Please review your details
+                        below and proceed to payment to secure your spot.</p>
+                </div>
+            </div>
+            <!-- Spot warning strip -->
+            <div class="px-8 py-3 flex items-center gap-2 border-t"
+                style="background: rgba(212,151,53,0.07); border-color: rgba(212,151,53,0.12);">
+                <span class="material-symbols-outlined text-sm" style="color:#d49735;">schedule</span>
+                <p class="text-xs font-medium" style="color: rgba(255,255,255,0.55);">Your spot is <strong
+                        style="color:#d49735;">not reserved</strong> until payment is completed. Limited seats
+                    available.</p>
+            </div>
+        </div>
+
+        <!-- ── APPLICATION SUMMARY CARD ── -->
+        <div class="bg-white rounded-2xl overflow-hidden mb-5 fade-up-3"
+            style="box-shadow: 0 2px 24px rgba(180,130,40,0.07), 0 1px 4px rgba(0,0,0,0.05);">
+
+            <!-- Card Top Bar -->
+            <div class="flex items-center justify-between px-7 py-5 border-b"
+                style="border-color: rgba(212,151,53,0.08);">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base" style="color:#d49735;">assignment</span>
+                    <span class="text-xs font-bold uppercase tracking-[0.15em] text-[#1a1208]">Application
+                        Summary</span>
+                </div>
+                <!-- Edit / Save / Cancel buttons -->
+                <div class="flex items-center gap-2">
+                    <button id="btn-edit" onclick="enterEditMode()"
+                        class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all"
+                        style="background: rgba(212,151,53,0.08); color: #c07820; border: 1px solid rgba(212,151,53,0.2);">
+                        <span class="material-symbols-outlined text-sm">edit</span>
+                        Edit Details
+                    </button>
+                    <button id="btn-save" onclick="saveChanges()"
+                        class="hidden items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white save-pulse"
+                        style="background: linear-gradient(135deg, #d49735, #c07820);">
+                        <span class="material-symbols-outlined text-sm">save</span>
+                        Save Changes
+                    </button>
+                    <button id="btn-cancel" onclick="cancelEdit()"
+                        class="hidden items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all"
+                        style="background: #f5f2ec; color: #9a8060; border: 1px solid #e8e0d0;">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+
+            <!-- Edit mode notice -->
+            <div id="edit-notice" class="hidden px-7 py-3 flex items-center gap-2 text-xs font-medium"
+                style="background: rgba(212,151,53,0.05); border-bottom: 1px solid rgba(212,151,53,0.08); color: #9a6820;">
+                <span class="material-symbols-outlined text-sm">info</span>
+                Program and class date are locked. All other fields are editable.
+            </div>
+
+            <div class="px-7 py-6 space-y-0">
+
+                <!-- ── SECTION: PROGRAM ── -->
+                <div class="mb-1">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] mb-4" style="color: #d49735;">Program
+                        Details</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+                        <!-- Program (LOCKED) -->
+                        <div class="locked-field">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.12em]"
+                                    style="color: #a08868;">Selected Program</span>
+                                <span class="locked-badge">
+                                    <span class="material-symbols-outlined text-[10px]">lock</span>
+                                    Locked
+                                </span>
+                            </div>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">Basic BOTOX® &amp; Dermal Filler
+                                Certification</p>
+                            <input class="field-input" type="text" value="Basic BOTOX® & Dermal Filler Certification"
+                                disabled />
+                        </div>
+
+                        <!-- Class Date (LOCKED) -->
+                        <div class="locked-field">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.12em]"
+                                    style="color: #a08868;">Class Date</span>
+                                <span class="locked-badge">
+                                    <span class="material-symbols-outlined text-[10px]">lock</span>
+                                    Locked
+                                </span>
+                            </div>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">April 10, 2026</p>
+                            <input class="field-input" type="text" value="April 10, 2026" disabled />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-rule mb-6"></div>
+
+                <!-- ── SECTION: PERSONAL ── -->
+                <div class="mb-1">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] mb-4" style="color: #d49735;">Personal
+                        Information</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Full Name</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">Dr. Sarah Mitchell</p>
+                            <input class="field-input" type="text" value="Dr. Sarah Mitchell" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Email Address</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">s.mitchell@cityclinic.com</p>
+                            <input class="field-input" type="email" value="s.mitchell@cityclinic.com" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Phone Number</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">+1 (917) 555-0192</p>
+                            <input class="field-input" type="tel" value="+1 (917) 555-0192" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Country of Residence</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">United States</p>
+                            <select class="field-input">
+                                <option>United States</option>
+                                <option>United Kingdom</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>India</option>
+                                <option>Germany</option>
+                                <option>United Arab Emirates</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-rule mb-6"></div>
+
+                <!-- ── SECTION: CREDENTIALS ── -->
+                <div class="mb-1">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] mb-4" style="color: #d49735;">
+                        Professional Credentials</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Professional Category</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">Physician (MD / DO)</p>
+                            <select class="field-input">
+                                <option selected>Physician (MD / DO)</option>
+                                <option>Dentist (DDS / DMD)</option>
+                                <option>Nurse Practitioner (NP)</option>
+                                <option>Physician Assistant (PA)</option>
+                                <option>Registered Nurse (RN)</option>
+                                <option>Other Licensed Medical Professional</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Degree / Qualification</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">MD</p>
+                            <input class="field-input" type="text" value="MD" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">License Number</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">NY-MD-2018-44821</p>
+                            <input class="field-input" type="text" value="NY-MD-2018-44821" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Years of Practice</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">5 – 10 years</p>
+                            <select class="field-input">
+                                <option>Less than 1 year</option>
+                                <option>1 – 3 years</option>
+                                <option>3 – 5 years</option>
+                                <option selected>5 – 10 years</option>
+                                <option>10+ years</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">Clinic / Practice</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">City Aesthetics Clinic</p>
+                            <input class="field-input" type="text" value="City Aesthetics Clinic" />
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                                style="color: #a08868;">City &amp; State</span>
+                            <p class="field-value text-sm font-medium text-[#1a1208]">New York, NY</p>
+                            <input class="field-input" type="text" value="New York, NY" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-rule mb-6"></div>
+
+                <!-- ── SECTION: STATEMENT ── -->
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] mb-4" style="color: #d49735;">
+                        Application Statement</p>
+                    <div>
+                        <span class="text-[10px] font-semibold uppercase tracking-[0.12em] block mb-1.5"
+                            style="color: #a08868;">Why I Want to Join</span>
+                        <p class="field-value text-sm leading-relaxed text-[#1a1208]" style="color:#5a4f3f;">I am
+                            looking to expand my practice into aesthetic medicine and provide my patients with
+                            non-surgical rejuvenation options. This certification will help me build a strong
+                            foundation.</p>
+                        <textarea class="field-input resize-none" rows="4"
+                            maxlength="300">I am looking to expand my practice into aesthetic medicine and provide my patients with non-surgical rejuvenation options. This certification will help me build a strong foundation.</textarea>
+                    </div>
+                </div>
+
+            </div><!-- /card body -->
+
+            <!-- Card Bottom Action -->
+            <div class="px-7 py-5 flex items-center justify-between flex-wrap gap-4 border-t"
+                style="border-color: rgba(212,151,53,0.08); background: #faf8f4;">
+                <div class="flex items-center gap-2 text-xs" style="color: #a08868;">
+                    <span class="material-symbols-outlined text-sm" style="color:#d49735;">lock</span>
+                    <span>Application ID: <strong style="color:#1a1208;">NYF-2026-03-8821</strong></span>
+                </div>
+                <div class="flex items-center gap-2 text-xs" style="color: #a08868;">
+                    <span class="material-symbols-outlined text-sm"
+                        style="color:#22c55e; font-variation-settings:'FILL' 1;">verified_user</span>
+                    <span style="color: #15803d; font-weight: 600;">Email Verified</span>
+                </div>
+            </div>
+
+        </div><!-- /card -->
+
+        <!-- ── PROCEED TO PAYMENT CTA ── -->
+        <div class="fade-up-4">
+            <div class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-5"
+                style="box-shadow: 0 2px 24px rgba(180,130,40,0.07);">
+
+                <!-- Price summary -->
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                        style="background: rgba(212,151,53,0.1);">
+                        <span class="material-symbols-outlined" style="color:#d49735;">payments</span>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em]" style="color:#a08868;">Program Fee
+                        </p>
+                        <p class="font-display text-2xl font-bold text-[#1a1208] leading-tight">$1,200 <span
+                                class="text-sm font-body font-normal" style="color:#a08868;">USD</span></p>
+                        <p class="text-xs mt-0.5" style="color:#a08868;">Basic BOTOX® &amp; Dermal Filler Certification
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <button onclick="proceedToPayment()"
+                    class="flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold text-sm tracking-wide transition-all hover:brightness-110 active:scale-95 shrink-0"
+                    style="background: linear-gradient(135deg, #d49735 0%, #c07820 100%); box-shadow: 0 6px 24px rgba(212,151,53,0.4);">
+                    Confirm &amp; Proceed to Payment
+                    <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </button>
+
+            </div>
+
+            <!-- Reassurance row -->
+            <div class="flex flex-wrap items-center justify-center gap-5 mt-4 text-[11px]" style="color: #a08868;">
+                <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm" style="color:#d49735;">lock</span>
+                    256-bit Encrypted Payment
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm" style="color:#d49735;">verified</span>
+                    Verified Application
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm" style="color:#d49735;">support_agent</span>
+                    Support Available
+                </span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] px-1"
+            style="color: #b0a090;">
+            <span>© 2026 NYFAF Academy. All rights reserved.</span>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-[#d49735] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#d49735] transition-colors">Terms</a>
+                <a href="#" class="hover:text-[#d49735] transition-colors">Contact Support</a>
+            </div>
+        </div>
+
+    </div><!-- /wrapper -->
+
+    <script>
+        function enterEditMode() {
+            document.body.classList.add('edit-mode');
+            document.getElementById('btn-edit').classList.add('hidden');
+            document.getElementById('btn-save').classList.remove('hidden');
+            document.getElementById('btn-save').classList.add('flex');
+            document.getElementById('btn-cancel').classList.remove('hidden');
+            document.getElementById('btn-cancel').classList.add('flex');
+            document.getElementById('edit-notice').classList.remove('hidden');
+            document.getElementById('edit-notice').classList.add('flex');
+        }
+
+        function cancelEdit() {
+            document.body.classList.remove('edit-mode');
+            document.getElementById('btn-edit').classList.remove('hidden');
+            document.getElementById('btn-save').classList.add('hidden');
+            document.getElementById('btn-save').classList.remove('flex');
+            document.getElementById('btn-cancel').classList.add('hidden');
+            document.getElementById('btn-cancel').classList.remove('flex');
+            document.getElementById('edit-notice').classList.add('hidden');
+            document.getElementById('edit-notice').classList.remove('flex');
+        }
+
+        function saveChanges() {
+            // Sync input values back to display values
+            document.querySelectorAll('.field-input:not([disabled])').forEach(input => {
+                const valueEl = input.closest('div').querySelector('.field-value');
+                if (valueEl) {
+                    valueEl.textContent = input.tagName === 'SELECT'
+                        ? input.options[input.selectedIndex].text
+                        : input.value;
+                }
+            });
+
+            cancelEdit();
+            showToast('Changes saved successfully.');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function proceedToPayment() {
+            showToast('Redirecting to payment...');
+            // In real implementation: window.location.href = '/payment?id=NYF-2026-03-8821';
+        }
+    </script>
+</body>
+
+</html>
