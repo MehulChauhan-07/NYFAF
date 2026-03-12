@@ -11,22 +11,21 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap"
         rel="stylesheet" />
     <style>
-        /* ── TOKENS ── */
         :root {
             --bg: #f5f2ee;
-            --bg-card: #fff;
+            --bg-card: #ffffff;
             --ink: #1a1612;
             --ink-2: #5a524a;
             --ink-3: #9c9188;
             --accent: #c8522a;
-            --accent-l: #f5ede8;
+            --accent-light: #f5ede8;
             --border: #e8e2da;
-            --border-s: #d4ccc0;
+            --border-strong: #d4ccc0;
             --shadow-sm: 0 1px 3px rgba(26, 22, 18, .06), 0 1px 2px rgba(26, 22, 18, .04);
             --shadow-lg: 0 20px 40px rgba(26, 22, 18, .12), 0 8px 16px rgba(26, 22, 18, .06);
             --r: 14px;
             --r-sm: 8px;
-            --rp: 100px;
+            --r-pill: 100px;
         }
 
         *,
@@ -44,12 +43,12 @@
             min-height: 100vh
         }
 
-        /* ── TOPBAR ── */
+        /* TOPBAR */
         .topbar {
             position: sticky;
             top: 0;
             z-index: 200;
-            background: rgba(245, 242, 238, .92);
+            background: rgba(245, 242, 238, .9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border)
         }
@@ -69,8 +68,7 @@
             font-family: 'DM Serif Display', serif;
             font-size: 1.5rem;
             color: var(--ink);
-            text-decoration: none;
-            flex-shrink: 0
+            text-decoration: none
         }
 
         .logo span {
@@ -98,7 +96,7 @@
             width: 100%;
             background: var(--bg-card);
             border: 1.5px solid var(--border);
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             padding: .6rem 1rem .6rem 2.5rem;
             color: var(--ink);
             font-family: 'DM Sans', sans-serif;
@@ -124,87 +122,45 @@
         }
 
         .count-pill {
-            background: var(--accent-l);
+            background: var(--accent-light);
             color: var(--accent);
             border: 1px solid rgba(200, 82, 42, .2);
             padding: .35rem .875rem;
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             font-size: .8rem;
             font-weight: 500;
             white-space: nowrap
         }
 
-        /* Admin button (shown when config.json loaded) */
-        .btn-admin {
+        .btn-add-top {
             display: flex;
             align-items: center;
             gap: .4rem;
             background: var(--accent);
             color: #fff;
             border: none;
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             padding: .5rem 1.1rem;
             font-family: 'DM Sans', sans-serif;
             font-size: .85rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background .2s;
+            transition: background .2s, box-shadow .2s;
             box-shadow: 0 2px 8px rgba(200, 82, 42, .3)
         }
 
-        .btn-admin:hover {
+        .btn-add-top:hover {
             background: #b04520
         }
 
-        /* Contact chip (shown when no config.json = visitor) */
-        .btn-contact {
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            background: var(--bg-card);
-            color: var(--ink-3);
-            border: 1.5px solid var(--border);
-            border-radius: var(--rp);
-            padding: .42rem 1rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: .8rem;
-            font-weight: 400;
-            cursor: default;
-            white-space: nowrap;
-            user-select: none
-        }
-
-        .btn-contact strong {
-            color: var(--ink-2);
-            font-weight: 600
-        }
-
-        .btn-contact a {
-            color: var(--accent);
-            font-weight: 600;
-            text-decoration: none
-        }
-
-        .btn-contact a:hover {
-            text-decoration: underline
-        }
-
-        .btn-contact .dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #e8e2da;
-            flex-shrink: 0
-        }
-
-        /* ── PAGE WRAP ── */
+        /* PAGE */
         .page-wrap {
             max-width: 1320px;
             margin: 0 auto;
             padding: 0 2rem
         }
 
-        /* ── HERO ── */
+        /* HERO */
         .hero {
             padding: 4.5rem 0 3rem;
             animation: fadeUp .7s ease-out both
@@ -214,10 +170,10 @@
             display: inline-flex;
             align-items: center;
             gap: .5rem;
-            background: var(--accent-l);
+            background: var(--accent-light);
             color: var(--accent);
             border: 1px solid rgba(200, 82, 42, .2);
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             padding: .35rem .875rem;
             font-size: .8rem;
             font-weight: 600;
@@ -257,7 +213,7 @@
             line-height: 1.7
         }
 
-        /* ── FILTER PILLS ── */
+        /* FILTERS */
         .filter-section {
             padding-bottom: 2.5rem;
             animation: fadeUp .7s .1s ease-out both
@@ -278,12 +234,12 @@
             gap: .5rem
         }
 
-        .fp {
+        .filter-pill {
             display: inline-flex;
             align-items: center;
             gap: .4rem;
             padding: .42rem 1rem;
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             font-size: .83rem;
             font-weight: 500;
             cursor: pointer;
@@ -294,19 +250,19 @@
             user-select: none
         }
 
-        .fp:hover {
+        .filter-pill:hover {
             border-color: var(--accent);
             color: var(--accent);
-            background: var(--accent-l)
+            background: var(--accent-light)
         }
 
-        .fp.active {
+        .filter-pill.active {
             background: var(--accent);
             border-color: var(--accent);
             color: #fff
         }
 
-        .fp-n {
+        .pill-count {
             background: rgba(255, 255, 255, .25);
             font-size: .7rem;
             font-weight: 700;
@@ -314,12 +270,12 @@
             border-radius: 100px
         }
 
-        .fp:not(.active) .fp-n {
+        .filter-pill:not(.active) .pill-count {
             background: var(--bg);
             color: var(--ink-3)
         }
 
-        /* ── GRID ── */
+        /* GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
@@ -328,12 +284,13 @@
             animation: fadeUp .7s .2s ease-out both
         }
 
-        /* ── CARD ── */
+        /* CARD */
         .card {
             background: var(--bg-card);
             border: 1.5px solid var(--border);
             border-radius: var(--r);
             overflow: hidden;
+            text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
@@ -345,7 +302,7 @@
         .card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--border-s)
+            border-color: var(--border-strong)
         }
 
         .card.is-custom {
@@ -366,10 +323,10 @@
             letter-spacing: .07em;
             text-transform: uppercase;
             padding: .18rem .5rem;
-            border-radius: var(--rp)
+            border-radius: var(--r-pill)
         }
 
-        .prev-wrap {
+        .preview-container {
             width: 100%;
             aspect-ratio: 16/9;
             overflow: hidden;
@@ -379,7 +336,7 @@
             flex-shrink: 0
         }
 
-        .prev-iframe {
+        .preview-iframe {
             width: 300%;
             height: 300%;
             position: absolute;
@@ -392,57 +349,54 @@
             background: #fff
         }
 
-        .prev-overlay {
+        .preview-overlay {
             position: absolute;
             inset: 0;
             background: rgba(26, 22, 18, 0);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: .5rem;
-            flex-wrap: wrap;
-            padding: .5rem;
+            gap: .6rem;
             transition: background .25s
         }
 
-        .card:hover .prev-overlay {
+        .card:hover .preview-overlay {
             background: rgba(26, 22, 18, .38)
         }
 
-        .ov-btn {
+        .overlay-btn {
             opacity: 0;
             transform: scale(.85) translateY(6px);
             background: #fff;
             color: var(--ink);
             border: none;
-            border-radius: var(--rp);
-            padding: .5rem 1rem;
+            border-radius: var(--r-pill);
+            padding: .55rem 1.1rem;
             font-family: 'DM Sans', sans-serif;
-            font-size: .8rem;
+            font-size: .82rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: .35rem;
+            gap: .4rem;
             cursor: pointer;
             transition: opacity .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
             box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
-            text-decoration: none;
-            white-space: nowrap
+            text-decoration: none
         }
 
-        .card:hover .ov-btn {
+        .card:hover .overlay-btn {
             opacity: 1;
             transform: scale(1) translateY(0)
         }
 
-        .ov-btn.code {
-            background: #1a1612;
-            color: #fff
-        }
-
-        .ov-btn.del {
+        .overlay-btn.danger {
             background: #fee2e2;
             color: #dc2626
+        }
+
+        .overlay-btn.code {
+            background: #1a1612;
+            color: #fff
         }
 
         .card-body {
@@ -474,7 +428,7 @@
             letter-spacing: .05em;
             text-transform: uppercase;
             padding: .22rem .6rem;
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             border: 1px solid
         }
 
@@ -486,7 +440,7 @@
             margin-bottom: 1.1rem
         }
 
-        .card-foot {
+        .card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between
@@ -527,7 +481,6 @@
             transform: rotate(-45deg)
         }
 
-        /* badge colours */
         .b-reg {
             background: #edf2ff;
             color: #3b5bdb;
@@ -553,7 +506,7 @@
         }
 
         .b-comp {
-            background: var(--accent-l);
+            background: var(--accent-light);
             color: var(--accent);
             border-color: rgba(200, 82, 42, .25)
         }
@@ -570,7 +523,7 @@
             border-color: var(--border)
         }
 
-        /* ── STATES ── */
+        /* EMPTY */
         .empty {
             grid-column: 1/-1;
             text-align: center;
@@ -581,7 +534,7 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: var(--accent-l);
+            background: var(--accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -599,26 +552,7 @@
             font-size: .9rem
         }
 
-        .loading-state {
-            grid-column: 1/-1;
-            text-align: center;
-            padding: 5rem 2rem;
-            color: var(--ink-3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem
-        }
-
-        .loading-ring {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin .8s linear infinite
-        }
-
+        /* SECTION DIVIDER */
         .section-divider {
             display: flex;
             align-items: center;
@@ -644,12 +578,12 @@
             background: var(--border)
         }
 
-        /* ── PIN MODAL ── */
-        .m-overlay {
+        /* MODAL */
+        .modal-overlay {
             position: fixed;
             inset: 0;
-            z-index: 600;
-            background: rgba(26, 22, 18, .6);
+            z-index: 500;
+            background: rgba(26, 22, 18, .55);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
@@ -660,126 +594,12 @@
             transition: opacity .25s
         }
 
-        .m-overlay.open {
+        .modal-overlay.open {
             opacity: 1;
             pointer-events: all
         }
 
-        .pin-box {
-            background: var(--bg-card);
-            border: 1.5px solid var(--border);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 360px;
-            box-shadow: var(--shadow-lg);
-            padding: 2rem;
-            transform: translateY(20px) scale(.97);
-            transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
-            text-align: center
-        }
-
-        .m-overlay.open .pin-box {
-            transform: translateY(0) scale(1)
-        }
-
-        .pin-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--accent-l);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem
-        }
-
-        .pin-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem;
-            margin-bottom: .3rem
-        }
-
-        .pin-sub {
-            font-size: .83rem;
-            color: var(--ink-3);
-            margin-bottom: 1.5rem;
-            font-weight: 300
-        }
-
-        .pin-input {
-            width: 100%;
-            background: var(--bg);
-            border: 1.5px solid var(--border);
-            border-radius: var(--r-sm);
-            padding: .75rem 1rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: .25em;
-            text-align: center;
-            outline: none;
-            transition: border-color .2s, box-shadow .2s;
-            margin-bottom: .75rem
-        }
-
-        .pin-input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(200, 82, 42, .1)
-        }
-
-        .pin-err {
-            display: none;
-            font-size: .82rem;
-            color: #dc2626;
-            background: #fee2e2;
-            border: 1px solid #fca5a5;
-            border-radius: var(--r-sm);
-            padding: .5rem .75rem;
-            margin-bottom: .75rem
-        }
-
-        .pin-row {
-            display: flex;
-            gap: .75rem
-        }
-
-        .pin-cancel {
-            flex: 1;
-            background: transparent;
-            border: 1.5px solid var(--border);
-            color: var(--ink-2);
-            border-radius: var(--rp);
-            padding: .65rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: .88rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all .2s
-        }
-
-        .pin-cancel:hover {
-            background: var(--bg)
-        }
-
-        .pin-submit {
-            flex: 2;
-            background: var(--accent);
-            border: none;
-            color: #fff;
-            border-radius: var(--rp);
-            padding: .65rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: .88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background .2s
-        }
-
-        .pin-submit:hover {
-            background: #b04520
-        }
-
-        /* ── ADD DESIGN MODAL ── */
-        .add-modal {
+        .modal {
             background: var(--bg-card);
             border: 1.5px solid var(--border);
             border-radius: 20px;
@@ -791,11 +611,11 @@
             overflow: hidden
         }
 
-        .m-overlay.open .add-modal {
+        .modal-overlay.open .modal {
             transform: translateY(0) scale(1)
         }
 
-        .m-head {
+        .modal-head {
             padding: 1.75rem 2rem 1.1rem;
             border-bottom: 1px solid var(--border);
             display: flex;
@@ -804,17 +624,17 @@
             gap: 1rem
         }
 
-        .m-title {
+        .modal-title {
             font-family: 'DM Serif Display', serif;
             font-size: 1.6rem
         }
 
-        .m-title em {
+        .modal-title em {
             font-style: italic;
             color: var(--accent)
         }
 
-        .m-sub {
+        .modal-sub {
             font-size: .82rem;
             color: var(--ink-3);
             margin-top: .3rem;
@@ -822,12 +642,12 @@
             line-height: 1.5
         }
 
-        .m-sub strong {
+        .modal-sub strong {
             color: var(--accent);
             font-weight: 600
         }
 
-        .btn-x {
+        .btn-close {
             width: 34px;
             height: 34px;
             border-radius: 50%;
@@ -842,11 +662,11 @@
             flex-shrink: 0
         }
 
-        .btn-x:hover {
+        .btn-close:hover {
             background: var(--bg)
         }
 
-        .m-body {
+        .modal-body {
             padding: 1.5rem 2rem;
             display: flex;
             flex-direction: column;
@@ -890,7 +710,7 @@
 
         .field textarea {
             resize: vertical;
-            min-height: 72px
+            min-height: 75px
         }
 
         .field select {
@@ -902,13 +722,13 @@
             padding-right: 2.5rem
         }
 
-        .row2 {
+        .row-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem
         }
 
-        .m-foot {
+        .modal-foot {
             padding: 1rem 2rem 1.5rem;
             border-top: 1px solid var(--border);
             display: flex;
@@ -920,7 +740,7 @@
             background: transparent;
             border: 1.5px solid var(--border);
             color: var(--ink-2);
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             padding: .6rem 1.25rem;
             font-family: 'DM Sans', sans-serif;
             font-size: .88rem;
@@ -937,7 +757,7 @@
             background: var(--accent);
             border: none;
             color: #fff;
-            border-radius: var(--rp);
+            border-radius: var(--r-pill);
             padding: .6rem 1.5rem;
             font-family: 'DM Sans', sans-serif;
             font-size: .88rem;
@@ -968,15 +788,37 @@
             display: none
         }
 
-        .btn-save.loading .spinner {
+        .loading .spinner {
             display: block
         }
 
-        .btn-save.loading .save-lbl {
+        .loading .save-lbl {
             display: none
         }
 
-        /* ── TOAST ── */
+        /* LOADING STATE */
+        .loading-state {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--ink-3);
+            font-size: .95rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .loading-ring {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin .8s linear infinite
+        }
+
+        /* TOAST */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -1002,15 +844,46 @@
             transform: translateY(0)
         }
 
-        .toast.ok {
+        .toast.success {
             background: #166534
         }
 
-        .toast.err {
+        .toast.error {
             background: #991b1b
         }
 
-        /* ── FOOTER ── */
+        /* REPO WARNING BANNER */
+        .repo-warn {
+            display: none;
+            align-items: center;
+            gap: .75rem;
+            background: #fff9db;
+            border: 1.5px solid #f59f00;
+            border-radius: var(--r-sm);
+            padding: .75rem 1.1rem;
+            margin-bottom: 2rem;
+            font-size: .85rem;
+            color: #7d5a00
+        }
+
+        .repo-warn.visible {
+            display: flex
+        }
+
+        .repo-warn strong {
+            font-weight: 700
+        }
+
+        .repo-warn code {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 4px;
+            padding: .1rem .4rem;
+            font-family: monospace;
+            font-size: .8rem
+        }
+
+        /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
             padding: 2rem 0;
@@ -1022,10 +895,6 @@
         footer a {
             color: var(--accent);
             text-decoration: none
-        }
-
-        footer a:hover {
-            text-decoration: underline
         }
 
         @keyframes fadeUp {
@@ -1046,7 +915,7 @@
             }
         }
 
-        .card-in {
+        .card-appear {
             animation: fadeUp .45s ease-out both
         }
 
@@ -1080,15 +949,27 @@
                 max-width: 100%
             }
 
-            .row2 {
+            .modal {
+                border-radius: 16px
+            }
+
+            .modal-head,
+            .modal-body,
+            .modal-foot {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem
+            }
+
+            .row-2 {
                 grid-template-columns: 1fr
             }
 
-            .m-head,
-            .m-body,
-            .m-foot {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem
+            .topbar-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding-top: .75rem;
+                padding-bottom: .75rem;
+                gap: .5rem
             }
         }
     </style>
@@ -1096,11 +977,10 @@
 
 <body>
 
-    <!-- ══ TOPBAR ══════════════════════════════════════════════════ -->
+    <!-- TOPBAR -->
     <header class="topbar">
         <div class="topbar-inner">
             <a href="#" class="logo">NYF<span>AF</span></a>
-
             <div class="search-wrap">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1108,22 +988,36 @@
                 </svg>
                 <input type="text" id="searchInput" class="search-input" placeholder="Search by name, category…" />
             </div>
-
             <div class="topbar-right">
                 <div class="count-pill" id="statsDisplay">Loading…</div>
-                <!-- Filled dynamically by renderTopbarAction() -->
-                <div id="topbarAction"></div>
+                <button class="btn-add-top" id="openModalBtn">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Add Design
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- ══ MAIN CONTENT ════════════════════════════════════════════ -->
     <div class="page-wrap">
         <section class="hero">
             <div class="hero-eyebrow">Design System</div>
             <h1>All <em>Designs,</em><br>One Place.</h1>
-            <p>Browse and preview every HTML design file for NYFAF — organised by category, searchable in seconds.</p>
+            <p>Browse, preview, and open every HTML design for NYFAF. Forgot to add a file? Hit <strong>Add
+                    Design</strong> — it goes live for everyone instantly.</p>
         </section>
+
+        <!-- REPO WARNING — shown only if REPO variable is not configured -->
+        <div class="repo-warn" id="repoWarn">
+            <svg width="18" height="18" fill="none" stroke="#d97706" viewBox="0 0 24 24" style="flex-shrink:0">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+            </svg>
+            <span><strong>View Code buttons are hidden.</strong> Open this file, set
+                <code>const REPO = "username/repo-name"</code> at the top of the &lt;script&gt;, push — every card gets
+                the correct GitHub link automatically.</span>
+        </div>
 
         <section class="filter-section">
             <div class="filter-label">Filter by category</div>
@@ -1145,49 +1039,28 @@
         </div>
     </footer>
 
-    <!-- ══ PIN MODAL (admin only) ══════════════════════════════════ -->
-    <div class="m-overlay" id="pinOverlay">
-        <div class="pin-box">
-            <div class="pin-icon">
-                <svg width="22" height="22" fill="none" stroke="#c8522a" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-            </div>
-            <div class="pin-title">Admin Access</div>
-            <div class="pin-sub">Enter your PIN to add a new design.</div>
-            <input type="password" id="pinInput" class="pin-input" placeholder="••••••••" maxlength="30"
-                autocomplete="off" />
-            <div class="pin-err" id="pinErr">Incorrect PIN. Please try again.</div>
-            <div class="pin-row">
-                <button class="pin-cancel" id="pinCancel">Cancel</button>
-                <button class="pin-submit" id="pinSubmit">Unlock</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══ ADD DESIGN MODAL (admin only) ══════════════════════════ -->
-    <div class="m-overlay" id="addOverlay">
-        <div class="add-modal">
-            <div class="m-head">
+    <!-- ADD DESIGN MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-head">
                 <div>
-                    <div class="m-title">Add <em>Design</em></div>
-                    <div class="m-sub">Saved to <strong>GitHub Gist</strong> — visible to every visitor instantly. No
-                        push needed.</div>
+                    <div class="modal-title">Add <em>Design</em></div>
+                    <div class="modal-sub">Saved to <strong>shared cloud storage</strong> — visible to every visitor
+                        immediately. No push needed.</div>
                 </div>
-                <button class="btn-x" id="closeAddBtn" aria-label="Close">
+                <button class="btn-close" id="closeModalBtn" aria-label="Close">
                     <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <div class="m-body">
+            <div class="modal-body">
                 <div class="field">
                     <label>File URL / Path *</label>
                     <input type="text" id="f-url" placeholder="designs/my-new-page-v1.html" />
                 </div>
-                <div class="row2">
+                <div class="row-2">
                     <div class="field">
                         <label>Page Title *</label>
                         <input type="text" id="f-title" placeholder="My Page v1" />
@@ -1211,8 +1084,8 @@
                 </div>
                 <div class="field">
                     <label>Badge Label <span
-                            style="color:var(--ink-3);font-weight:400;text-transform:none;letter-spacing:0;font-size:.72rem">(optional
-                            — defaults to category)</span></label>
+                            style="color:var(--ink-3);font-weight:400;text-transform:none;letter-spacing:0">(leave blank
+                            to use category)</span></label>
                     <input type="text" id="f-badge" placeholder="e.g. Landing, v3, Final…" />
                 </div>
                 <div class="field">
@@ -1220,8 +1093,8 @@
                     <textarea id="f-desc" placeholder="One sentence about what this page does…"></textarea>
                 </div>
             </div>
-            <div class="m-foot">
-                <button class="btn-cancel" id="closeAddBtn2">Cancel</button>
+            <div class="modal-foot">
+                <button class="btn-cancel" id="closeModalBtn2">Cancel</button>
                 <button class="btn-save" id="saveBtn">
                     <div class="spinner"></div>
                     <span class="save-lbl">Save &amp; Publish Live</span>
@@ -1232,26 +1105,27 @@
 
     <div class="toast" id="toast"></div>
 
-    <!-- ══ SCRIPT ═════════════════════════════════════════════════ -->
     <script>
         /* ================================================================
-           CONFIG (non-secret — safe to push)
+           ✏️  CONFIG — SET THIS ONCE AFTER YOU PUSH TO GITHUB
+           ================================================================
+           Format:  "github-username/repository-name"
+           Example: "johnsmith/nyfaf-designs"
+        
+           This builds the "View Code" link on every card automatically:
+           → https://github.com/REPO/blob/BRANCH/designs/your-file.html
+        
+           After setting this, every existing + future card gets the
+           correct GitHub link with zero extra work.
            ================================================================ */
-        const REPO = "MehulChauhan-07/NYFAF";
-        const BRANCH = "main";
-        const GIST_ID = "8f1003d2da6843a181f687cd7ab9555c";
-        const GIST_FILE = "nyfaf-pages.json";
-        /* ================================================================
-           SECRET (loaded at runtime from local config.json — never pushed)
-           config.json must be in .gitignore!
-           ================================================================ */
-        let GIST_TOKEN = null;   // set by loadConfig()
-        let ADMIN_PIN = null;   // set by loadConfig()
+        const REPO = "MehulChauhan-07/NYFAF";  // ← your GitHub repo
+        const BRANCH = "main";                   // ← change to "master" if needed
+        /* ================================================================ */
 
-        /* ════════════════════════════════════════════════════════════════
-           BASE PAGES — hardcoded, always visible, cannot be deleted via UI
-           To add here: push a new object + deploy.
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── BASE PAGES ────────────────────────────────────────────────────────────
+           These are hardcoded. They always show. They cannot be deleted from the UI.
+           To add more here, just push a new object into this array and deploy.
+           ───────────────────────────────────────────────────────────────────────── */
         const BASE = [
             { url: "designs/header-footer-v1.html", title: "Header & Footer v1", category: "Component", badge: "Component", description: "Shared header and footer layout used across all pages." },
             { url: "designs/hero-v1.html", title: "Hero Section v1", category: "Component", badge: "Component", description: "Hero banner with headline, subtext, and CTA button." },
@@ -1290,102 +1164,36 @@
             "Who Can Apply": "b-crs", "Why We": "b-about", "Faculty": "b-reg"
         };
 
-        /* ── State ── */
+        const STORAGE_KEY = "nyfaf-custom-pages-v1";
+
         let customPages = [];
         let activeCategory = "All";
         let searchQuery = "";
         let isReady = false;
-        let pinUnlocked = false;
-        let isAdmin = false;   // true only when config.json loaded successfully
 
-        /* ════════════════════════════════════════════════════════════════
-           STEP 1 — Load config.json (local only, never on GitHub Pages)
-           Silent fail = visitor mode
-           ════════════════════════════════════════════════════════════════ */
-        async function loadConfig() {
-            try {
-                const res = await fetch("./config.json", { cache: "no-store" });
-                if (!res.ok) throw new Error("not found");
-                const cfg = await res.json();
-                GIST_TOKEN = cfg.gist_token || null;
-                ADMIN_PIN = cfg.admin_pin || null;
-                if (GIST_TOKEN && !GIST_TOKEN.includes("YOUR_NEW")) {
-                    isAdmin = true;  // real token loaded — this is the admin's machine
-                }
-            } catch {
-                // config.json missing = GitHub Pages / visitor — silent, expected
-                isAdmin = false;
-            }
-        }
-
-        /* ════════════════════════════════════════════════════════════════
-           STEP 2 — Render topbar action based on isAdmin
-           ════════════════════════════════════════════════════════════════ */
-        function renderTopbarAction() {
-            const el = document.getElementById("topbarAction");
-            if (isAdmin) {
-                el.innerHTML = `
-            <button class="btn-admin" id="openAddBtn">
-                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
-                </svg>
-                Add Design
-            </button>`;
-                document.getElementById("openAddBtn").addEventListener("click", openPinModal);
-            } else {
-                // Visitor — show contact chip instead
-                el.innerHTML = `
-            <div class="btn-contact">
-                <div class="dot"></div>
-                <span>Want to add a page? Contact <a href="https://github.com/MehulChauhan-07" target="_blank">@MehulChauhan-07</a></span>
-            </div>`;
-            }
-        }
-
-        /* ════════════════════════════════════════════════════════════════
-           GIST API — READ (no token needed, public gist)
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── STORAGE ──────────────────────────────────────────────── */
         async function loadCustom() {
             try {
-                const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
-                    headers: { "Accept": "application/vnd.github.v3+json" }
-                    // No Authorization header — public read, safe everywhere
-                });
-                if (!res.ok) throw new Error(`${res.status}`);
-                const data = await res.json();
-                customPages = JSON.parse(data.files[GIST_FILE]?.content || "[]");
-            } catch (e) {
-                console.warn("Could not load Gist entries:", e.message);
-                customPages = [];
-            }
+                const res = await window.storage.get(STORAGE_KEY, true);
+                customPages = res ? JSON.parse(res.value) : [];
+            } catch { customPages = []; }
         }
 
-        /* ════════════════════════════════════════════════════════════════
-           GIST API — WRITE (needs token = admin only)
-           ════════════════════════════════════════════════════════════════ */
         async function persistCustom() {
-            if (!GIST_TOKEN) throw new Error("No token — write not allowed");
-            const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
-                method: "PATCH",
-                headers: {
-                    "Authorization": `token ${GIST_TOKEN}`,
-                    "Accept": "application/vnd.github.v3+json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ files: { [GIST_FILE]: { content: JSON.stringify(customPages, null, 2) } } })
-            });
-            if (!res.ok) throw new Error(`Gist write failed: ${res.status}`);
+            await window.storage.set(STORAGE_KEY, JSON.stringify(customPages), true);
         }
 
-        /* ── GitHub browse URL ── */
-        const ghUrl = f => `https://github.com/${REPO}/blob/${BRANCH}/${f}`;
+        /* ─── GITHUB URL BUILDER ───────────────────────────────────── */
+        // Builds: https://github.com/USER/REPO/blob/BRANCH/path/to/file.html
+        function githubUrl(filePath) {
+            if (!REPO || REPO.includes("YOUR-USERNAME")) return null; // not configured yet
+            return `https://github.com/${REPO}/blob/${BRANCH}/${filePath}`;
+        }
 
-        /* ── Combined list ── */
+        /* ─── COMBINED LIST ────────────────────────────────────────── */
         const all = () => [...BASE, ...customPages.map(p => ({ ...p, _custom: true }))];
 
-        /* ════════════════════════════════════════════════════════════════
-           RENDER — filter pills
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── PILLS ────────────────────────────────────────────────── */
         function renderPills() {
             const el = document.getElementById("filterPills");
             const cats = ["All", ...new Set(all().map(p => p.category))];
@@ -1393,16 +1201,14 @@
             cats.forEach(cat => {
                 const n = cat === "All" ? all().length : all().filter(p => p.category === cat).length;
                 const btn = document.createElement("button");
-                btn.className = "fp" + (cat === activeCategory ? " active" : "");
-                btn.innerHTML = `${cat} <span class="fp-n">${n}</span>`;
+                btn.className = "filter-pill" + (cat === activeCategory ? " active" : "");
+                btn.innerHTML = `${cat} <span class="pill-count">${n}</span>`;
                 btn.onclick = () => { activeCategory = cat; renderPills(); renderGrid(); };
                 el.appendChild(btn);
             });
         }
 
-        /* ════════════════════════════════════════════════════════════════
-           RENDER — card grid
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── GRID ─────────────────────────────────────────────────── */
         function renderGrid() {
             const container = document.getElementById("gridContainer");
             const stats = document.getElementById("statsDisplay");
@@ -1414,13 +1220,14 @@
 
             const q = searchQuery.toLowerCase();
             const filtered = all().filter(p => {
-                const okCat = activeCategory === "All" || p.category === activeCategory;
-                const okQ = !q || [p.title, p.category, p.badge, p.description].join(" ").toLowerCase().includes(q);
-                return okCat && okQ;
+                const ok_cat = activeCategory === "All" || p.category === activeCategory;
+                const ok_q = !q || [p.title, p.category, p.badge, p.description].join(" ").toLowerCase().includes(q);
+                return ok_cat && ok_q;
             });
 
-            const cc = customPages.length;
-            stats.textContent = `${filtered.length} / ${all().length} pages${cc ? ` · ${cc} custom` : ""}`;
+            const cCount = customPages.length;
+            stats.textContent = `${filtered.length} / ${all().length} pages${cCount ? ` · ${cCount} custom` : ""}`;
+
             container.innerHTML = "";
 
             if (!filtered.length) {
@@ -1433,36 +1240,31 @@
                 return;
             }
 
-            const baseF = filtered.filter(p => !p._custom);
-            const customF = filtered.filter(p => p._custom);
+            const base_f = filtered.filter(p => !p._custom);
+            const custom_f = filtered.filter(p => p._custom);
 
             const mkCard = (p, i) => {
                 const cls = BADGE_CLS[p.category] || "b-def";
                 const card = document.createElement("div");
-                card.className = "card card-in" + (p._custom ? " is-custom" : "");
+                card.className = "card card-appear" + (p._custom ? " is-custom" : "");
                 card.style.animationDelay = `${i * 0.05}s`;
-
-                // Remove button only shown to admin
-                const removeBtn = (isAdmin && p._custom)
-                    ? `<button class="ov-btn del" onclick="removeCustom('${p.url.replace(/'/g, "\\'")}')">
-                <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                Remove
-               </button>`
-                    : "";
-
                 card.innerHTML = `
-            <div class="prev-wrap">
-                <iframe src="${p.url}" class="prev-iframe" scrolling="no" tabindex="-1" loading="lazy"></iframe>
-                <div class="prev-overlay">
-                    <a href="${p.url}" class="ov-btn" target="_blank">
+            <div class="preview-container">
+                <iframe src="${p.url}" class="preview-iframe" scrolling="no" tabindex="-1" loading="lazy"></iframe>
+                <div class="preview-overlay">
+                    <a href="${p.url}" class="overlay-btn" target="_blank">
                         <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                         Open Page
                     </a>
-                    <a href="${ghUrl(p.url)}" class="ov-btn code" target="_blank">
+                    ${githubUrl(p.url) ? `
+                    <a href="${githubUrl(p.url)}" class="overlay-btn code" target="_blank">
                         <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                         View Code
-                    </a>
-                    ${removeBtn}
+                    </a>` : ""}
+                    ${p._custom ? `<button class="overlay-btn danger" onclick="removeCustom('${p.url.replace(/'/g, "\\'")}')">
+                        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        Remove
+                    </button>` : ""}
                 </div>
             </div>
             <div class="card-body">
@@ -1471,7 +1273,7 @@
                     <span class="card-badge ${cls}">${p.badge || p.category}</span>
                 </div>
                 <p class="card-desc">${p.description || "No description."}</p>
-                <div class="card-foot">
+                <div class="card-footer">
                     <span class="card-path" title="${p.url}">${p.url}</span>
                     <a href="${p.url}" target="_blank" class="card-arrow">
                         <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1481,116 +1283,57 @@
                 container.appendChild(card);
             };
 
-            baseF.forEach((p, i) => mkCard(p, i));
+            base_f.forEach((p, i) => mkCard(p, i));
 
-            if (customF.length) {
+            if (custom_f.length) {
                 const sep = document.createElement("div");
                 sep.className = "section-divider";
-                sep.innerHTML = `<span>Custom Additions (${customF.length})</span>`;
+                sep.innerHTML = `<span>Custom Additions (${custom_f.length})</span>`;
                 container.appendChild(sep);
-                customF.forEach((p, i) => mkCard(p, baseF.length + i));
+                custom_f.forEach((p, i) => mkCard(p, base_f.length + i));
             }
         }
 
-        /* ════════════════════════════════════════════════════════════════
-           REMOVE (admin only)
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── REMOVE CUSTOM ────────────────────────────────────────── */
         window.removeCustom = async (url) => {
             if (!confirm(`Remove "${url}" from the index?\n\nThe actual file on GitHub is NOT deleted.`)) return;
-            const backup = [...customPages];
             customPages = customPages.filter(p => p.url !== url);
-            try {
-                await persistCustom();
-                toast("Entry removed.", "ok");
-                renderPills();
-                renderGrid();
-            } catch (e) {
-                customPages = backup;
-                toast("Remove failed — try again.", "err");
-            }
+            await persistCustom();
+            toast("Entry removed from index.", "success");
+            renderPills();
+            renderGrid();
         };
 
-        /* ════════════════════════════════════════════════════════════════
-           PIN MODAL
-           ════════════════════════════════════════════════════════════════ */
-        const pinOverlay = document.getElementById("pinOverlay");
-        const addOverlay = document.getElementById("addOverlay");
+        /* ─── MODAL ────────────────────────────────────────────────── */
+        const overlay = document.getElementById("modalOverlay");
+        const openBtn = document.getElementById("openModalBtn");
+        const saveBtn = document.getElementById("saveBtn");
 
-        function openPinModal() {
-            if (pinUnlocked) { openAddModal(); return; }
-            pinOverlay.classList.add("open");
-            setTimeout(() => document.getElementById("pinInput").focus(), 80);
-        }
+        const fields = () => ({
+            url: document.getElementById("f-url").value.trim(),
+            title: document.getElementById("f-title").value.trim(),
+            cat: document.getElementById("f-cat").value,
+            badge: document.getElementById("f-badge").value.trim(),
+            desc: document.getElementById("f-desc").value.trim(),
+        });
 
-        function openAddModal() {
-            addOverlay.classList.add("open");
-            setTimeout(() => document.getElementById("f-url").focus(), 80);
-        }
-
-        function closeAddModal() {
-            addOverlay.classList.remove("open");
+        function openModal() { overlay.classList.add("open"); document.getElementById("f-url").focus(); }
+        function closeModal() {
+            overlay.classList.remove("open");
             ["f-url", "f-title", "f-badge", "f-desc"].forEach(id => document.getElementById(id).value = "");
             document.getElementById("f-cat").value = "";
         }
 
-        document.getElementById("pinSubmit").addEventListener("click", () => {
-            const val = document.getElementById("pinInput").value.trim();
-            const err = document.getElementById("pinErr");
-            if (val === ADMIN_PIN) {
-                pinUnlocked = true;
-                pinOverlay.classList.remove("open");
-                document.getElementById("pinInput").value = "";
-                err.style.display = "none";
-                openAddModal();
-            } else {
-                err.style.display = "block";
-                document.getElementById("pinInput").value = "";
-                document.getElementById("pinInput").focus();
-                setTimeout(() => err.style.display = "none", 3000);
-            }
-        });
-
-        document.getElementById("pinInput").addEventListener("keydown", e => {
-            if (e.key === "Enter") document.getElementById("pinSubmit").click();
-        });
-
-        document.getElementById("pinCancel").addEventListener("click", () => {
-            pinOverlay.classList.remove("open");
-            document.getElementById("pinInput").value = "";
-            document.getElementById("pinErr").style.display = "none";
-        });
-
-        pinOverlay.addEventListener("click", e => {
-            if (e.target === pinOverlay) {
-                pinOverlay.classList.remove("open");
-                document.getElementById("pinErr").style.display = "none";
-            }
-        });
-
-        document.getElementById("closeAddBtn").addEventListener("click", closeAddModal);
-        document.getElementById("closeAddBtn2").addEventListener("click", closeAddModal);
-        addOverlay.addEventListener("click", e => { if (e.target === addOverlay) closeAddModal(); });
-        document.addEventListener("keydown", e => {
-            if (e.key === "Escape") {
-                closeAddModal();
-                pinOverlay.classList.remove("open");
-            }
-        });
-
-        /* ════════════════════════════════════════════════════════════════
-           SAVE NEW ENTRY
-           ════════════════════════════════════════════════════════════════ */
-        const saveBtn = document.getElementById("saveBtn");
+        openBtn.addEventListener("click", openModal);
+        document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+        document.getElementById("closeModalBtn2").addEventListener("click", closeModal);
+        overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
         saveBtn.addEventListener("click", async () => {
-            const url = document.getElementById("f-url").value.trim();
-            const title = document.getElementById("f-title").value.trim();
-            const cat = document.getElementById("f-cat").value;
-            const badge = document.getElementById("f-badge").value.trim();
-            const desc = document.getElementById("f-desc").value.trim();
-
-            if (!url || !title || !cat) { toast("URL, Title, and Category are required.", "err"); return; }
-            if (all().some(p => p.url === url)) { toast("This URL already exists.", "err"); return; }
+            const { url, title, cat, badge, desc } = fields();
+            if (!url || !title || !cat) { toast("URL, Title, and Category are required.", "error"); return; }
+            if (all().some(p => p.url === url)) { toast("A page with this URL already exists.", "error"); return; }
 
             saveBtn.classList.add("loading");
             saveBtn.disabled = true;
@@ -1600,48 +1343,44 @@
             try {
                 customPages.push(entry);
                 await persistCustom();
-                closeAddModal();
+                closeModal();
                 renderPills();
                 renderGrid();
-                toast(`"${title}" is now live for all visitors!`, "ok");
-            } catch (e) {
+                toast(`"${title}" is now live for all visitors!`, "success");
+            } catch (err) {
                 customPages.pop();
-                toast("Save failed — check your connection.", "err");
-                console.error(e);
+                toast("Save failed — please try again.", "error");
+                console.error(err);
             } finally {
                 saveBtn.classList.remove("loading");
                 saveBtn.disabled = false;
             }
         });
 
-        /* ── Search ── */
+        /* ─── SEARCH ───────────────────────────────────────────────── */
         document.getElementById("searchInput").addEventListener("input", e => {
             searchQuery = e.target.value;
             renderGrid();
         });
 
-        /* ── Toast ── */
-        function toast(msg, type = "ok") {
+        /* ─── TOAST ────────────────────────────────────────────────── */
+        function toast(msg, type = "success") {
             const el = document.getElementById("toast");
             el.textContent = msg;
             el.className = `toast ${type} show`;
             setTimeout(() => el.classList.remove("show"), 3800);
         }
 
-        /* ════════════════════════════════════════════════════════════════
-           INIT — order matters:
-           1. Load config.json (silent fail on GitHub Pages)
-           2. Render topbar (Add Design or Contact chip)
-           3. Load Gist publicly (no token needed)
-           4. Render grid
-           ════════════════════════════════════════════════════════════════ */
+        /* ─── INIT ─────────────────────────────────────────────────── */
         (async () => {
-            await loadConfig();        // 1
-            renderTopbarAction();      // 2
-            await loadCustom();        // 3
+            // Show warning if REPO not configured
+            if (!REPO || REPO.includes("YOUR-USERNAME")) {
+                document.getElementById("repoWarn").classList.add("visible");
+            }
+            await loadCustom();
             isReady = true;
             renderPills();
-            renderGrid();              // 4
+            renderGrid();
         })();
     </script>
 </body>
