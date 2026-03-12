@@ -1015,8 +1015,7 @@
                     d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
             </svg>
             <span><strong>View Code buttons are hidden.</strong> Open this file, set
-                <code>const REPO = "MehulChauhan-07/NYFAF"</code> at the top of the &lt;script&gt;, push — every card
-                gets
+                <code>const REPO = "username/repo-name"</code> at the top of the &lt;script&gt;, push — every card gets
                 the correct GitHub link automatically.</span>
         </div>
 
@@ -1119,8 +1118,8 @@
            After setting this, every existing + future card gets the
            correct GitHub link with zero extra work.
            ================================================================ */
-        const REPO = "MehulChauhan-07/NYFAF";  // ← only line you change
-        const BRANCH = "main";                           // ← or "master" if needed
+        const REPO = "MehulChauhan-07/NYFAF";  // ← your GitHub repo
+        const BRANCH = "main";                   // ← change to "master" if needed
         /* ================================================================ */
 
         /* ─── BASE PAGES ────────────────────────────────────────────────────────────
@@ -1187,7 +1186,7 @@
         /* ─── GITHUB URL BUILDER ───────────────────────────────────── */
         // Builds: https://github.com/USER/REPO/blob/BRANCH/path/to/file.html
         function githubUrl(filePath) {
-            if (!REPO || REPO.includes("MehulChauhan-07")) return null; // not configured yet
+            if (!REPO || REPO.includes("YOUR-USERNAME")) return null; // not configured yet
             return `https://github.com/${REPO}/blob/${BRANCH}/${filePath}`;
         }
 
@@ -1375,7 +1374,7 @@
         /* ─── INIT ─────────────────────────────────────────────────── */
         (async () => {
             // Show warning if REPO not configured
-            if (!REPO || REPO.includes("MehulChauhan-07")) {
+            if (!REPO || REPO.includes("YOUR-USERNAME")) {
                 document.getElementById("repoWarn").classList.add("visible");
             }
             await loadCustom();
