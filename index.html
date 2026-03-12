@@ -1118,7 +1118,7 @@
            After setting this, every existing + future card gets the
            correct GitHub link with zero extra work.
            ================================================================ */
-        const REPO = "YOUR-USERNAME/YOUR-REPO-NAME";  // ← only line you change
+        const REPO = "MehulChauhan-07/NYFAF";  // ← only line you change
         const BRANCH = "main";                           // ← or "master" if needed
         /* ================================================================ */
 
@@ -1186,7 +1186,7 @@
         /* ─── GITHUB URL BUILDER ───────────────────────────────────── */
         // Builds: https://github.com/USER/REPO/blob/BRANCH/path/to/file.html
         function githubUrl(filePath) {
-            if (!REPO || REPO.includes("YOUR-USERNAME")) return null; // not configured yet
+            if (!REPO || REPO.includes("MehulChauhan-07")) return null; // not configured yet
             return `https://github.com/${REPO}/blob/${BRANCH}/${filePath}`;
         }
 
