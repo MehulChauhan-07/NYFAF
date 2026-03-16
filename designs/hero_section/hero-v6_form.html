@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYFAF — Premium Injectable Training | New York City</title>
+    <meta name="description"
+        content="NYFAF is a selective injectable certification program for licensed medical professionals. Small cohorts, live models, Midtown Manhattan." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ════════════════════════════════════════════════════
+           NYFAF — Hero v6 · Premium Admissions Form
+           Deep Navy · Muted Gold · Glassmorphic · Elevated
+           ════════════════════════════════════════════════════ */
+
+        /* ── DESIGN TOKENS ── */
+        :root {
+            /* Backgrounds */
+            --bg-deep: #0B0F17;
+            --bg-mid: #101624;
+            --bg-card: rgba(16, 22, 36, 0.72);
+            --bg-card-solid: #121A2C;
+            --bg-proof: #0A0F1A;
+            --bg-input: rgba(255, 255, 255, 0.035);
+            --bg-input-focus: rgba(201, 147, 58, 0.04);
+
+            /* Brand Gold */
+            --gold: #C9933A;
+            --gold-hover: #B58432;
+            --gold-soft: #D4A754;
+            --amber: #E4B56A;
+            --gold-muted: rgba(201, 147, 58, 0.08);
+
+            /* Text */
+            --text-hi: #F2F1EC;
+            --text-mid: #9A9A92;
+            --text-lo: #636360;
+            --text-on-gold: #0B0F17;
+
+            /* Borders */
+            --border-subtle: rgba(201, 147, 58, 0.07);
+            --border-card: rgba(201, 147, 58, 0.14);
+            --border-input: rgba(255, 255, 255, 0.08);
+            --border-input-focus: rgba(201, 147, 58, 0.45);
+            --border-glass: rgba(255, 255, 255, 0.06);
+
+            /* Typography */
+            --f-head: 'Cormorant Garamond', Georgia, serif;
+            --f-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Radii */
+            --r-xs: 6px;
+            --r-sm: 8px;
+            --r-md: 12px;
+            --r-lg: 16px;
+            --r-xl: 20px;
+
+            /* Shadows */
+            --shadow-card:
+                0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+                0 24px 64px rgba(0, 0, 0, 0.40),
+                0 8px 24px rgba(0, 0, 0, 0.25);
+            --shadow-btn:
+                0 2px 12px rgba(201, 147, 58, 0.22);
+            --shadow-btn-hover:
+                0 4px 24px rgba(201, 147, 58, 0.32);
+        }
+
+        /* ── RESET ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--f-body);
+            background: var(--bg-deep);
+            color: var(--text-hi);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--f-body);
+            border: none;
+            background: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           §1 — HERO
+           ════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0 64px;
+            overflow: hidden;
+        }
+
+        /* ── Atmospheric Background ── */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 55% at 28% 48%, rgba(14, 20, 36, 1) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 65% at 78% 38%, rgba(18, 26, 46, 0.85) 0%, transparent 55%),
+                linear-gradient(175deg, #0B0F17 0%, #0E1525 35%, #111B30 65%, #0C1220 100%);
+        }
+
+        /* Warm ambient glow — bottom */
+        .hero-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 280px;
+            z-index: 1;
+            background: linear-gradient(to top,
+                    rgba(201, 147, 58, 0.045) 0%,
+                    rgba(201, 147, 58, 0.015) 40%,
+                    transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Gold orb — top left */
+        .hero-orb {
+            position: absolute;
+            top: 6%;
+            left: -6%;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 147, 58, 0.03) 0%, transparent 65%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Blue orb accent — right */
+        .hero-orb-blue {
+            position: absolute;
+            bottom: 15%;
+            right: -8%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(60, 80, 140, 0.025) 0%, transparent 60%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* NYC Skyline */
+        .hero-skyline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.06;
+        }
+
+        /* Grain */
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.016;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+
+        /* ── Hero Grid ── */
+        .hero-grid {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 54% 1fr;
+            gap: 52px;
+            align-items: center;
+            width: 100%;
+        }
+
+
+        /* ────────────────────────────────────────────
+           LEFT COLUMN
+           ──────────────────────────────────────────── */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Eyebrow badge */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold-muted);
+            border: 1px solid var(--border-card);
+            border-radius: 100px;
+            padding: 6px 16px;
+            width: fit-content;
+            margin-bottom: 28px;
+        }
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .eyebrow-text {
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* Headline */
+        .headline {
+            font-family: var(--f-head);
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.10;
+            color: var(--text-hi);
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+        }
+
+        .headline .gold {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* Subheadline */
+        .subheadline {
+            font-size: 15.5px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--text-mid);
+            max-width: 510px;
+            margin-bottom: 32px;
+        }
+
+        /* Trust grid — 2×2 */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 450px;
+            margin-bottom: 36px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--r-sm);
+            padding: 11px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-hi);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .trust-item:hover {
+            border-color: var(--border-card);
+            background: rgba(201, 147, 58, 0.035);
+        }
+
+        .trust-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: var(--r-sm);
+            background: rgba(201, 147, 58, 0.09);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* CTA Row */
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--text-on-gold);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 14px 30px;
+            border-radius: var(--r-sm);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-btn);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-btn-hover);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-hi);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 13px 26px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--r-sm);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .btn-secondary .btn-ico {
+            opacity: 0.5;
+            font-size: 15px;
+        }
+
+        /* Dual path */
+        .dual-path {
+            font-size: 12.5px;
+            color: var(--text-lo);
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .dual-path a {
+            color: var(--amber);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(228, 181, 106, 0.28);
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .dual-path a:hover {
+            color: var(--gold);
+            text-decoration-color: var(--gold);
+        }
+
+        .dual-path .sep {
+            margin: 0 10px;
+            color: var(--text-lo);
+        }
+
+        /* Support row */
+        .support-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 12px;
+            color: var(--text-lo);
+        }
+
+        .support-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .support-item .s-icon {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .support-divider {
+            width: 1px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+
+        /* ────────────────────────────────────────────
+           RIGHT COLUMN — ADMISSIONS FORM CARD
+           ──────────────────────────────────────────── */
+        .form-card {
+            position: relative;
+            background: var(--bg-card);
+            backdrop-filter: blur(24px) saturate(1.15);
+            -webkit-backdrop-filter: blur(24px) saturate(1.15);
+            border: 1px solid var(--border-card);
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Inner top glow */
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            background: linear-gradient(to bottom, rgba(201, 147, 58, 0.035), transparent);
+            pointer-events: none;
+            border-radius: var(--r-xl) var(--r-xl) 0 0;
+            z-index: 0;
+        }
+
+        /* Card header */
+        .fc-header {
+            position: relative;
+            z-index: 1;
+            padding: 26px 28px 20px;
+            text-align: center;
+        }
+
+        .fc-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .fc-subline {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        /* Divider */
+        .fc-divider {
+            height: 1px;
+            background: var(--border-subtle);
+            margin: 0;
+        }
+
+        /* Form area */
+        .fc-form-area {
+            position: relative;
+            z-index: 1;
+            padding: 24px 28px 28px;
+        }
+
+        /* Form group */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-lo);
+            margin-bottom: 7px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 13px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border-input);
+            border-radius: var(--r-sm);
+            color: var(--text-hi);
+            font-size: 14px;
+            font-family: var(--f-body);
+            font-weight: 400;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: var(--text-lo);
+            font-weight: 400;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            border-color: var(--border-input-focus);
+            background: var(--bg-input-focus);
+            box-shadow: 0 0 0 3px rgba(201, 147, 58, 0.06);
+        }
+
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23636360' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: var(--bg-card-solid);
+            color: var(--text-hi);
+            padding: 8px;
+        }
+
+        /* Submit button */
+        .btn-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            background: var(--gold);
+            color: var(--text-on-gold);
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 15px 24px;
+            border: none;
+            border-radius: var(--r-sm);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-btn);
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-btn-hover);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Micro-trust line */
+        .form-trust {
+            text-align: center;
+            font-size: 11.5px;
+            color: var(--text-lo);
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+
+        /* Lower proof area inside card */
+        .fc-proof-area {
+            position: relative;
+            z-index: 1;
+            padding: 18px 28px 22px;
+        }
+
+        .fc-proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .fc-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-mid);
+        }
+
+        .fc-proof-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .fc-proof-dot.green {
+            background: #34D399;
+            opacity: 0.7;
+            animation: pulse-green 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.35); }
+            50%       { box-shadow: 0 0 5px 2px rgba(52, 211, 153, 0.12); }
+        }
+
+
+        /* ════════════════════════════════════════════════
+           §2 — SOCIAL PROOF STRIP
+           ════════════════════════════════════════════════ */
+        .proof-strip {
+            background: var(--bg-proof);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 0;
+        }
+
+        .proof-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .proof-item:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .proof-number {
+            color: var(--text-hi);
+            font-weight: 600;
+        }
+
+        .proof-quote {
+            font-family: var(--f-head);
+            font-style: italic;
+            font-size: 14.5px;
+            color: var(--text-mid);
+        }
+
+        .proof-attr {
+            color: var(--text-hi);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           ANIMATIONS
+           ════════════════════════════════════════════════ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-left {
+            animation: fadeUp 0.7s ease-out both;
+        }
+
+        .form-card {
+            animation: fadeUp 0.7s 0.12s ease-out both;
+        }
+
+        .proof-strip {
+            animation: fadeUp 0.5s 0.24s ease-out both;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           RESPONSIVE
+           ════════════════════════════════════════════════ */
+
+        /* ≤ 1100 */
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+
+            .form-card {
+                max-width: 500px;
+            }
+
+            .headline {
+                font-size: 44px;
+            }
+        }
+
+        /* ≤ 768 — Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 52px 0 56px;
+                min-height: auto;
+            }
+
+            .headline {
+                font-size: 34px;
+            }
+
+            .subheadline {
+                font-size: 14.5px;
+            }
+
+            .trust-grid {
+                max-width: 100%;
+            }
+
+            .cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dual-path {
+                text-align: center;
+            }
+
+            .support-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .proof-inner {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .proof-item {
+                padding: 5px 0;
+                border-right: none !important;
+            }
+
+            .proof-item:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                padding-bottom: 10px;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .fc-proof-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ≤ 480 — Small */
+        @media (max-width: 480px) {
+            .headline {
+                font-size: 28px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fc-header {
+                padding: 22px 20px 18px;
+            }
+
+            .fc-form-area {
+                padding: 20px 20px 24px;
+            }
+
+            .fc-proof-area {
+                padding: 14px 20px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════════
+         §1 — HERO
+         ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+
+        <!-- Background composition -->
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-orb" aria-hidden="true"></div>
+        <div class="hero-orb-blue" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+
+        <!-- NYC Skyline silhouette -->
+        <svg class="hero-skyline" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path fill="#C9933A"
+                d="M0,120 L0,100 L50,100 L50,78 L54,78 L54,72 L58,72 L58,78 L68,78 L68,92 L100,92 L100,68 L104,68 L104,50 L108,50 L108,44 L112,44 L112,50 L116,50 L116,68 L120,68 L120,86 L160,86 L160,78 L172,78 L172,60 L176,60 L176,48 L180,48 L180,42 L182,42 L182,22 L184,22 L184,16 L186,16 L186,22 L188,22 L188,42 L190,42 L190,48 L194,48 L194,60 L198,60 L198,78 L230,78 L230,84 L270,84 L270,68 L276,68 L276,44 L280,44 L280,32 L284,32 L284,44 L288,44 L288,68 L294,68 L294,84 L340,84 L340,94 L380,94 L380,80 L390,80 L390,56 L394,56 L394,36 L396,36 L396,14 L398,14 L398,8 L400,8 L400,14 L402,14 L402,36 L404,36 L404,56 L408,56 L408,80 L424,80 L424,90 L470,90 L470,82 L490,82 L490,62 L494,62 L494,42 L498,42 L498,62 L502,62 L502,82 L530,82 L530,92 L570,92 L570,86 L600,86 L600,70 L604,70 L604,46 L606,46 L606,24 L608,24 L608,16 L610,16 L610,24 L612,24 L612,46 L616,46 L616,70 L620,70 L620,86 L660,86 L660,94 L700,94 L700,84 L720,84 L720,64 L724,64 L724,44 L726,44 L726,28 L728,28 L728,44 L730,44 L730,64 L734,64 L734,84 L770,84 L770,90 L810,90 L810,82 L830,82 L830,62 L834,62 L834,40 L836,40 L836,20 L838,20 L838,10 L840,10 L840,20 L842,20 L842,40 L844,40 L844,62 L850,62 L850,82 L890,82 L890,92 L930,92 L930,84 L960,84 L960,66 L964,66 L964,46 L968,46 L968,66 L972,66 L972,84 L1010,84 L1010,94 L1050,94 L1050,86 L1080,86 L1080,70 L1084,70 L1084,48 L1086,48 L1086,30 L1088,30 L1088,48 L1090,48 L1090,70 L1096,70 L1096,86 L1130,86 L1130,94 L1170,94 L1170,88 L1200,88 L1200,74 L1204,74 L1204,56 L1208,56 L1208,74 L1212,74 L1212,88 L1250,88 L1250,96 L1300,96 L1300,90 L1330,90 L1330,78 L1334,78 L1334,62 L1338,62 L1338,78 L1342,78 L1342,90 L1380,90 L1380,100 L1440,100 L1440,120 Z" />
+            <g fill="#E4B56A" opacity="0.45">
+                <rect x="183" y="28" width="1.5" height="1.5" rx="0.3" />
+                <rect x="185" y="36" width="1.5" height="1.5" rx="0.3" />
+                <rect x="397" y="20" width="1.5" height="1.5" rx="0.3" />
+                <rect x="399" y="30" width="1.5" height="1.5" rx="0.3" />
+                <rect x="607" y="30" width="1.5" height="1.5" rx="0.3" />
+                <rect x="609" y="40" width="1.5" height="1.5" rx="0.3" />
+                <rect x="727" y="34" width="1.5" height="1.5" rx="0.3" />
+                <rect x="837" y="24" width="1.5" height="1.5" rx="0.3" />
+                <rect x="839" y="34" width="1.5" height="1.5" rx="0.3" />
+                <rect x="1087" y="36" width="1.5" height="1.5" rx="0.3" />
+            </g>
+        </svg>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- ── LEFT COLUMN ── -->
+                <div class="hero-left">
+
+                    <!-- Eyebrow -->
+                    <div class="eyebrow" id="hero-eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span>
+                        <span class="eyebrow-text">Licensed Medical Professionals Only</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="headline" id="hero-headline">
+                        Master Facial Aesthetics<br>
+                        in the Heart of <span class="gold">New York City.</span>
+                    </h1>
+
+                    <!-- Supporting paragraph -->
+                    <p class="subheadline" id="hero-sub">
+                        Join an advanced hands-on BOTOX® and dermal filler training experience
+                        in Midtown Manhattan, designed for licensed medical professionals seeking
+                        real patient exposure, expert guidance, and premium small-group learning.
+                    </p>
+
+                    <!-- Trust points -->
+                    <div class="trust-grid" id="hero-trust">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="7" r="4" />
+                                    <path d="M5.5 21a6.5 6.5 0 0113 0" />
+                                </svg>
+                            </div>
+                            Live Model Training
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            14+ Clinical Hours
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 010 7.75" />
+                                </svg>
+                            </div>
+                            Small Elite Cohorts
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                            Certificate of Completion
+                        </div>
+                    </div>
+
+                    <!-- CTA Row -->
+                    <div class="cta-row" id="hero-cta">
+                        <a href="#apply" class="btn-primary">Apply Now →</a>
+                        <a href="#brochure" class="btn-secondary">
+                            <span class="btn-ico" aria-hidden="true">↓</span>
+                            Download Brochure
+                        </a>
+                    </div>
+
+                    <!-- Dual path -->
+                    <div class="dual-path" id="hero-dual-path">
+                        Based in the U.S.? <a href="#apply">Start Application</a>
+                        <span class="sep" aria-hidden="true">·</span>
+                        Applying internationally? <a href="#visa">View Visa &amp; Admissions Steps</a>
+                    </div>
+
+                    <!-- Support row -->
+                    <div class="support-row" id="hero-support">
+                        <div class="support-item">
+                            <span class="s-icon" aria-hidden="true">💬</span>
+                            <span>WhatsApp Admissions</span>
+                        </div>
+                        <div class="support-divider" aria-hidden="true"></div>
+                        <div class="support-item">
+                            <span class="s-icon" aria-hidden="true">👥</span>
+                            <span>4:1 Student-Faculty Ratio</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ── RIGHT COLUMN — ADMISSIONS FORM CARD ── -->
+                <div class="form-card" id="admissions-form-card">
+
+                    <!-- Card Header -->
+                    <div class="fc-header">
+                        <span class="fc-label">Start Your Application</span>
+                        <span class="fc-subline">Reviewed by our admissions team within 24 hours</span>
+                    </div>
+
+                    <div class="fc-divider" aria-hidden="true"></div>
+
+                    <!-- Form Area -->
+                    <div class="fc-form-area">
+                        <form id="admissions-form" autocomplete="off">
+
+                            <div class="form-group">
+                                <label for="field-name" class="form-label">Full Name</label>
+                                <input type="text" id="field-name" name="name" class="form-input"
+                                    placeholder="Dr. Jane Smith" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="field-email" class="form-label">Email Address</label>
+                                <input type="email" id="field-email" name="email" class="form-input"
+                                    placeholder="jane@example.com" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="field-credential" class="form-label">Credential / License</label>
+                                <select id="field-credential" name="credential" class="form-select" required>
+                                    <option value="" disabled selected>Select your credential</option>
+                                    <option value="physician">Physician (MD / DO)</option>
+                                    <option value="nurse-practitioner">Nurse Practitioner (NP)</option>
+                                    <option value="registered-nurse">Registered Nurse (RN)</option>
+                                    <option value="dentist">Dentist (DDS / DMD)</option>
+                                    <option value="physician-assistant">Physician Assistant (PA)</option>
+                                    <option value="other">Other Licensed Professional</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="btn-submit">
+                                Request My Seat →
+                            </button>
+                        </form>
+
+                        <p class="form-trust">
+                            For licensed professionals only. International applicants welcome.
+                        </p>
+                    </div>
+
+                    <div class="fc-divider" aria-hidden="true"></div>
+
+                    <!-- Lower proof area -->
+                    <div class="fc-proof-area">
+                        <div class="fc-proof-grid">
+                            <div class="fc-proof-item">
+                                <span class="fc-proof-dot green" aria-hidden="true"></span>
+                                Next NYC cohort open
+                            </div>
+                            <div class="fc-proof-item">
+                                <span class="fc-proof-dot" aria-hidden="true"></span>
+                                Midtown Manhattan
+                            </div>
+                            <div class="fc-proof-item">
+                                <span class="fc-proof-dot" aria-hidden="true"></span>
+                                Live model training
+                            </div>
+                            <div class="fc-proof-item">
+                                <span class="fc-proof-dot" aria-hidden="true"></span>
+                                Limited seats per batch
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         §2 — SOCIAL PROOF STRIP
+         ════════════════════════════════════════════════ -->
+    <div class="proof-strip" id="social-proof">
+        <div class="container proof-inner">
+            <div class="proof-item">
+                <span><span class="proof-number">180+</span> Providers Trained</span>
+            </div>
+            <div class="proof-item">
+                <span><span class="proof-number">22</span> Countries Represented</span>
+            </div>
+            <div class="proof-item">
+                <span>Avg. Rating <span class="proof-number">4.9 / 5</span></span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-quote">"The anatomy instruction alone was worth the flight from
+                    Dubai."</span>
+                &nbsp;—&nbsp;
+                <span class="proof-attr">Dr. S.A., Aesthetic Physician, UAE</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
