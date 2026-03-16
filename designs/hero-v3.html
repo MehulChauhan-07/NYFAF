@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NYFAF — Elite BOTOX® & Dermal Filler Training | New York City</title>
+    <meta name="description"
+        content="Master BOTOX® & Dermal Filler injection techniques in Midtown Manhattan. Hands-on training with live patient models, 4:1 student ratio, and dual RN + DDS supervision. Apply now." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d49735;
+            --gold-light: #e8b960;
+            --gold-bright: #f5d590;
+            --gold-dim: #a07428;
+            --navy: #0a0e1a;
+            --navy-mid: #111827;
+            --charcoal: #151b2b;
+            --charcoal-light: #1e2640;
+            --white: #ffffff;
+            --white-90: rgba(255, 255, 255, 0.9);
+            --white-70: rgba(255, 255, 255, 0.7);
+            --white-50: rgba(255, 255, 255, 0.5);
+            --white-30: rgba(255, 255, 255, 0.3);
+            --white-15: rgba(255, 255, 255, 0.15);
+            --white-08: rgba(255, 255, 255, 0.08);
+            --white-05: rgba(255, 255, 255, 0.05);
+            --green: #22c55e;
+            --yellow: #eab308;
+            --red: #ef4444;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(170deg, var(--navy) 0%, #0d1225 30%, var(--charcoal) 70%, #0f1520 100%);
+        }
+
+        /* Ambient light effects */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(212, 151, 53, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -15%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(ellipse, rgba(212, 151, 53, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Subtle noise texture overlay */
+        .hero-noise {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Manhattan Skyline */
+        .skyline-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .skyline-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, rgba(212, 151, 53, 0.08) 0%, transparent 100%);
+        }
+
+        .skyline-svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            opacity: 0.12;
+        }
+
+        /* ===== MAIN CONTENT GRID ===== */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 48px 100px;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 64px;
+            align-items: center;
+        }
+
+        /* ===== LEFT SIDE ===== */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        /* Headline */
+        .hero-headline {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 40%, var(--white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: headlineShimmer 6s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes headlineShimmer {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Subheadline */
+        .hero-subheadline {
+            font-size: 1.15rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-70);
+            max-width: 580px;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-subheadline strong {
+            color: var(--white-90);
+            font-weight: 600;
+        }
+
+        /* Benefit Icons Row */
+        .benefits-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .benefit-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 100px;
+            border: 1px solid rgba(212, 151, 53, 0.25);
+            background: rgba(212, 151, 53, 0.06);
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-chip:hover {
+            border-color: rgba(212, 151, 53, 0.5);
+            background: rgba(212, 151, 53, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(212, 151, 53, 0.15);
+        }
+
+        .benefit-chip .icon {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 1.8;
+            fill: none;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 8px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+            box-shadow:
+                0 4px 24px rgba(212, 151, 53, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 8px 40px rgba(212, 151, 53, 0.45),
+                0 2px 6px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-primary::before {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-bright) 100%);
+        }
+
+        .cta-primary:hover::before {
+            opacity: 1;
+        }
+
+        .cta-primary .cta-label {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white-90);
+            border: 1px solid var(--white-15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white-30);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-icon {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* ===== RIGHT SIDE — GLASSMORPHIC CARD ===== */
+        .glass-card {
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.07) 0%,
+                    rgba(255, 255, 255, 0.03) 100%);
+            backdrop-filter: blur(24px) saturate(1.2);
+            -webkit-backdrop-filter: blur(24px) saturate(1.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+            box-shadow:
+                0 24px 80px rgba(0, 0, 0, 0.4),
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            animation: floatCard 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        /* Inner glow effect */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            border-radius: 23px;
+            background: radial-gradient(ellipse at top left,
+                    rgba(212, 151, 53, 0.06) 0%,
+                    transparent 50%);
+            pointer-events: none;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Card Header */
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+        }
+
+        .card-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: rgba(212, 151, 53, 0.15);
+            color: var(--gold-light);
+            border: 1px solid rgba(212, 151, 53, 0.2);
+        }
+
+        /* Cohort Table */
+        .cohort-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .cohort-table th {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--white-50);
+            padding: 0 0 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--white-08);
+        }
+
+        .cohort-table th:last-child {
+            text-align: right;
+        }
+
+        .cohort-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--white-05);
+            vertical-align: middle;
+        }
+
+        .cohort-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cohort-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--white-90);
+        }
+
+        .cohort-type {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--white-50);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 100px;
+            white-space: nowrap;
+            float: right;
+        }
+
+        .status-pill .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-yellow {
+            background: rgba(234, 179, 8, 0.12);
+            color: #fbbf24;
+            border: 1px solid rgba(234, 179, 8, 0.2);
+        }
+
+        .status-yellow .dot {
+            background: #eab308;
+            box-shadow: 0 0 8px rgba(234, 179, 8, 0.6);
+        }
+
+        .status-green {
+            background: rgba(34, 197, 94, 0.12);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .status-green .dot {
+            background: #22c55e;
+            box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+        }
+
+        .status-red {
+            background: rgba(239, 68, 68, 0.12);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .status-red .dot {
+            background: #ef4444;
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Mini Stats */
+        .mini-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .mini-stat {
+            text-align: center;
+            padding: 14px 8px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--white-08);
+            transition: all 0.3s ease;
+        }
+
+        .mini-stat:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(212, 151, 53, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .mini-stat-value {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 3px;
+        }
+
+        .mini-stat-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--white-50);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            line-height: 1.3;
+        }
+
+        /* Video Thumbnail */
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            background: linear-gradient(145deg, var(--charcoal) 0%, var(--navy-mid) 100%);
+            border: 1px solid var(--white-08);
+            transition: all 0.4s ease;
+        }
+
+        .video-thumb:hover {
+            border-color: rgba(212, 151, 53, 0.3);
+            box-shadow: 0 4px 24px rgba(212, 151, 53, 0.1);
+            transform: scale(1.02);
+        }
+
+        .video-thumb-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg,
+                    rgba(212, 151, 53, 0.05) 0%,
+                    rgba(10, 14, 26, 0.8) 50%,
+                    rgba(212, 151, 53, 0.03) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(212, 151, 53, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(212, 151, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .video-thumb:hover .play-btn {
+            transform: scale(1.15);
+            box-shadow: 0 6px 30px rgba(212, 151, 53, 0.6);
+        }
+
+        .play-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--navy);
+            margin-left: 2px;
+        }
+
+        .video-label-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .video-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--white-50);
+            text-align: center;
+            letter-spacing: 0.04em;
+            transition: color 0.3s;
+        }
+
+        .video-label:hover {
+            color: var(--gold);
+        }
+
+        /* Injection scene visual elements inside the preview */
+        .video-scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0.25;
+        }
+
+        .scene-syringe {
+            width: 40px;
+            height: 40px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.2;
+        }
+
+        .scene-text {
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--white-30);
+        }
+
+        /* ===== SOCIAL PROOF STRIP ===== */
+        .social-proof {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 48px 60px;
+        }
+
+        .proof-strip {
+            border: 1px solid rgba(212, 151, 53, 0.2);
+            border-radius: 16px;
+            padding: 24px 36px;
+            background: rgba(212, 151, 53, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: floatStrip 8s ease-in-out infinite;
+        }
+
+        @keyframes floatStrip {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .proof-stats {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .proof-stat {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: 0.02em;
+        }
+
+        .proof-divider {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(212, 151, 53, 0.4);
+        }
+
+        .proof-quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--white-50);
+            text-align: center;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .proof-attribution {
+            font-family: var(--font-primary);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--gold-dim);
+        }
+
+        /* ===== SCROLL INDICATOR ===== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--white-30);
+            opacity: 0.6;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(to bottom, var(--gold-dim), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1.3);
+            }
+        }
+
+        /* ===== PARTICLE / FLOATING ORB EFFECTS ===== */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 20%;
+            background: radial-gradient(circle, rgba(212, 151, 53, 0.04) 0%, transparent 70%);
+            animation: orbFloat1 12s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 30%;
+            left: 5%;
+            background: radial-gradient(circle, rgba(212, 151, 53, 0.03) 0%, transparent 70%);
+            animation: orbFloat2 15s ease-in-out infinite;
+        }
+
+        .orb-3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 5%;
+            background: radial-gradient(circle, rgba(100, 130, 200, 0.03) 0%, transparent 70%);
+            animation: orbFloat3 10s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            33% {
+                transform: translate(20px, -30px);
+            }
+
+            66% {
+                transform: translate(-15px, 15px);
+            }
+        }
+
+        @keyframes orbFloat2 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(25px, -20px);
+            }
+        }
+
+        @keyframes orbFloat3 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-20px, 25px);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                padding: 100px 24px 80px;
+                gap: 48px;
+            }
+
+            .hero-headline {
+                font-size: 3rem;
+            }
+
+            .glass-card {
+                max-width: 480px;
+            }
+
+            .social-proof {
+                padding: 0 24px 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2.4rem;
+            }
+
+            .hero-subheadline {
+                font-size: 1rem;
+            }
+
+            .benefits-row {
+                gap: 8px;
+            }
+
+            .benefit-chip {
+                padding: 8px 14px;
+                font-size: 0.72rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .mini-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6px;
+            }
+
+            .proof-stats {
+                gap: 12px;
+            }
+
+            .proof-stat {
+                font-size: 0.75rem;
+            }
+
+            .proof-quote {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-headline {
+                font-size: 2rem;
+            }
+
+            .glass-card {
+                padding: 24px;
+            }
+
+            .hero-content {
+                padding: 90px 16px 60px;
+            }
+
+            .social-proof {
+                padding: 0 16px 40px;
+            }
+        }
+
+        /* ===== ENTRANCE ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .anim-fade-up-1 {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .anim-fade-up-2 {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .anim-fade-up-3 {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .anim-fade-up-4 {
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .anim-fade-right {
+            animation: fadeInRight 1s ease-out 0.5s both;
+        }
+
+        .anim-fade-up-5 {
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero" id="hero">
+        <!-- Ambient orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Noise texture -->
+        <div class="hero-noise"></div>
+
+        <!-- Manhattan Skyline -->
+        <div class="skyline-container">
+            <div class="skyline-glow"></div>
+            <svg class="skyline-svg" viewBox="0 0 1440 140" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="skylineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#d49735;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#a07428;stop-opacity:0.3" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#skylineGrad)"
+                    d="M0,140 L0,120 L30,120 L30,90 L35,90 L35,85 L40,85 L40,90 L50,90 L50,110 L70,110 L70,75 L75,75 L75,60 L80,60 L80,55 L85,55 L85,60 L90,60 L90,75 L95,75 L95,105 L110,105 L110,95 L120,95 L120,80 L125,80 L125,70 L130,70 L130,65 L133,65 L133,30 L136,30 L136,25 L139,25 L139,30 L142,30 L142,65 L145,65 L145,70 L150,70 L150,80 L155,80 L155,95 L170,95 L170,100 L190,100 L190,85 L195,85 L195,55 L200,55 L200,40 L205,40 L205,35 L210,35 L210,40 L215,40 L215,55 L220,55 L220,85 L225,85 L225,100 L250,100 L250,110 L280,110 L280,95 L290,95 L290,70 L295,70 L295,50 L298,50 L298,20 L301,20 L301,15 L304,15 L304,20 L307,20 L307,50 L310,50 L310,70 L315,70 L315,95 L325,95 L325,105 L360,105 L360,90 L370,90 L370,75 L375,75 L375,45 L380,45 L380,40 L385,40 L385,45 L390,45 L390,75 L395,75 L395,90 L410,90 L410,100 L440,100 L440,110 L470,110 L470,95 L480,95 L480,60 L485,60 L485,45 L490,45 L490,60 L495,60 L495,95 L510,95 L510,105 L540,105 L540,100 L560,100 L560,80 L565,80 L565,55 L568,55 L568,25 L571,25 L571,18 L574,18 L574,25 L577,25 L577,55 L580,55 L580,80 L585,80 L585,100 L610,100 L610,110 L640,110 L640,105 L660,105 L660,85 L665,85 L665,65 L670,65 L670,50 L675,50 L675,65 L680,65 L680,85 L685,85 L685,105 L700,105 L700,115 L730,115 L730,95 L740,95 L740,70 L743,70 L743,35 L746,35 L746,22 L749,22 L749,35 L752,35 L752,70 L755,70 L755,95 L770,95 L770,108 L800,108 L800,100 L820,100 L820,85 L825,85 L825,60 L830,60 L830,85 L835,85 L835,100 L860,100 L860,115 L890,115 L890,105 L920,105 L920,90 L930,90 L930,65 L935,65 L935,40 L938,40 L938,12 L941,12 L941,8 L944,8 L944,12 L947,12 L947,40 L950,40 L950,65 L955,65 L955,90 L970,90 L970,100 L1000,100 L1000,110 L1030,110 L1030,95 L1040,95 L1040,75 L1045,75 L1045,55 L1050,55 L1050,75 L1055,75 L1055,95 L1070,95 L1070,108 L1100,108 L1100,100 L1120,100 L1120,80 L1125,80 L1125,50 L1128,50 L1128,30 L1131,30 L1131,50 L1134,50 L1134,80 L1140,80 L1140,100 L1170,100 L1170,110 L1200,110 L1200,105 L1220,105 L1220,90 L1225,90 L1225,70 L1230,70 L1230,90 L1235,90 L1235,105 L1260,105 L1260,115 L1290,115 L1290,110 L1310,110 L1310,95 L1315,95 L1315,75 L1320,75 L1320,55 L1325,55 L1325,75 L1330,75 L1330,95 L1340,95 L1340,108 L1370,108 L1370,115 L1400,115 L1400,120 L1440,120 L1440,140 Z" />
+                <!-- Tiny lit windows -->
+                <g fill="#d49735" opacity="0.5">
+                    <rect x="133" y="40" width="2" height="2" rx="0.5" />
+                    <rect x="137" y="45" width="2" height="2" rx="0.5" />
+                    <rect x="133" y="52" width="2" height="2" rx="0.5" />
+                    <rect x="299" y="30" width="2" height="2" rx="0.5" />
+                    <rect x="303" y="35" width="2" height="2" rx="0.5" />
+                    <rect x="299" y="42" width="2" height="2" rx="0.5" />
+                    <rect x="569" y="35" width="2" height="2" rx="0.5" />
+                    <rect x="573" y="40" width="2" height="2" rx="0.5" />
+                    <rect x="569" y="48" width="2" height="2" rx="0.5" />
+                    <rect x="744" y="42" width="2" height="2" rx="0.5" />
+                    <rect x="748" y="50" width="2" height="2" rx="0.5" />
+                    <rect x="939" y="20" width="2" height="2" rx="0.5" />
+                    <rect x="943" y="28" width="2" height="2" rx="0.5" />
+                    <rect x="939" y="35" width="2" height="2" rx="0.5" />
+                    <rect x="1129" y="38" width="2" height="2" rx="0.5" />
+                    <rect x="200" y="48" width="2" height="2" rx="0.5" />
+                    <rect x="207" y="42" width="2" height="2" rx="0.5" />
+                    <rect x="380" y="48" width="2" height="2" rx="0.5" />
+                    <rect x="487" y="52" width="2" height="2" rx="0.5" />
+                    <rect x="670" y="55" width="2" height="2" rx="0.5" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="hero-content">
+            <!-- LEFT SIDE -->
+            <div class="hero-left">
+                <h1 class="hero-headline anim-fade-up-1">
+                    Train Here.<br />Inject Anywhere.
+                </h1>
+
+                <p class="hero-subheadline anim-fade-up-2">
+                    Hands-on <strong>BOTOX® &amp; Dermal Filler</strong> mastery in a real
+                    <strong>Midtown Manhattan clinic</strong> small groups, live models,
+                    dual <strong>RN + DDS</strong> supervision.
+                </p>
+
+                <!-- Benefit Chips -->
+                <div class="benefits-row anim-fade-up-3">
+                    <div class="benefit-chip">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M5.5 21a6.5 6.5 0 0 1 13 0" />
+                            <path d="M16 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Live Patient Models
+                    </div>
+                    <div class="benefit-chip">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        4:1 Student Ratio
+                    </div>
+                    <div class="benefit-chip">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        14+ Clinical Hours
+                    </div>
+                    <div class="benefit-chip">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        NYC Location
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="cta-group anim-fade-up-4">
+                    <button class="cta-btn cta-primary" id="cta-apply-us">
+                        <span class="cta-label">🇺🇸 Based in the US? Apply Now</span>
+                    </button>
+                    <button class="cta-btn cta-secondary" id="cta-apply-intl">
+                        <span class="cta-label">🌍 International? Start Visa Process</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE — GLASS CARD -->
+            <div class="anim-fade-right">
+                <div class="glass-card" id="cohort-card">
+                    <!-- Header -->
+                    <div class="card-header">
+                        <span class="card-title">Upcoming Cohorts</span>
+                        <span class="card-badge">2025</span>
+                    </div>
+
+                    <!-- Cohort Table -->
+                    <table class="cohort-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Program</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="cohort-date">Mar 28–29</span></td>
+                                <td><span class="cohort-type">Comprehensive</span></td>
+                                <td>
+                                    <span class="status-pill status-yellow">
+                                        <span class="dot"></span>
+                                        3 seats left
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cohort-date">Apr 19</span></td>
+                                <td><span class="cohort-type">Basic</span></td>
+                                <td>
+                                    <span class="status-pill status-green">
+                                        <span class="dot"></span>
+                                        Open
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cohort-date">May 10</span></td>
+                                <td><span class="cohort-type">Advanced</span></td>
+                                <td>
+                                    <span class="status-pill status-red">
+                                        <span class="dot"></span>
+                                        Waitlist
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Mini Stats -->
+                    <div class="mini-stats">
+                        <div class="mini-stat">
+                            <div class="mini-stat-value">4:1</div>
+                            <div class="mini-stat-label">Student<br />Ratio</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-value">Live</div>
+                            <div class="mini-stat-label">Patient<br />Models</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-value">14+</div>
+                            <div class="mini-stat-label">Clinical<br />Hours</div>
+                        </div>
+                    </div>
+
+                    <!-- Video Thumbnail -->
+                    <div class="video-thumb" id="video-preview" role="button" tabindex="0"
+                        aria-label="Watch training footage">
+                        <div class="video-scene">
+                            <svg class="scene-syringe" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.5 2.5L21.5 5.5M19 4L14.5 8.5M10.5 8.5L15.5 13.5M8 11L13 16M4.5 14.5L9.5 19.5M2 22L4.5 19.5M4.5 14.5L2 17L7 22L9.5 19.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div>
+                                <div class="scene-text">Safe Injection</div>
+                                <div class="scene-text">Training Preview</div>
+                            </div>
+                        </div>
+                        <div class="video-thumb-bg">
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-label-row">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="color: var(--white-50);">
+                            <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                        </svg>
+                        <span class="video-label">Watch Training Footage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SOCIAL PROOF STRIP ===== -->
+        <div class="social-proof anim-fade-up-5">
+            <div class="proof-strip" id="social-proof-strip">
+                <div class="proof-stats">
+                    <span class="proof-stat">180+ Providers Trained</span>
+                    <span class="proof-divider"></span>
+                    <span class="proof-stat">From 22 Countries</span>
+                    <span class="proof-divider"></span>
+                    <span class="proof-stat">4.9/5 Average Rating</span>
+                </div>
+                <p class="proof-quote">
+                    "The anatomy instruction alone was worth the flight from Dubai."
+                    <span class="proof-attribution">— Dr. S.A., Aesthetic Physician, UAE</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>Explore Program</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <script>
+        // Parallax-lite effect on orbs
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            document.querySelectorAll('.orb').forEach((orb, i) => {
+                const factor = (i + 1) * 8;
+                orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+            });
+        });
+
+        // Subtle tilt on glass card
+        const card = document.querySelector('.glass-card');
+        if (card) {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+                const y = ((e.clientY - rect.top) / rect.height - 0.5) * 6;
+                card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+                card.style.transition = 'transform 0.5s ease-out';
+            });
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease-out';
+            });
+        }
+    </script>
+</body>
+
+</html>

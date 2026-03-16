@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYFAF — Premium Injectable Training | New York City</title>
+    <meta name="description"
+        content="NYFAF is a selective injectable certification program for licensed medical professionals. Small cohorts, live models, Midtown Manhattan." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ════════════════════════════════════════════════════
+           NYFAF — Hero v4
+           Premium Admissions · Glassmorphic · Atmospheric
+           ════════════════════════════════════════════════════ */
+
+        /* ── TOKENS ── */
+        :root {
+            /* Backgrounds */
+            --bg-deep:        #0B0F17;
+            --bg-mid:         #101624;
+            --bg-card:        rgba(18, 24, 38, 0.65);
+            --bg-card-solid:  #131A2A;
+            --bg-proof:       #0D1220;
+
+            /* Brand */
+            --gold:           #C9933A;
+            --gold-hover:     #B58432;
+            --gold-soft:      #D4A754;
+            --amber:          #E4B56A;
+
+            /* Text */
+            --text-hi:        #F2F1EC;
+            --text-mid:       #A0A098;
+            --text-lo:        #686862;
+
+            /* Borders */
+            --border-subtle:  rgba(201, 147, 58, 0.08);
+            --border-card:    rgba(201, 147, 58, 0.15);
+            --border-strong:  rgba(201, 147, 58, 0.22);
+            --border-glass:   rgba(255, 255, 255, 0.07);
+
+            /* Status */
+            --st-open:        #34D399;
+            --st-limited:     #FBBF24;
+            --st-waitlist:    #F87171;
+
+            /* Type */
+            --f-head: 'Cormorant Garamond', Georgia, serif;
+            --f-body: 'DM Sans', -apple-system, sans-serif;
+
+            /* Radii */
+            --r-sm:  8px;
+            --r-md:  12px;
+            --r-lg:  16px;
+            --r-xl:  20px;
+        }
+
+        /* ── RESET ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--f-body);
+            background: var(--bg-deep);
+            color: var(--text-hi);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; font-family: var(--f-body); border: none; background: none; }
+        img { display: block; max-width: 100%; }
+
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           §1 — HERO
+           ════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 72px 0 64px;
+            overflow: hidden;
+        }
+
+        /* ── Atmospheric Background Layers ── */
+
+        /* Cinematic gradient base */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 30% 50%, rgba(17, 24, 42, 1) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(20, 28, 48, 0.9) 0%, transparent 60%),
+                linear-gradient(175deg, #0B0F17 0%, #0E1525 40%, #111B30 70%, #0C1220 100%);
+        }
+
+        /* Warm ambient glow (bottom) */
+        .hero-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 260px;
+            z-index: 1;
+            background: linear-gradient(
+                to top,
+                rgba(201, 147, 58, 0.05) 0%,
+                rgba(201, 147, 58, 0.02) 40%,
+                transparent 100%
+            );
+            pointer-events: none;
+        }
+
+        /* Faint gold orb accent (top-left) */
+        .hero-orb {
+            position: absolute;
+            top: 8%;
+            left: -5%;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 147, 58, 0.035) 0%, transparent 65%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* NYC Skyline silhouette */
+        .hero-skyline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.07;
+        }
+
+        /* Subtle grain overlay */
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.018;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+
+        /* ── Hero Grid ── */
+        .hero-grid {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 55% 1fr;
+            gap: 52px;
+            align-items: center;
+            width: 100%;
+        }
+
+
+        /* ────────────────────────────────────────────
+           LEFT COLUMN
+           ──────────────────────────────────────────── */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Eyebrow badge */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 147, 58, 0.08);
+            border: 1px solid var(--border-card);
+            border-radius: 100px;
+            padding: 6px 16px;
+            width: fit-content;
+            margin-bottom: 28px;
+        }
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .eyebrow-text {
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* Headline */
+        .headline {
+            font-family: var(--f-head);
+            font-size: 54px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-hi);
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+        }
+
+        .headline .gold {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* Subheadline */
+        .subheadline {
+            font-size: 15.5px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--text-mid);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        /* Trust points — 2×2 */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 440px;
+            margin-bottom: 34px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--r-sm);
+            padding: 10px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-hi);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .trust-item:hover {
+            border-color: var(--border-card);
+            background: rgba(201, 147, 58, 0.04);
+        }
+
+        .trust-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--r-sm);
+            background: rgba(201, 147, 58, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* CTA Row */
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 14px 30px;
+            border-radius: var(--r-sm);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 12px rgba(201, 147, 58, 0.20);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(201, 147, 58, 0.30);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-hi);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 13px 26px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--r-sm);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .btn-secondary .btn-ico {
+            opacity: 0.5;
+            font-size: 15px;
+        }
+
+        /* Dual path */
+        .dual-path {
+            font-size: 12.5px;
+            color: var(--text-lo);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .dual-path a {
+            color: var(--amber);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(228, 181, 106, 0.30);
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .dual-path a:hover {
+            color: var(--gold);
+            text-decoration-color: var(--gold);
+        }
+
+        .dual-path .sep {
+            margin: 0 10px;
+            color: var(--text-lo);
+        }
+
+        /* Support row */
+        .support-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 12px;
+            color: var(--text-lo);
+        }
+
+        .support-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .support-item .s-icon {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .support-divider {
+            width: 1px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+
+        /* ────────────────────────────────────────────
+           RIGHT COLUMN — SNAPSHOT CARD
+           ──────────────────────────────────────────── */
+        .snapshot-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px) saturate(1.15);
+            -webkit-backdrop-filter: blur(20px) saturate(1.15);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow:
+                0 24px 64px rgba(0, 0, 0, 0.35),
+                0 8px 24px rgba(0, 0, 0, 0.20),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Inner glow highlight */
+        .snapshot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(201, 147, 58, 0.03), transparent);
+            pointer-events: none;
+            border-radius: var(--r-xl) var(--r-xl) 0 0;
+        }
+
+        /* Card header */
+        .sc-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px 16px;
+            position: relative;
+        }
+
+        .sc-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .sc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--st-open);
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.15);
+            border-radius: 100px;
+            padding: 4px 12px;
+        }
+
+        .sc-badge-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--st-open);
+            flex-shrink: 0;
+            animation: pulse-soft 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.40); }
+            50%      { box-shadow: 0 0 5px 2px rgba(52, 211, 153, 0.15); }
+        }
+
+        /* Divider */
+        .sc-divider {
+            height: 1px;
+            background: var(--border-subtle);
+            margin: 0;
+        }
+
+        /* Cohort rows */
+        .sc-cohorts {
+            padding: 6px 0;
+        }
+
+        .cohort-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            transition: background 0.2s ease;
+        }
+
+        .cohort-row:hover {
+            background: rgba(201, 147, 58, 0.03);
+        }
+
+        .cohort-row + .cohort-row {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .c-date {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-hi);
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .c-name {
+            font-size: 12.5px;
+            font-weight: 400;
+            color: var(--text-mid);
+            flex: 1;
+        }
+
+        .c-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10.5px;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 100px;
+            flex-shrink: 0;
+            letter-spacing: 0.02em;
+        }
+
+        .c-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .c-open {
+            background: rgba(52, 211, 153, 0.08);
+            color: var(--st-open);
+        }
+        .c-open .c-dot { background: var(--st-open); }
+
+        .c-limited {
+            background: rgba(251, 191, 36, 0.08);
+            color: var(--st-limited);
+        }
+        .c-limited .c-dot { background: var(--st-limited); }
+
+        .c-waitlist {
+            background: rgba(248, 113, 113, 0.08);
+            color: var(--st-waitlist);
+        }
+        .c-waitlist .c-dot { background: var(--st-waitlist); }
+
+        .sc-footnote {
+            font-size: 11px;
+            color: var(--text-lo);
+            font-style: italic;
+            padding: 4px 24px 16px;
+        }
+
+        /* Program snapshot bullets */
+        .sc-snapshot {
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sc-snapshot-label {
+            font-size: 9.5px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-lo);
+            margin-bottom: 4px;
+        }
+
+        .snap-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-mid);
+        }
+
+        .snap-icon {
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+            background: var(--gold);
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        /* Card CTA area */
+        .sc-cta {
+            padding: 20px 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .btn-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 13px 20px;
+            border-radius: var(--r-sm);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(201, 147, 58, 0.18);
+        }
+
+        .btn-card:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 18px rgba(201, 147, 58, 0.28);
+        }
+
+        .sc-link {
+            font-size: 12px;
+            color: var(--text-lo);
+            text-align: center;
+            transition: color 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .sc-link:hover {
+            color: var(--amber);
+        }
+
+        .sc-link-icon {
+            font-size: 10px;
+            opacity: 0.7;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           §2 — SOCIAL PROOF STRIP
+           ════════════════════════════════════════════════ */
+        .proof-strip {
+            background: var(--bg-proof);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 0;
+        }
+
+        .proof-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .proof-item:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .proof-number {
+            color: var(--text-hi);
+            font-weight: 600;
+        }
+
+        .proof-quote {
+            font-family: var(--f-head);
+            font-style: italic;
+            font-size: 14.5px;
+            color: var(--text-mid);
+        }
+
+        .proof-attr {
+            color: var(--text-hi);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+
+        /* ════════════════════════════════════════════════
+           ANIMATIONS
+           ════════════════════════════════════════════════ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-left      { animation: fadeUp 0.7s ease-out both; }
+        .snapshot-card   { animation: fadeUp 0.7s 0.15s ease-out both; }
+        .proof-strip     { animation: fadeUp 0.5s 0.28s ease-out both; }
+
+
+        /* ════════════════════════════════════════════════
+           RESPONSIVE
+           ════════════════════════════════════════════════ */
+
+        /* ≤ 1080 */
+        @media (max-width: 1080px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+            .snapshot-card {
+                max-width: 500px;
+            }
+            .headline { font-size: 46px; }
+        }
+
+        /* ≤ 768 — Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 48px 0 56px;
+                min-height: auto;
+            }
+            .headline { font-size: 36px; }
+            .subheadline { font-size: 14.5px; }
+
+            .trust-grid { max-width: 100%; }
+
+            .cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dual-path { text-align: center; }
+
+            .support-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .proof-inner {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .proof-item {
+                padding: 5px 0;
+                border-right: none !important;
+            }
+            .proof-item:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                padding-bottom: 10px;
+            }
+
+            .container { padding: 0 1.25rem; }
+        }
+
+        /* ≤ 480 — Small */
+        @media (max-width: 480px) {
+            .headline { font-size: 30px; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .c-date { width: 78px; font-size: 12px; }
+            .c-name { font-size: 11.5px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════════
+         §1 — HERO
+         ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+
+        <!-- Background composition -->
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-orb" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+
+        <!-- NYC Skyline silhouette -->
+        <svg class="hero-skyline" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#C9933A"
+                d="M0,120 L0,100 L50,100 L50,78 L54,78 L54,72 L58,72 L58,78 L68,78 L68,92 L100,92 L100,68 L104,68 L104,50 L108,50 L108,44 L112,44 L112,50 L116,50 L116,68 L120,68 L120,86 L160,86 L160,78 L172,78 L172,60 L176,60 L176,48 L180,48 L180,42 L182,42 L182,22 L184,22 L184,16 L186,16 L186,22 L188,22 L188,42 L190,42 L190,48 L194,48 L194,60 L198,60 L198,78 L230,78 L230,84 L270,84 L270,68 L276,68 L276,44 L280,44 L280,32 L284,32 L284,44 L288,44 L288,68 L294,68 L294,84 L340,84 L340,94 L380,94 L380,80 L390,80 L390,56 L394,56 L394,36 L396,36 L396,14 L398,14 L398,8 L400,8 L400,14 L402,14 L402,36 L404,36 L404,56 L408,56 L408,80 L424,80 L424,90 L470,90 L470,82 L490,82 L490,62 L494,62 L494,42 L498,42 L498,62 L502,62 L502,82 L530,82 L530,92 L570,92 L570,86 L600,86 L600,70 L604,70 L604,46 L606,46 L606,24 L608,24 L608,16 L610,16 L610,24 L612,24 L612,46 L616,46 L616,70 L620,70 L620,86 L660,86 L660,94 L700,94 L700,84 L720,84 L720,64 L724,64 L724,44 L726,44 L726,28 L728,28 L728,44 L730,44 L730,64 L734,64 L734,84 L770,84 L770,90 L810,90 L810,82 L830,82 L830,62 L834,62 L834,40 L836,40 L836,20 L838,20 L838,10 L840,10 L840,20 L842,20 L842,40 L844,40 L844,62 L850,62 L850,82 L890,82 L890,92 L930,92 L930,84 L960,84 L960,66 L964,66 L964,46 L968,46 L968,66 L972,66 L972,84 L1010,84 L1010,94 L1050,94 L1050,86 L1080,86 L1080,70 L1084,70 L1084,48 L1086,48 L1086,30 L1088,30 L1088,48 L1090,48 L1090,70 L1096,70 L1096,86 L1130,86 L1130,94 L1170,94 L1170,88 L1200,88 L1200,74 L1204,74 L1204,56 L1208,56 L1208,74 L1212,74 L1212,88 L1250,88 L1250,96 L1300,96 L1300,90 L1330,90 L1330,78 L1334,78 L1334,62 L1338,62 L1338,78 L1342,78 L1342,90 L1380,90 L1380,100 L1440,100 L1440,120 Z"/>
+            <g fill="#E4B56A" opacity="0.45">
+                <rect x="183" y="28" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="185" y="36" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="397" y="20" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="399" y="30" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="607" y="30" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="609" y="40" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="727" y="34" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="837" y="24" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="839" y="34" width="1.5" height="1.5" rx="0.3"/>
+                <rect x="1087" y="36" width="1.5" height="1.5" rx="0.3"/>
+            </g>
+        </svg>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- ── LEFT COLUMN ── -->
+                <div class="hero-left">
+
+                    <!-- Eyebrow -->
+                    <div class="eyebrow" id="hero-eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span>
+                        <span class="eyebrow-text">Licensed Medical Professionals Only</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="headline" id="hero-headline">
+                        Master Facial Aesthetics<br>
+                        in the Heart of <span class="gold">New York City.</span>
+                    </h1>
+
+                    <!-- Supporting paragraph -->
+                    <p class="subheadline" id="hero-sub">
+                        Join an advanced hands-on BOTOX® and dermal filler training experience
+                        in Midtown Manhattan, designed for licensed medical professionals seeking
+                        real patient exposure, expert guidance, and premium small-group learning.
+                    </p>
+
+                    <!-- Trust points -->
+                    <div class="trust-grid" id="hero-trust">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/></svg>
+                            </div>
+                            Live Model Training
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            14+ Clinical Hours
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                            Small Elite Cohorts
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            Certificate of Completion
+                        </div>
+                    </div>
+
+                    <!-- CTA Row -->
+                    <div class="cta-row" id="hero-cta">
+                        <a href="#apply" class="btn-primary">Apply Now →</a>
+                        <a href="#brochure" class="btn-secondary">
+                            <span class="btn-ico" aria-hidden="true">↓</span>
+                            Download Brochure
+                        </a>
+                    </div>
+
+                    <!-- Dual path -->
+                    <div class="dual-path" id="hero-dual-path">
+                        Based in the U.S.? <a href="#apply">Start Application</a>
+                        <span class="sep" aria-hidden="true">·</span>
+                        Applying internationally? <a href="#visa">View Visa &amp; Admissions Steps</a>
+                    </div>
+
+                    <!-- Support row -->
+                    <div class="support-row" id="hero-support">
+                        <div class="support-item">
+                            <span class="s-icon" aria-hidden="true">💬</span>
+                            <span>WhatsApp Admissions</span>
+                        </div>
+                        <div class="support-divider" aria-hidden="true"></div>
+                        <div class="support-item">
+                            <span class="s-icon" aria-hidden="true">👥</span>
+                            <span>4:1 Student-Faculty Ratio</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ── RIGHT COLUMN — SNAPSHOT CARD ── -->
+                <div class="snapshot-card" id="snapshot-card">
+
+                    <!-- Header -->
+                    <div class="sc-header">
+                        <span class="sc-label">Next NYC Cohorts</span>
+                        <span class="sc-badge">
+                            <span class="sc-badge-dot" aria-hidden="true"></span>
+                            Admissions Open
+                        </span>
+                    </div>
+
+                    <div class="sc-divider" aria-hidden="true"></div>
+
+                    <!-- Cohort status board -->
+                    <div class="sc-cohorts">
+                        <div class="cohort-row">
+                            <span class="c-date">Mar 28–29</span>
+                            <span class="c-name">Comprehensive</span>
+                            <span class="c-status c-limited">
+                                <span class="c-dot" aria-hidden="true"></span>
+                                Limited Seats
+                            </span>
+                        </div>
+                        <div class="cohort-row">
+                            <span class="c-date">Apr 19</span>
+                            <span class="c-name">Basic</span>
+                            <span class="c-status c-open">
+                                <span class="c-dot" aria-hidden="true"></span>
+                                Open
+                            </span>
+                        </div>
+                        <div class="cohort-row">
+                            <span class="c-date">May 10</span>
+                            <span class="c-name">Advanced</span>
+                            <span class="c-status c-waitlist">
+                                <span class="c-dot" aria-hidden="true"></span>
+                                Waitlist
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="sc-footnote">International applicants should plan 3–6 months ahead for visa processing.</div>
+
+                    <div class="sc-divider" aria-hidden="true"></div>
+
+                    <!-- Program snapshot -->
+                    <div class="sc-snapshot">
+                        <div class="sc-snapshot-label">Program Snapshot</div>
+                        <div class="snap-item">
+                            <span class="snap-icon" aria-hidden="true"></span>
+                            Midtown Manhattan, New York City
+                        </div>
+                        <div class="snap-item">
+                            <span class="snap-icon" aria-hidden="true"></span>
+                            Live model injectable training
+                        </div>
+                        <div class="snap-item">
+                            <span class="snap-icon" aria-hidden="true"></span>
+                            Small-group format (max 10 per cohort)
+                        </div>
+                        <div class="snap-item">
+                            <span class="snap-icon" aria-hidden="true"></span>
+                            Designed for licensed professionals only
+                        </div>
+                    </div>
+
+                    <div class="sc-divider" aria-hidden="true"></div>
+
+                    <!-- Card CTA -->
+                    <div class="sc-cta">
+                        <a href="#eligibility" class="btn-card" id="btn-eligibility">Check Eligibility</a>
+                        <a href="#footage" class="sc-link">
+                            <span class="sc-link-icon" aria-hidden="true">▶</span>
+                            Watch Training Footage
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         §2 — SOCIAL PROOF STRIP
+         ════════════════════════════════════════════════ -->
+    <div class="proof-strip" id="social-proof">
+        <div class="container proof-inner">
+            <div class="proof-item">
+                <span><span class="proof-number">180+</span> Providers Trained</span>
+            </div>
+            <div class="proof-item">
+                <span><span class="proof-number">22</span> Countries Represented</span>
+            </div>
+            <div class="proof-item">
+                <span>Avg. Rating <span class="proof-number">4.9 / 5</span></span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-quote">"The anatomy instruction alone was worth the flight from Dubai."</span>
+                &nbsp;—&nbsp;
+                <span class="proof-attr">Dr. S.A., Aesthetic Physician, UAE</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYFAF — NY Facial Aesthetics Forum | Premium Injectable Training NYC</title>
+    <meta name="description"
+        content="NYFAF is a selective injectable certification program for licensed medical professionals. Small cohorts, live patient models, Midtown Manhattan. Apply now." />
+
+    <!-- Fonts: Cormorant Garamond (headlines) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════════════════════
+           NYFAF — NY Facial Aesthetics Forum
+           Hero Section v3 — Premium Admissions Experience
+           ═══════════════════════════════════════════════════ */
+
+        /* ── DESIGN TOKENS ── */
+        :root {
+            /* Backgrounds */
+            --bg-deep:          #0C1018;
+            --bg-announcement:  #080C12;
+            --bg-card:          #141A24;
+            --bg-card-alt:      #111720;
+            --bg-proof-strip:   #0E1319;
+
+            /* Brand palette */
+            --gold:             #C9933A;
+            --gold-hover:       #B8842F;
+            --gold-soft:        #D4A650;
+            --amber:            #E8B86D;
+
+            /* Text */
+            --text-primary:     #F0F0EA;
+            --text-secondary:   #8A8A82;
+            --text-muted:       #5C5C56;
+
+            /* Borders */
+            --border-subtle:    rgba(201, 147, 58, 0.10);
+            --border-card:      rgba(201, 147, 58, 0.18);
+            --border-strong:    rgba(201, 147, 58, 0.25);
+
+            /* Status */
+            --status-open:      #2ECC71;
+            --status-limited:   #F39C12;
+            --status-waitlist:  #CD6155;
+
+            /* Typography */
+            --font-headline:    'Cormorant Garamond', Georgia, serif;
+            --font-body:        'DM Sans', Helvetica, Arial, sans-serif;
+        }
+
+        /* ── RESET ── */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        button {
+            cursor: pointer;
+            font-family: var(--font-body);
+            border: none;
+            background: none;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+
+        /* ═══════════════════════════════════════════════
+           §1 — ANNOUNCEMENT BAR
+           ═══════════════════════════════════════════════ */
+        .announcement-bar {
+            background: var(--bg-announcement);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 0;
+        }
+
+        .announcement-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .announcement-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+            animation: pulse-glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201, 147, 58, 0.45); }
+            50%      { box-shadow: 0 0 6px 3px rgba(201, 147, 58, 0.18); }
+        }
+
+        .announcement-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .seats-remaining {
+            color: var(--amber);
+            font-weight: 500;
+        }
+
+        .announcement-sep {
+            width: 1px;
+            height: 13px;
+            background: rgba(201, 147, 58, 0.22);
+        }
+
+        .rolling-text {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+
+        /* ═══════════════════════════════════════════════
+           §2 — NAVIGATION BAR
+           ═══════════════════════════════════════════════ */
+        .navbar {
+            background: var(--bg-deep);
+            border-bottom: 1px solid var(--border-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        /* Logo */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-headline);
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.03em;
+        }
+
+        /* Nav links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.25s ease;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Nav CTA */
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            padding: 9px 20px;
+            transition: background 0.25s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-hover);
+        }
+
+
+        /* ═══════════════════════════════════════════════
+           §3 — HERO SECTION
+           ═══════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 60px - 37px);
+            display: flex;
+            align-items: center;
+            padding: 64px 0 80px;
+            overflow: hidden;
+        }
+
+        /* Subtle ambient glow — NYC skyline mood */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background: linear-gradient(
+                to top,
+                rgba(201, 147, 58, 0.04) 0%,
+                transparent 100%
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Faint skyline silhouette */
+        .hero-skyline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.06;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 54% 1fr;
+            gap: 56px;
+            align-items: start;
+            width: 100%;
+        }
+
+
+        /* ── Left Column ── */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            padding-top: 12px;
+        }
+
+        /* Eyebrow badge */
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            border: 1px solid var(--border-card);
+            padding: 5px 14px;
+            width: fit-content;
+            margin-bottom: 28px;
+        }
+
+        .hero-eyebrow .eyebrow-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .hero-eyebrow span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* Headline */
+        .hero-headline {
+            font-family: var(--font-headline);
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.08;
+            color: var(--text-primary);
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-headline .accent {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* Subheadline */
+        .hero-sub {
+            font-size: 15.5px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        /* Trust points — 2×2 grid */
+        .trust-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 420px;
+            margin-bottom: 34px;
+        }
+
+        .trust-point {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 9px 14px;
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: border-color 0.25s ease;
+        }
+
+        .trust-point:hover {
+            border-color: var(--border-strong);
+        }
+
+        .trust-point .tp-icon {
+            color: var(--gold);
+            font-size: 11px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        /* CTA Row */
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 14px 28px;
+            transition: background 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-hover);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 13.5px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 13px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline .btn-icon {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Dual-path selector */
+        .dual-path {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .dual-path a {
+            color: var(--amber);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(232, 184, 109, 0.35);
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .dual-path a:hover {
+            color: var(--gold);
+            text-decoration-color: var(--gold);
+        }
+
+        .dual-path .sep {
+            margin: 0 10px;
+            color: var(--text-muted);
+        }
+
+
+        /* ── Right Column — Program Snapshot Card ── */
+        .snapshot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card header */
+        .sc-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .sc-title {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .sc-year {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Course level tabs */
+        .sc-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .sc-tab {
+            flex: 1;
+            text-align: center;
+            padding: 11px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease;
+            position: relative;
+            border: none;
+            background: none;
+        }
+
+        .sc-tab:not(:last-child) {
+            border-right: 1px solid var(--border-subtle);
+        }
+
+        .sc-tab:hover {
+            color: var(--text-secondary);
+            background: rgba(201, 147, 58, 0.03);
+        }
+
+        .sc-tab.active {
+            color: var(--gold);
+            background: rgba(201, 147, 58, 0.05);
+        }
+
+        .sc-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        /* Cohort rows */
+        .sc-cohorts {
+            padding: 8px 24px 4px;
+        }
+
+        .cohort-row {
+            display: flex;
+            align-items: center;
+            padding: 11px 0;
+            transition: background 0.2s ease;
+        }
+
+        .cohort-row:hover {
+            background: rgba(201, 147, 58, 0.03);
+            margin: 0 -24px;
+            padding: 11px 24px;
+        }
+
+        .cohort-row + .cohort-row {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .cohort-date {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-primary);
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .cohort-name {
+            font-size: 12px;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .cohort-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 4px 10px;
+            flex-shrink: 0;
+        }
+
+        .cohort-badge .badge-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Badge variants */
+        .badge-open {
+            background: rgba(46, 204, 113, 0.10);
+            color: var(--status-open);
+        }
+        .badge-open .badge-dot { background: var(--status-open); }
+
+        .badge-limited {
+            background: rgba(243, 156, 18, 0.10);
+            color: var(--status-limited);
+        }
+        .badge-limited .badge-dot { background: var(--status-limited); }
+
+        .badge-waitlist {
+            background: rgba(205, 97, 85, 0.10);
+            color: var(--status-waitlist);
+        }
+        .badge-waitlist .badge-dot { background: var(--status-waitlist); }
+
+        .sc-footnote {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 0 24px 16px;
+        }
+
+        /* Divider within card */
+        .sc-divider {
+            height: 1px;
+            background: var(--border-subtle);
+        }
+
+        /* Key stats 2×2 */
+        .sc-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0;
+        }
+
+        .sc-stat {
+            text-align: center;
+            padding: 18px 12px;
+            border: 0.5px solid var(--border-subtle);
+        }
+
+        .sc-stat-value {
+            font-family: var(--font-headline);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1.2;
+            margin-bottom: 3px;
+        }
+
+        .sc-stat-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* Card CTA area */
+        .sc-cta-area {
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .btn-card-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            padding: 13px 20px;
+            width: 100%;
+            transition: background 0.25s ease;
+        }
+
+        .btn-card-primary:hover {
+            background: var(--gold-hover);
+        }
+
+        .sc-secondary-link {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .sc-secondary-link:hover {
+            color: var(--amber);
+        }
+
+        .sc-secondary-link .link-icon {
+            font-size: 13px;
+        }
+
+
+        /* ═══════════════════════════════════════════════
+           §4 — SOCIAL PROOF STRIP
+           ═══════════════════════════════════════════════ */
+        .proof-strip {
+            background: var(--bg-proof-strip);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 0;
+        }
+
+        .proof-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 0 22px;
+        }
+
+        .proof-item:not(:last-child) {
+            border-right: 1px solid rgba(201, 147, 58, 0.12);
+        }
+
+        .proof-number {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .proof-quote {
+            font-family: var(--font-headline);
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .proof-attribution {
+            color: var(--text-primary);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+
+        /* ═══════════════════════════════════════════════
+           ENTRANCE ANIMATIONS (subtle)
+           ═══════════════════════════════════════════════ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-left     { animation: fadeInUp 0.65s ease-out both; }
+        .snapshot-card  { animation: fadeInUp 0.65s 0.12s ease-out both; }
+        .proof-strip    { animation: fadeInUp 0.45s 0.24s ease-out both; }
+
+
+        /* ═══════════════════════════════════════════════
+           RESPONSIVE ≤ 1024px
+           ═══════════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .snapshot-card {
+                max-width: 520px;
+            }
+
+            .hero-headline {
+                font-size: 44px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════
+           RESPONSIVE ≤ 768px (MOBILE)
+           ═══════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .announcement-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .announcement-right {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .announcement-sep { display: none; }
+
+            .nav-links { display: none; }
+
+            .navbar-inner { height: 52px; }
+
+            .hero {
+                padding: 36px 0 56px;
+                min-height: auto;
+            }
+
+            .hero-headline { font-size: 36px; }
+
+            .trust-points { max-width: 100%; }
+
+            .cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dual-path {
+                text-align: center;
+            }
+
+            .proof-inner {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .proof-item {
+                padding: 4px 0;
+                border-right: none !important;
+            }
+
+            .proof-item:not(:last-child) {
+                border-bottom: 1px solid rgba(201, 147, 58, 0.08);
+                padding-bottom: 8px;
+            }
+
+            .container { padding: 0 1.25rem; }
+
+            .sc-tabs { flex-wrap: wrap; }
+        }
+
+        /* RESPONSIVE ≤ 480px */
+        @media (max-width: 480px) {
+            .hero-headline { font-size: 30px; }
+            .hero-sub { font-size: 14px; }
+
+            .trust-points {
+                grid-template-columns: 1fr;
+            }
+
+            .cohort-date {
+                width: 76px;
+                font-size: 12px;
+            }
+
+            .cohort-name { font-size: 11px; }
+
+            .sc-stat-value { font-size: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═════════════════════════════════════════════
+         §1 — ANNOUNCEMENT BAR
+         ═════════════════════════════════════════════ -->
+    <div class="announcement-bar" id="announcement-bar" role="banner">
+        <div class="container announcement-inner">
+            <div class="announcement-left">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Next NYC Cohort: <strong>March 28–29, 2026</strong> · Comprehensive Training</span>
+            </div>
+            <div class="announcement-right">
+                <span class="seats-remaining">3 of 10 seats remaining</span>
+                <span class="announcement-sep" aria-hidden="true"></span>
+                <span class="rolling-text">Applications reviewed on a rolling basis</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═════════════════════════════════════════════
+         §2 — NAVIGATION BAR
+         ═════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar" aria-label="Primary navigation">
+        <div class="container navbar-inner">
+
+            <!-- Logo -->
+            <a href="#" class="nav-logo" aria-label="NYFAF Home">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2v20" stroke="#C9933A" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M12 4c2.5 0 5 1.5 5 3.5S14.5 11 12 11" stroke="#C9933A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    <path d="M12 4c-2.5 0-5 1.5-5 3.5S9.5 11 12 11" stroke="#C9933A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    <path d="M12 8c2 0 4 1.2 4 2.8S14 14 12 14" stroke="#C9933A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    <path d="M12 8c-2 0-4 1.2-4 2.8S10 14 12 14" stroke="#C9933A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    <circle cx="9" cy="3" r="1.2" fill="#C9933A"/>
+                    <circle cx="15" cy="3" r="1.2" fill="#C9933A"/>
+                </svg>
+                <span class="nav-logo-text">NYFAF</span>
+            </a>
+
+            <!-- Center links -->
+            <ul class="nav-links">
+                <li><a href="#program">Program</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#international">International</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+
+            <!-- Apply CTA -->
+            <a href="#apply" class="nav-cta" id="nav-apply">Apply Now</a>
+        </div>
+    </nav>
+
+
+    <!-- ═════════════════════════════════════════════
+         §3 — HERO SECTION
+         ═════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+
+        <!-- Subtle NYC skyline silhouette at bottom -->
+        <svg class="hero-skyline" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#C9933A"
+                d="M0,100 L0,88 L40,88 L40,70 L44,70 L44,66 L48,66 L48,70 L56,70 L56,82 L80,82 L80,60 L84,60 L84,46 L88,46 L88,42 L92,42 L92,46 L96,46 L96,60 L100,60 L100,78 L130,78 L130,72 L140,72 L140,58 L144,58 L144,48 L148,48 L148,44 L150,44 L150,22 L152,22 L152,18 L154,18 L154,22 L156,22 L156,44 L158,44 L158,48 L162,48 L162,58 L166,58 L166,72 L180,72 L180,76 L210,76 L210,62 L214,62 L214,40 L218,40 L218,30 L222,30 L222,40 L226,40 L226,62 L230,62 L230,76 L260,76 L260,84 L300,84 L300,72 L308,72 L308,52 L312,52 L312,34 L314,34 L314,14 L316,14 L316,10 L318,10 L318,14 L320,14 L320,34 L322,34 L322,52 L326,52 L326,72 L340,72 L340,80 L380,80 L380,68 L388,68 L388,50 L392,50 L392,36 L396,36 L396,50 L400,50 L400,68 L420,68 L420,80 L460,80 L460,86 L500,86 L500,74 L508,74 L508,44 L512,44 L512,30 L516,30 L516,44 L520,44 L520,74 L540,74 L540,82 L580,82 L580,76 L600,76 L600,58 L604,58 L604,36 L606,36 L606,18 L608,18 L608,12 L610,12 L610,18 L612,18 L612,36 L614,36 L614,58 L618,58 L618,76 L650,76 L650,84 L690,84 L690,78 L710,78 L710,60 L714,60 L714,42 L718,42 L718,60 L722,60 L722,78 L750,78 L750,86 L790,86 L790,74 L800,74 L800,52 L802,52 L802,26 L804,26 L804,16 L806,16 L806,26 L808,26 L808,52 L812,52 L812,74 L840,74 L840,82 L880,82 L880,76 L910,76 L910,62 L918,62 L918,40 L922,40 L922,20 L924,20 L924,8 L926,8 L926,20 L928,20 L928,40 L932,40 L932,62 L950,62 L950,76 L990,76 L990,84 L1030,84 L1030,72 L1038,72 L1038,54 L1042,54 L1042,38 L1046,38 L1046,54 L1050,54 L1050,72 L1070,72 L1070,82 L1110,82 L1110,76 L1130,76 L1130,56 L1134,56 L1134,36 L1136,36 L1136,22 L1138,22 L1138,36 L1140,36 L1140,56 L1146,56 L1146,76 L1180,76 L1180,84 L1220,84 L1220,78 L1240,78 L1240,64 L1244,64 L1244,48 L1248,48 L1248,64 L1252,64 L1252,78 L1280,78 L1280,86 L1320,86 L1320,80 L1340,80 L1340,68 L1344,68 L1344,50 L1348,50 L1348,68 L1352,68 L1352,80 L1380,80 L1380,88 L1440,88 L1440,100 Z"/>
+            <!-- Lit windows -->
+            <g fill="#E8B86D" opacity="0.5">
+                <rect x="151" y="26" width="2" height="2"/>
+                <rect x="153" y="32" width="2" height="2"/>
+                <rect x="315" y="20" width="2" height="2"/>
+                <rect x="317" y="28" width="2" height="2"/>
+                <rect x="607" y="22" width="2" height="2"/>
+                <rect x="609" y="30" width="2" height="2"/>
+                <rect x="803" y="32" width="2" height="2"/>
+                <rect x="805" y="40" width="2" height="2"/>
+                <rect x="925" y="14" width="2" height="2"/>
+                <rect x="923" y="26" width="2" height="2"/>
+                <rect x="1137" y="28" width="2" height="2"/>
+            </g>
+        </svg>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- ── LEFT COLUMN — Copy + CTAs ── -->
+                <div class="hero-left">
+
+                    <!-- Eyebrow -->
+                    <div class="hero-eyebrow" id="hero-eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span>
+                        <span>Licensed Medical Professionals Only</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="hero-headline" id="hero-headline">
+                        Master Facial Aesthetics<br>
+                        in <span class="accent">New York City.</span>
+                    </h1>
+
+                    <!-- Supporting paragraph -->
+                    <p class="hero-sub" id="hero-sub">
+                        Advanced hands-on BOTOX® and dermal filler certification for licensed medical professionals.
+                        Real patient exposure, expert dual-faculty instruction, and premium small-group learning
+                        in the heart of Midtown Manhattan.
+                    </p>
+
+                    <!-- Trust / proof points -->
+                    <div class="trust-points" id="trust-points">
+                        <div class="trust-point">
+                            <span class="tp-icon" aria-hidden="true">✦</span>
+                            Live Model Training
+                        </div>
+                        <div class="trust-point">
+                            <span class="tp-icon" aria-hidden="true">✦</span>
+                            14+ Clinical Hours
+                        </div>
+                        <div class="trust-point">
+                            <span class="tp-icon" aria-hidden="true">✦</span>
+                            Small Elite Cohorts
+                        </div>
+                        <div class="trust-point">
+                            <span class="tp-icon" aria-hidden="true">✦</span>
+                            Certificate of Completion
+                        </div>
+                    </div>
+
+                    <!-- CTA Row -->
+                    <div class="cta-row" id="hero-cta">
+                        <a href="#apply" class="btn-primary">Apply Now →</a>
+                        <a href="#brochure" class="btn-outline">
+                            <span class="btn-icon" aria-hidden="true">↓</span>
+                            Download Brochure
+                        </a>
+                    </div>
+
+                    <!-- Dual-path navigation -->
+                    <div class="dual-path" id="dual-path">
+                        Based in the U.S.? <a href="#apply">Start Application</a>
+                        <span class="sep" aria-hidden="true">·</span>
+                        Applying internationally? <a href="#visa">View Visa &amp; Admissions Steps</a>
+                    </div>
+
+                </div>
+
+                <!-- ── RIGHT COLUMN — Program Snapshot Card ── -->
+                <div class="snapshot-card" id="snapshot-card">
+
+                    <!-- Card header -->
+                    <div class="sc-header">
+                        <span class="sc-title">Program Snapshot</span>
+                        <span class="sc-year">2026</span>
+                    </div>
+
+                    <!-- Course level tabs -->
+                    <div class="sc-tabs" role="tablist" aria-label="Course levels">
+                        <button class="sc-tab" role="tab" aria-selected="false">Basic</button>
+                        <button class="sc-tab active" role="tab" aria-selected="true">Comprehensive</button>
+                        <button class="sc-tab" role="tab" aria-selected="false">Advanced</button>
+                    </div>
+
+                    <!-- Cohort status board -->
+                    <div class="sc-cohorts">
+                        <div class="cohort-row">
+                            <span class="cohort-date">Mar 28–29</span>
+                            <span class="cohort-name">Comprehensive</span>
+                            <span class="cohort-badge badge-limited">
+                                <span class="badge-dot" aria-hidden="true"></span>
+                                Limited
+                            </span>
+                        </div>
+                        <div class="cohort-row">
+                            <span class="cohort-date">Apr 19</span>
+                            <span class="cohort-name">Basic Certification</span>
+                            <span class="cohort-badge badge-open">
+                                <span class="badge-dot" aria-hidden="true"></span>
+                                Open
+                            </span>
+                        </div>
+                        <div class="cohort-row">
+                            <span class="cohort-date">May 10</span>
+                            <span class="cohort-name">Advanced</span>
+                            <span class="cohort-badge badge-waitlist">
+                                <span class="badge-dot" aria-hidden="true"></span>
+                                Waitlist
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="sc-footnote">Cohorts close when full. International applicants should plan 3–6 months ahead.</div>
+
+                    <!-- Divider -->
+                    <div class="sc-divider" aria-hidden="true"></div>
+
+                    <!-- Key stats 2×2 -->
+                    <div class="sc-stats">
+                        <div class="sc-stat">
+                            <div class="sc-stat-value">4:1</div>
+                            <div class="sc-stat-label">Student Ratio</div>
+                        </div>
+                        <div class="sc-stat">
+                            <div class="sc-stat-value">14+</div>
+                            <div class="sc-stat-label">Clinical Hours</div>
+                        </div>
+                        <div class="sc-stat">
+                            <div class="sc-stat-value">Live</div>
+                            <div class="sc-stat-label">Patient Models</div>
+                        </div>
+                        <div class="sc-stat">
+                            <div class="sc-stat-value">NYC</div>
+                            <div class="sc-stat-label">Manhattan</div>
+                        </div>
+                    </div>
+
+                    <!-- Card CTA area -->
+                    <div class="sc-cta-area">
+                        <a href="#eligibility" class="btn-card-primary" id="check-eligibility">Check Eligibility</a>
+                        <a href="#footage" class="sc-secondary-link">
+                            <span class="link-icon" aria-hidden="true">▶</span>
+                            Watch Training Footage
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════
+         §4 — SOCIAL PROOF STRIP
+         ═════════════════════════════════════════════ -->
+    <div class="proof-strip" id="social-proof">
+        <div class="container proof-inner">
+            <div class="proof-item">
+                <span><span class="proof-number">180+</span> Providers Trained</span>
+            </div>
+            <div class="proof-item">
+                <span><span class="proof-number">22</span> Countries Represented</span>
+            </div>
+            <div class="proof-item">
+                <span>Avg. Rating <span class="proof-number">4.9 / 5</span></span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-quote">"The anatomy instruction alone was worth the flight from Dubai."</span>
+                &nbsp;—&nbsp;
+                <span class="proof-attribution">Dr. S.A., Aesthetic Physician, UAE</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
