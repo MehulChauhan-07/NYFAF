@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NYFAF teaching approach: anatomy-focused education, patient safety, supervised live-model practice, and small-group injectable training in New York City." />
+  <title>Our Teaching Approach | NYFAF</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#d49735',
+            'navy-deep': '#0f172a',
+            'brand-navy': '#1e293b',
+            'brand-cream': '#fdf8f0',
+            'background-light': '#f8f7f6'
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          borderRadius: { '2xl': '1rem', '3xl': '1.5rem', '4xl': '2rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .medical-grid {
+      background-image: radial-gradient(rgba(212,151,53,.18) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .gold-gradient { background: linear-gradient(135deg, #d49735 0%, #b37b2a 100%); }
+    .soft-shadow { box-shadow: 0 28px 70px rgba(15, 23, 42, .10); }
+    .section-kicker { letter-spacing: .18em; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Design basis: user-provided NYFAF HTML references. Content basis: live nyfam.org + user's restructuring Google Doc. -->
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+      <a href="https://nyfam.org/" class="flex items-center gap-3" aria-label="NYFAF home">
+        <div class="text-primary">
+          <svg class="h-9 w-9" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" d="M24 .757 47.243 24 24 47.243.757 24 24 .757ZM21 35.757V12.243L9.243 24 21 35.757Z" fill="currentColor" fill-rule="evenodd" />
+          </svg>
+        </div>
+        <div>
+          <div class="text-xl font-black tracking-tight text-navy-deep">NYFAF</div>
+          <div class="text-[9px] font-bold uppercase tracking-[.22em] text-primary">Facial Aesthetics Forum</div>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <a class="transition hover:text-primary" href="https://nyfam.org/">Home</a>
+        <a class="transition hover:text-primary" href="#principles">How We Teach</a>
+        <a class="transition hover:text-primary" href="#curriculum">Curriculum</a>
+        <a class="transition hover:text-primary" href="#programs">Programs</a>
+        <a class="transition hover:text-primary" href="https://nyfam.org/contact/">Contact</a>
+        <a class="rounded-xl bg-primary px-5 py-3 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" href="https://nyfam.org/contact/">Talk To Advisors</a>
+      </nav>
+      <a class="rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white md:hidden" href="#programs">Programs</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / new page introduction from the restructuring doc -->
+    <section class="relative overflow-hidden bg-navy-deep text-white">
+      <div class="absolute inset-0 medical-grid opacity-60"></div>
+      <div class="absolute -right-32 -top-32 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-3xl"></div>
+      <div class="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-6 lg:grid-cols-12 lg:px-8 lg:py-28">
+        <div class="flex flex-col justify-center lg:col-span-7">
+          <div class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-bold uppercase text-primary section-kicker">
+            Hands-On Injector Education in New York City
+          </div>
+          <h1 class="max-w-4xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
+            Our Teaching <span class="text-primary">Approach</span>
+          </h1>
+          <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+            NYFAF combines anatomy-focused education, patient-safety principles, instructor demonstrations, and supervised live-model practice. Our small-group format helps licensed medical professionals connect clinical knowledge with practical decision-making and develop greater confidence in aesthetic injectable procedures.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#journey" class="gold-gradient rounded-xl px-7 py-4 font-bold text-white shadow-xl shadow-primary/20 transition hover:-translate-y-0.5">See the Learning Journey</a>
+            <a href="#programs" class="rounded-xl border border-white/20 bg-white/5 px-7 py-4 font-bold text-white transition hover:bg-white/10">Explore Training Programs</a>
+          </div>
+        </div>
+        <div class="relative lg:col-span-5">
+          <div class="absolute -inset-5 rounded-[2.5rem] bg-primary/15 blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 soft-shadow">
+            <img class="h-[31rem] w-full rounded-[1.55rem] object-cover" alt="Hands-on clinical aesthetics training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDmNTbO7TcaKWN2kVdTdqcAhmgl98011jc0p0b-eEBTs5gSY3OGjQMD22pd5ehIpMeTpCK9Y6xCSfSohmHKSBpR6aF39p6HhINzJx-FkpyNJUNprRDoj6aL6prlJo0x7U_jF5xc9ImJixKJAfXnqr9PlXU5Eu2Ue_YO3-xWl-Xn6kI6G0mGLNVHU8KJjYuZORMYSrpn1kCkE6zXkKLosk64QYCHsvjd7woajcQeQufndOM0pyXu1JpQuoALu6g95W8bGxOMH20Gp27" />
+            <div class="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/15 bg-navy-deep/80 p-5 backdrop-blur-lg">
+              <div class="text-xs font-bold uppercase text-primary section-kicker">NYFAF Training Standard</div>
+              <div class="mt-2 text-lg font-bold">Anatomy. Safety. Supervision. Live-model practice.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fast summary strip -->
+    <section class="relative z-10 mx-auto -mt-8 max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div class="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl md:grid-cols-4">
+        <div class="border-b border-slate-200 p-7 md:border-b-0 md:border-r"><div class="text-xs font-bold uppercase text-primary section-kicker">Format</div><div class="mt-2 text-xl font-extrabold text-navy-deep">Didactic + Hands-On</div></div>
+        <div class="border-b border-slate-200 p-7 md:border-b-0 md:border-r"><div class="text-xs font-bold uppercase text-primary section-kicker">Clinical Training</div><div class="mt-2 text-xl font-extrabold text-navy-deep">Supervised Live Models</div></div>
+        <div class="border-b border-slate-200 p-7 md:border-b-0 md:border-r"><div class="text-xs font-bold uppercase text-primary section-kicker">Environment</div><div class="mt-2 text-xl font-extrabold text-navy-deep">Limited / Intimate</div></div>
+        <div class="p-7"><div class="text-xs font-bold uppercase text-primary section-kicker">Location</div><div class="mt-2 text-xl font-extrabold text-navy-deep">New York City</div></div>
+      </div>
+    </section>
+
+    <!-- Core principles -->
+    <section id="principles" class="py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <div class="text-xs font-black uppercase text-primary section-kicker">Foundational Pillars</div>
+          <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep sm:text-5xl">Our Core Principles</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">Four principles shape the learning environment and keep the program focused on clinical judgment, safety, and practical skill development.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-cream text-primary"><span class="material-symbols-outlined">menu_book</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Evidence-Based Education</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Academic instruction is grounded in current clinical evidence and structured to support responsible aesthetic decision-making.</p>
+          </article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-cream text-primary"><span class="material-symbols-outlined">verified_user</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Anatomy &amp; Safety</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Detailed facial anatomy, patient assessment, treatment planning, and complication awareness remain central throughout training.</p>
+          </article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-cream text-primary"><span class="material-symbols-outlined">clinical_notes</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Live-Model Experience</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Participants progress from theory and demonstrations into supervised clinical practice with live models supplied or approved by NYFAF.</p>
+          </article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-cream text-primary"><span class="material-symbols-outlined">groups</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Small-Group Instruction</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Limited groups allow closer faculty oversight, direct feedback, and more opportunities to discuss patient-specific decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational journey -->
+    <section id="journey" class="bg-slate-50 py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="grid gap-14 lg:grid-cols-12 lg:items-start">
+          <div class="lg:col-span-4 lg:sticky lg:top-28">
+            <div class="text-xs font-black uppercase text-primary section-kicker">Educational Journey</div>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep">Program Structure &amp; Learning Format</h2>
+            <p class="mt-5 leading-7 text-slate-600">The program connects core knowledge to clinical application through a three-phase learning sequence.</p>
+          </div>
+          <div class="space-y-6 lg:col-span-8">
+            <article class="grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:grid-cols-[90px_1fr]">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-2xl font-black text-white">01</div>
+              <div>
+                <div class="text-xs font-bold uppercase text-primary section-kicker">Core Foundations</div>
+                <h3 class="mt-2 text-2xl font-black text-navy-deep">Phase 1: Didactic Education</h3>
+                <p class="mt-3 text-slate-600">Interactive education establishes the clinical framework before hands-on work begins.</p>
+                <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                  <span class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold">Aesthetic injectable fundamentals</span>
+                  <span class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold">Facial anatomy &amp; physiology</span>
+                  <span class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold">Patient assessment</span>
+                </div>
+              </div>
+            </article>
+            <article class="grid gap-6 rounded-3xl border border-slate-200 bg-navy-deep p-8 text-white shadow-xl sm:grid-cols-[90px_1fr]">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-2xl font-black text-white">02</div>
+              <div>
+                <div class="text-xs font-bold uppercase text-primary section-kicker">Clinical Immersion</div>
+                <h3 class="mt-2 text-2xl font-black">Phase 2: Clinical Training</h3>
+                <p class="mt-3 text-slate-300">In-person instruction in New York City moves from demonstration to supervised live-model practice.</p>
+                <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                  <span class="rounded-xl bg-white/5 px-4 py-3 text-sm font-semibold">Small-group supervision</span>
+                  <span class="rounded-xl bg-white/5 px-4 py-3 text-sm font-semibold">Models provided by NYFAF</span>
+                  <span class="rounded-xl bg-white/5 px-4 py-3 text-sm font-semibold">Midtown clinical setting</span>
+                </div>
+              </div>
+            </article>
+            <article class="grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:grid-cols-[90px_1fr]">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-2xl font-black text-white">03</div>
+              <div>
+                <div class="text-xs font-bold uppercase text-primary section-kicker">Professional Milestone</div>
+                <h3 class="mt-2 text-2xl font-black text-navy-deep">Phase 3: Course Completion</h3>
+                <p class="mt-3 text-slate-600">Participants complete the educational program with documented recognition of training and a framework for continued professional development.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty / combined teaching advantage -->
+    <section class="py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-deep text-white soft-shadow">
+          <div class="grid lg:grid-cols-12">
+            <div class="relative min-h-[420px] lg:col-span-5">
+              <img class="absolute inset-0 h-full w-full object-cover opacity-80" alt="Small-group clinical training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByL-MJM9eT87h96vm5KwB1Dj8lsnYly4t_Gxq7OuzzJKRqz5NOkKRb-pw2ymoa5Dn8EgO9vFr5yoS_NGbp5SgI4nsE70hYfn_9m4FoLCTFe2ZNja2XE3LgaPoTtvBVzfkTKW4uyigltspXF1k3N-i44l1Ml4hhAN8IrbLtg3dfi-kLcObvUMYbOqnrBBZx4CcpwsNahEfa6S0XhvoxeD1qvwuQqJLMT2n0BSlSL_e7oiVAOEdK3JpxUURLOwkyROsJnvr9VeBezZ7i" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/20 to-transparent"></div>
+              <div class="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/10 bg-navy-deep/75 p-5 backdrop-blur">
+                <div class="text-sm font-bold">Olga Klempner, RN</div>
+                <div class="text-xs text-slate-300">Registered Nurse | Clinical Educator</div>
+                <div class="mt-3 text-sm font-bold">Dr. Oleg Klempner, DDS</div>
+                <div class="text-xs text-slate-300">Doctor of Dental Surgery | Anatomy Expert</div>
+              </div>
+            </div>
+            <div class="p-9 sm:p-12 lg:col-span-7 lg:p-14">
+              <div class="text-xs font-black uppercase text-primary section-kicker">The Combined Teaching Advantage</div>
+              <h2 class="mt-4 text-4xl font-black tracking-tight">Technical injection training meets structural anatomy.</h2>
+              <p class="mt-6 text-lg leading-8 text-slate-300">NYFAF’s dual-instructor approach brings together injection technique, facial structure, vascular awareness, treatment planning, and post-care considerations so participants can view each procedure as a complete clinical decision—not an isolated injection step.</p>
+              <div class="mt-9 grid gap-5 sm:grid-cols-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><div class="font-bold text-primary">Structural Foundation</div><p class="mt-2 text-sm leading-6 text-slate-400">Facial anatomy and patient structure guide treatment planning.</p></div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><div class="font-bold text-primary">Technical Delivery</div><p class="mt-2 text-sm leading-6 text-slate-400">Technique is demonstrated, practiced, corrected, and discussed in context.</p></div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><div class="font-bold text-primary">Total Competence</div><p class="mt-2 text-sm leading-6 text-slate-400">Assessment, execution, documentation, and post-care are taught as one workflow.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Format / schedule -->
+    <section class="bg-brand-cream py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div class="max-w-3xl">
+            <div class="text-xs font-black uppercase text-primary section-kicker">Training Schedule</div>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep sm:text-5xl">Course Format &amp; Schedule</h2>
+          </div>
+          <p class="max-w-xl leading-7 text-slate-600">Program length and exact content vary by course, but the teaching model combines theory, demonstration, supervised practice, and assessment in a focused NYC training environment.</p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-4">
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-xs font-bold uppercase text-primary section-kicker">Duration</div><div class="mt-2 text-2xl font-black">1–2 Days</div><p class="mt-2 text-sm text-slate-500">Intensive training sessions.</p></div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-xs font-bold uppercase text-primary section-kicker">Format</div><div class="mt-2 text-2xl font-black">Didactic + Hands-On</div><p class="mt-2 text-sm text-slate-500">Knowledge followed by clinical application.</p></div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-xs font-bold uppercase text-primary section-kicker">Location</div><div class="mt-2 text-2xl font-black">New York City</div><p class="mt-2 text-sm text-slate-500">Midtown Manhattan setting.</p></div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-xs font-bold uppercase text-primary section-kicker">Class Size</div><div class="mt-2 text-2xl font-black">Limited / Intimate</div><p class="mt-2 text-sm text-slate-500">Designed for closer instructor interaction.</p></div>
+        </div>
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div class="grid border-b border-slate-200 bg-navy-deep px-7 py-5 text-sm font-bold uppercase tracking-wider text-white md:grid-cols-[1fr_3fr]"><span>Typical Flow</span><span class="hidden md:block">Learning Focus</span></div>
+          <div class="grid gap-6 border-b border-slate-100 p-7 md:grid-cols-[1fr_3fr]">
+            <div><div class="text-2xl font-black text-primary">Day 1</div><div class="text-sm font-bold uppercase text-slate-400">Foundations</div></div>
+            <div class="grid gap-4 md:grid-cols-2"><div class="rounded-2xl bg-slate-50 p-5"><div class="font-bold">Morning</div><p class="mt-2 text-sm text-slate-600">Theory, anatomy review, product science, and patient assessment.</p></div><div class="rounded-2xl bg-slate-50 p-5"><div class="font-bold">Afternoon</div><p class="mt-2 text-sm text-slate-600">Instructor demonstrations followed by guided clinical practice.</p></div></div>
+          </div>
+          <div class="grid gap-6 p-7 md:grid-cols-[1fr_3fr]">
+            <div><div class="text-2xl font-black text-primary">Day 2</div><div class="text-sm font-bold uppercase text-slate-400">Clinical Development</div></div>
+            <div class="grid gap-4 md:grid-cols-2"><div class="rounded-2xl bg-slate-50 p-5"><div class="font-bold">Clinical Workshop</div><p class="mt-2 text-sm text-slate-600">Expanded treatment planning, techniques, and supervised live-model work.</p></div><div class="rounded-2xl bg-slate-50 p-5"><div class="font-bold">Closing &amp; Assessment</div><p class="mt-2 text-sm text-slate-600">Practice review, Q&amp;A, and course-completion steps.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live model -->
+    <section class="py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4 pt-10">
+              <img class="h-52 w-full rounded-3xl object-cover shadow-lg" alt="Clinical injection practice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPo-YDRUWYS_qIrizEPd0BCYz1Xkm5bFMmwTOb6zJ9NG3fdSF2MGDH_Qz5lxXHGE8l3mjlSSAkA4fOp4hyLR5I3gp2fx0hpxOgov6xzw-hauyzhu8JsB4nWT1Vk6zfqhMp2P2utiwnOsZtiSiom3OySIBhnGPoNr33AEkqD2QCXG8KB5OoEFwSM76rNJfLxQZBbrDQY6N6MThjl5eNNgreFlUgasOUNhrKVkpnxc9FhTSx3qNFrKvpPjOqquT8BZJgdp77IQLZEVH9" />
+              <div class="rounded-3xl bg-primary p-7 text-navy-deep"><div class="text-3xl font-black">Live Models</div><p class="mt-2 text-sm font-semibold">Supervised practice with patient-specific planning and feedback.</p></div>
+            </div>
+            <div class="space-y-4">
+              <div class="rounded-3xl bg-navy-deep p-7 text-white"><div class="text-3xl font-black text-primary">Small Groups</div><p class="mt-2 text-sm text-slate-300">Closer observation, feedback, and technique correction.</p></div>
+              <img class="h-64 w-full rounded-3xl object-cover shadow-lg" alt="Small-group medical aesthetics training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5oEABxZdM22PZsVhQNrzSSAHWzMPuJyi48zI0xphe3umyU8PZ3SHNbZ5G3ARm9KaOO55dLe6LUOHCesYj9TXQliQz0x96928mY5ewrz2XXX_vdCXCZA7-xmlvb1rux3aIbXxuHxZkWtnmHtHLTchvAgs8Lqklu96kuiO8H9SYLz8e4tLX96Feu0f7wBr9AnskemlGicwrcM25aXcactUpWMZ_Ib5JTF8aZNbBd8cbZyROSfzTckC3dvhISV_1HNGdRXsNQJQoyvLX" />
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-black uppercase text-primary section-kicker">Live-Model Training</div>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep sm:text-5xl">Real Hands-On Injection Training on Live Models</h2>
+            <p class="mt-6 text-lg leading-8 text-slate-600">Clinical training is built around active participation rather than observation alone. Participants evaluate models, discuss treatment plans, perform procedures under supervision when appropriate, and receive real-time faculty feedback.</p>
+            <div class="mt-8 space-y-4">
+              <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="material-symbols-outlined text-primary">fact_check</span><div><div class="font-bold">Treatment planning</div><p class="mt-1 text-sm text-slate-600">Assess anatomy, treatment goals, contraindications, and technique before injection.</p></div></div>
+              <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="material-symbols-outlined text-primary">forum</span><div><div class="font-bold">Real-time feedback</div><p class="mt-1 text-sm text-slate-600">Faculty can correct positioning, handling, sequence, and clinical reasoning during practice.</p></div></div>
+              <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="material-symbols-outlined text-primary">description</span><div><div class="font-bold">Documentation &amp; post-care</div><p class="mt-1 text-sm text-slate-600">Training also addresses documentation, patient communication, and post-treatment guidance.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section id="curriculum" class="bg-slate-50 py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <div class="text-xs font-black uppercase text-primary section-kicker">What You Will Learn</div>
+          <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep sm:text-5xl">Comprehensive Curriculum in Aesthetic Injectables</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">The curriculum builds a clinical foundation for safe, supervised injectable training. Exact depth and treatment areas vary by the program selected.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+          <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"><div class="text-4xl font-black text-slate-100">01</div><h3 class="mt-3 text-lg font-extrabold">Foundations of Neurotoxin Therapy</h3><p class="mt-3 text-sm leading-6 text-slate-600">Product fundamentals, handling, dosing logic, and treatment planning principles.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"><div class="text-4xl font-black text-slate-100">02</div><h3 class="mt-3 text-lg font-extrabold">Facial Anatomy &amp; Assessment</h3><p class="mt-3 text-sm leading-6 text-slate-600">Muscular anatomy, vascular considerations, aging patterns, and patient evaluation.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"><div class="text-4xl font-black text-slate-100">03</div><h3 class="mt-3 text-lg font-extrabold">Injection Techniques</h3><p class="mt-3 text-sm leading-6 text-slate-600">Technique selection and placement for the treatment areas included in the chosen course.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"><div class="text-4xl font-black text-slate-100">04</div><h3 class="mt-3 text-lg font-extrabold">Safety &amp; Complication Management</h3><p class="mt-3 text-sm leading-6 text-slate-600">Risk reduction, adverse-event awareness, clinical protocols, and escalation planning.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-navy-deep p-7 text-white shadow-xl"><div class="text-4xl font-black text-white/10">05</div><h3 class="mt-3 text-lg font-extrabold text-primary">Practice &amp; Professionalism</h3><p class="mt-3 text-sm leading-6 text-slate-300">Consultation, documentation, ethical practice, patient communication, and responsible professional growth.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility / clarifications from the restructuring doc -->
+    <section class="py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <div class="text-xs font-black uppercase text-primary section-kicker">Clinical Eligibility &amp; Training Standards</div>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-navy-deep">Important Information Before You Enroll</h2>
+            <p class="mt-5 text-lg leading-8 text-slate-600">NYFAF programs are designed for licensed medical professionals. Participation in hands-on activities may vary according to the selected course, professional license, experience level, applicable regulations, and clinical considerations.</p>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+              <div class="flex gap-4 border-b border-slate-100 p-6"><span class="material-symbols-outlined text-primary">badge</span><p class="font-semibold text-slate-700">Participants must provide an active professional license or other required credentials.</p></div>
+              <div class="flex gap-4 border-b border-slate-100 p-6"><span class="material-symbols-outlined text-primary">inventory_2</span><p class="font-semibold text-slate-700">All live models, injectable products, and clinical materials are provided or approved by NYFAF.</p></div>
+              <div class="flex gap-4 border-b border-slate-100 p-6"><span class="material-symbols-outlined text-primary">block</span><p class="font-semibold text-slate-700">Outside models and products are not permitted for safety and liability reasons.</p></div>
+              <div class="flex gap-4 border-b border-slate-100 p-6"><span class="material-symbols-outlined text-primary">gavel</span><p class="font-semibold text-slate-700">Participants must follow the scope-of-practice requirements that apply in their state, country, or professional jurisdiction.</p></div>
+              <div class="flex gap-4 p-6"><span class="material-symbols-outlined text-primary">workspace_premium</span><p class="font-semibold text-slate-700">A Certificate of Completion recognizes participation in the educational program and does not replace professional licensure or expand an individual’s legal scope of practice.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs CTA -->
+    <section id="programs" class="relative overflow-hidden bg-navy-deep py-24 text-white lg:py-28">
+      <div class="absolute inset-0 medical-grid opacity-30"></div>
+      <div class="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"></div>
+      <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-xs font-black uppercase text-primary section-kicker">Find the Right Training for Your Experience</div>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Take the Next Step in Your Aesthetic Education</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-300">Explore NYFAF’s Basic, Comprehensive, and Advanced training programs to find the course that matches your current skills and professional goals.</p>
+          <p class="mt-3 text-slate-400">Train in Midtown Manhattan through focused instruction, expert guidance, and supervised clinical experience.</p>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <a href="https://nyfam.org/basic-botox-dermal-filler-training-course/" class="group rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10">
+            <div class="text-xs font-bold uppercase text-primary section-kicker">Foundational</div>
+            <h3 class="mt-3 text-2xl font-black">Basic BOTOX® &amp; Dermal Filler</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-400">For licensed medical professionals beginning injectable training and building a strong foundation in anatomy, safety, and technique.</p>
+            <div class="mt-6 flex items-center gap-2 font-bold text-primary">View Course <span class="material-symbols-outlined transition group-hover:translate-x-1">arrow_forward</span></div>
+          </a>
+          <a href="https://nyfam.org/comprehensive-botox-dermal-filler-training-course/" class="group rounded-3xl border border-primary/30 bg-primary/10 p-7 transition hover:-translate-y-1 hover:bg-primary/15">
+            <div class="text-xs font-bold uppercase text-primary section-kicker">Comprehensive 2-Day</div>
+            <h3 class="mt-3 text-2xl font-black">Comprehensive BOTOX® &amp; Dermal Filler</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-300">A two-day immersive program combining core education, full-face planning, and expanded supervised live-model experience.</p>
+            <div class="mt-6 flex items-center gap-2 font-bold text-primary">View Course <span class="material-symbols-outlined transition group-hover:translate-x-1">arrow_forward</span></div>
+          </a>
+          <a href="https://nyfam.org/advanced-botox-dermal-filler-training-course/" class="group rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10">
+            <div class="text-xs font-bold uppercase text-primary section-kicker">Advanced</div>
+            <h3 class="mt-3 text-2xl font-black">Advanced BOTOX® &amp; Dermal Filler</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-400">For experienced practitioners seeking more precise planning, advanced techniques, and expanded treatment applications.</p>
+            <div class="mt-6 flex items-center gap-2 font-bold text-primary">View Course <span class="material-symbols-outlined transition group-hover:translate-x-1">arrow_forward</span></div>
+          </a>
+        </div>
+        <div class="mt-12 flex flex-wrap justify-center gap-4">
+          <a class="gold-gradient rounded-xl px-8 py-4 font-bold text-white shadow-xl shadow-primary/20" href="https://nyfam.org/">Explore Our Courses</a>
+          <a class="rounded-xl border border-white/20 bg-white/5 px-8 py-4 font-bold" href="https://nyfam.org/contact/">Speak With an Advisor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-12">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3 md:items-center">
+        <div>
+          <div class="text-xl font-black text-navy-deep">NYFAF</div>
+          <p class="mt-2 max-w-sm text-xs leading-5 text-slate-500">New York Facial Aesthetics Mentorship (NYFAM) is a registered DBA of New York Facial Aesthetics Forum (NYFAF).</p>
+        </div>
+        <div class="flex flex-wrap gap-5 text-sm font-semibold text-slate-500 md:justify-center">
+          <a class="hover:text-primary" href="https://nyfam.org/">Home</a>
+          <a class="hover:text-primary" href="https://nyfam.org/contact/">Contact</a>
+          <a class="hover:text-primary" href="https://nyfam.org/terms-of-use/">Terms</a>
+          <a class="hover:text-primary" href="https://nyfam.org/refund_returns-2/">Refund Policy</a>
+        </div>
+        <div class="text-sm text-slate-500 md:text-right">10 W 46th St Suite 1401<br />New York, NY 10036<br />(212) 759-5595</div>
+      </div>
+      <div class="mt-8 border-t border-slate-100 pt-6 text-xs text-slate-400">Preview page prepared from the current NYFAM/NYFAF site content and the restructuring brief. Reference imagery is retained from the supplied design HTML for layout visualization.</div>
+    </div>
+  </footer>
+</body>
+</html>
